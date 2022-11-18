@@ -1,15 +1,23 @@
 <img style="max-height:300px;display:block;margin: 1.0rem auto" src="/attachments/skojaku-welcome-top-image.png" />
 
----
-Exposing and controlling biases in algorithms for complex networks
-----
+Hi 👋, I am Sadamori Kojaku. I'm a (computer scientist | network scientist) working at the intersection of Network Science and Machine Learning.
+I am a postdoctoral researcher working with Dr.~Yong-Yeol Ahn at Indiana University (IU), Bloomington. I am a former postdoc of Dr. Naoki Masuda.
 
-<img style="width:30%;max-width:500px;float:right;padding:5px" src="/attachments/sada-2021.jpg#floatright" />
 
-I am a Postdoctoral Fellow at Indiana University Bloomington since 2020. Previously, I was a Research Associate at University of Bristol (2016-2019) and Kobe University (2019-2020). I have received my Ph.D. in Computer Science at Hokkaido University in 2016.
+# My research
 
-My research interest lies at the intersection between Network Science, Machine Lerning and Science of Science.
-Data is the oil of in the 21st century, fueling a deep quantitative understanding of science. However, the new data-driven paradigm comes with substantial risks and challenges. Data about science is an imperfect, noisy, and biased reflection of science. Algorithms trained on the data can generate false claims and make biased decisions. Thus, algorithms that can "distill" useful and unbiased information from crude data are instrumental in the science of science.
-My research has been focused on algorithms that can extract useful information from rich but noisy biased data, with the ultimate goal of better-informed decision-making in scientific enterprise. My research views science as a complex network of papers, authors, and concepts. Building on this perspective, my research program focuses on algorithms for networks.
+Data is the "oil" that fuels a quantitative understanding and exploitation of the physical world, human behaviors and our society.
+However, data is *crude*; it is often incomplete, noisy, and biased.
+Algorithms trained on crude data can generate false claims and make biased decisions.
+For instance, algorithms trained on social networks may learn inappropriate gender and ethical biases and influence critical human decisions such as promotion and law enforcement.
+For instance, many social networks exhibit strong gender and ethnic homophily and are dominated by exceptionally popular individuals having a disproportionate share of connections.
 
-I love sailing (470;Laser;OP), Kendo (a Japanese martial arts;3rd-Dan), and Ski. Recently, Tennis is added to my favorite sports!
+While fairness and faithfulness of algorithms are becoming increasingly important in text and image processing,
+another prevalent data type---networks---has received far less attention.
+Networks are a simple and powerful representation that abstracts out various complex systems including social networks, banking networks, the Internet, food webs, and brains.
+The structure of networks is critical; for example, it underpins the spreading of ideas, misinformation, and disease over social networks.
+Despite the universality and critical use of network data, the faithfulness and fairness of algorithms for network data have received much less attention than they deserve.
+
+My research aims to provide a fundamental basis for faithful and fairness-aware machine learning for networks.
+This basis is graph representation learning, or embedding, which embeds a network into a vector space.
+I focus on fundamental understanding of how they function, which enables us to assess and leverage their strength, and "distill" useful insights from rich but crude network data.
