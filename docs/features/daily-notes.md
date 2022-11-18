@@ -13,7 +13,6 @@ You can also quickly create link to your daily notes, in the configured format, 
 
 Type `/today` and press `enter` to link to today's note.
 You can also write:
-
 | Snippet      | Date          |
 | ------------ | ------------- |
 | `/tomorrow`  | tomorrow      |

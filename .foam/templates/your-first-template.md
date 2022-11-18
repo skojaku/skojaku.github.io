@@ -1,6 +1,6 @@
 # Foam Note Templates
 
-Foam includes note templates! 
+Foam includes note templates!
 This allows you to easily create notes that have similar structure without having to use copy/paste :)
 
 Templates support the [VS Code's Snippet Syntax](https://code.visualstudio.com/docs/editor/userdefinedsnippets#_snippet-syntax), which means you can:

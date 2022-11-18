@@ -1,39 +1,15 @@
-<img src="attachments/foam-icon.png" width=100 align="left">
+<img style="max-height:300px;display:block;margin: 1.0rem auto" src="/attachments/skojaku-welcome-top-image.png" />
 
-# Foam
+---
+Exposing and controlling biases in algorithms for complex networks
+----
 
-**👋 Welcome to your new Foam Knowledge Base!**
+<img style="width:30%;max-width:500px;float:right;padding:5px" src="/attachments/sada-2021.jpg#floatright" />
 
-## Getting started
+I am a Postdoctoral Fellow at Indiana University Bloomington since 2020. Previously, I was a Research Associate at University of Bristol (2016-2019) and Kobe University (2019-2020). I have received my Ph.D. in Computer Science at Hokkaido University in 2016.
 
-This documentation assumes that you have a GitHub account and have [Visual Studio Code](https://code.visualstudio.com/) installed on your Linux/macOS/Windows machine.
+My research interest lies at the intersection between Network Science, Machine Lerning and Science of Science.
+Data is the oil of in the 21st century, fueling a deep quantitative understanding of science. However, the new data-driven paradigm comes with substantial risks and challenges. Data about science is an imperfect, noisy, and biased reflection of science. Algorithms trained on the data can generate false claims and make biased decisions. Thus, algorithms that can "distill" useful and unbiased information from crude data are instrumental in the science of science.
+My research has been focused on algorithms that can extract useful information from rich but noisy biased data, with the ultimate goal of better-informed decision-making in scientific enterprise. My research views science as a complex network of papers, authors, and concepts. Building on this perspective, my research program focuses on algorithms for networks.
 
-1. If you haven't yet, browse over to the main [Foam documentation](https://foambubble.github.io/foam) to get an idea of what Foam is and how to use it.
-2. Press "Use this template" button at [foam-template](https://github.com/foambubble/foam-template/generate) (that's this repository!) to fork it to your own GitHub account. If you want to keep your thoughts to yourself, remember to set the repository private.
-3. [Clone the repository to your local machine](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) and open it in VS Code.
-
-    *Open the repository as a folder using the `File > Open...` menu item.*
-
-4. When prompted to install recommended extensions, click **Install all** (or **Show Recommendations** if you want to review and install them one by one)
-
-After setting up the repository, head to [getting started](./getting-started.md) to get familiar with your new knowledge base!
-
-To learn more about how to use **Foam**, read the [Recipes](https://foambubble.github.io/foam/recipes/recipes) bubbles of the Foam documentation workspace.
-
-And remember that you can always join our [Foam community on Discord](https://foambubble.github.io/join-discord/g)!
-
-## Using Foam
-
-We've created a few Bubbles (Markdown documents) to get you started.
-
-- [inbox](./inbox.md) - a place to write down quick notes to be categorized later
-- [getting-started](./getting-started.md) - learn how to use your Foam workspace
-- [todo](./todo.md) - a place to keep track of things to do
-
-In the `docs` directory you can find everything you need to learn the basics of Foam.
-
-## Submitting Issues
-
-As you may have noticed, issues are disabled. With the goal to keep the project fairly easy to maintain, please file your issues in the main Foam repository:
-
-> <https://github.com/foambubble/foam>
+I love sailing (470;Laser;OP), Kendo (a Japanese martial arts;3rd-Dan), and Ski. Recently, Tennis is added to my favorite sports!
