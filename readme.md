@@ -4,10 +4,9 @@
 
 Hi 👋, I am Sadamori Kojaku. I'm a network scientist and computer scientist working at the intersection of Network Science and Machine Learning. I am a postdoctoral researcher working with Dr.~Yong-Yeol Ahn at Indiana University (IU), Bloomington. I am a former postdoc of Dr. Naoki Masuda.
 
-- [About me]()
-- [CV](attachments/docs/cv/cv-skojaku.pdf)
+- [About me](./attachments/docs/../../docs/about_me/About_me.md)
+- [CV](./attachments/docs/cv/cv-skojaku.pdf)
 - [Publications](./docs/publications/Publications.md)
-- [Teaching]()
 - [My digital garden](https://spontaneous-chebakia-5b4975.netlify.app/)
 
 # Research
