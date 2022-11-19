@@ -1,0 +1,116 @@
+##
+- [CV](/docs/cv/cv-sadamori-kojaku.pdf)
+- [Google Scholar](https://scholar.google.com/citations?user=IyWt4R4AAAAJ&hl=en)
+
+## Preprints
+
+1.  Dakota Murray, Jisung Yoon, **Sadamori Kojaku**, Rodrigo Costas, Woo-Sung Jung, Staša Milojević, Yong-Yeol Ahn
+    + [[Preprint]](https://arxiv.org/abs/2012.02785)]
+
+## Journal papers and conference proceedings (refereed)
+
+1. **Sadamori Kojaku**, Jisung Yoon, Isabel Constantino, and Yong-Yeol Ahn. Residual2Vec: Debiasing graph embedding with random graphs. NeurIPS (2021).
+    + [[Preprint]](https://arxiv.org/abs/)], [[Code](https://github.com/skojaku/residual2vec)]
+
+1. **Sadamori Kojaku**, Giacomo Livan, and Naoki Masuda. Detecting citation cartels in journal networks. Scientific Reports. 11, 14524 (2021).
+    + [[Preprint]](https://arxiv.org/abs/2009.09097)], [[Code](https://github.com/skojaku/journal-citation-cartels)]
+
+
+1. **Sadamori Kojaku**, Laurent Hébert-Dufresne, Enys Mones, Sune Lehmann, Yong-Yeol Ahn. The effectiveness of backward contact tracing in networks. Nature Physics (2021).
+    + [[Paper](https://www.nature.com/articles/s41567-021-01187-2)], [[Preprint](https://arxiv.org/abs/2005.02362)], [ [Code](https://github.com/yy/backward-contact-tracing) ]<a name="scola-ref"></a>
+
+1. **Sadamori Kojaku**, Naoki Masuda. Constructing networks by filtering correlation matrices: A null model approach, Proceedings of the Royal Society A, 475, 2231 (2019).
+    + [[Paper](https://royalsocietypublishing.org/doi/abs/10.1098/rspa.2019.0578?af=R)], [[Preprint](https://arxiv.org/abs/1903.10805)], [ [Python code](https://github.com/skojaku/scola) ]<a name="scola-ref"></a>
+
+1. **Sadamori Kojaku**, Mengqiao Xu, Haoxiang Xia, Naoki Masuda. Multiscale core-periphery structure in a global liner shipping network. Scientific Reports, 9, 404 (2019)
+    + [[Paper](https://www.nature.com/articles/s41598-018-35922-2)], [[Preprint](https://arxiv.org/abs/1808.04549)], [[Python code](https://github.com/skojaku/multiresolcp)].
+
+1. **Sadamori Kojaku**, Giulio Cimini, Guido Caldarelli, Naoki Masuda. Structural changes in the interbank market across the financial crisis from multiple core-periphery analysis. Journal of Network Theory in Finance, 4, 33-51 (2018)
+    + [[Paper](https://doi.org/10.21314/JNTF.2018.044)], [[Preprint](https://arxiv.org/abs/1802.05139)]
+
+1. Naoki Masuda, **Sadamori Kojaku**, Yukie Sano. A configuration model for correlation matrices. Physical Review E, 98, 012312 (2018)
+    + [[Paper](https://doi.org/10.1103/PhysRevE.98.012312)], [[Preprint](https://arxiv.org/abs/1806.08709)], [[MATLAB code](https://github.com/naokimas/config_corr)]
+
+1. **Sadamori Kojaku**, Naoki Masuda. A generalised significance test for individual communities in networks. Scientific Reports, 8, 7351 (2018)
+	+ [[Paper](https://www.nature.com/articles/s41598-018-25560-z)], [[Preprint](https://arxiv.org/abs/1712.00298)], [[Python code](https://github.com/skojaku/qstest/)]
+
+1. **Sadamori Kojaku**, Naoki Masuda. Core-periphery structure requires something else in the network. New Journal of Physics, 20, 043012 (2018)
+	+ [[Paper](http://iopscience.iop.org/article/10.1088/1367-2630/aab547)], [[Preprint](https://arxiv.org/abs/1710.07076")], [[Code: C++, MATLAB and Python code](https://github.com/skojaku/km_config/)]
+
+1. **Sadamori Kojaku**, Naoki Masuda. Finding multiple core-periphery pairs in networks. Physical Review E, 96, 052313 (2017)
+	+ [[Paper](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.96.052313)], [[Preprint](https://arxiv.org/abs/1702.06903")], [[MATLAB code](http://www.naokimasuda.net/publ_e.html)]
+
+1. **Sadamori Koujaku**, Ichigaku Takigawa, Mineichi Kudo and Hideyuki Imai. Dense core model for cohesive subgraph discovery. Social Networks, 44, 143-152 (2016)
+	+ [[Paper](http://www.sciencedirect.com/science/article/pii/S0378873315000520)]
+
+1. **Sadamori Koujaku**, Mineichi Kudo, Ichigaku Takigawa and Hideyuki Imai. Community change detection in dynamic networks in noisy environment. 24th International Conference on World Wide Web. Florence, Italy, May 18 - 22 (2015)
+
+1. **Sadamori Koujaku**, Mineichi Kudo, Ichigaku Takigawa and Hideyuki Imai. Structual change point detection for social networks. The World Congress on Engineering. London, the United Kingdom, July 3-5 (2013)
+
+1. **幸若 完壮**, 渡辺 浩太, 五十嵐 一. 合理的な忘却型Profit Sharing強化学習法. 電気学会論文誌Ｃ, 132, 448-454 (2012)
+	+ [[Paper](https://www.jstage.jst.go.jp/article/ieejeiss/132/3/132_3_448/_article/-char/ja/)]
+
+1. **Sadamori Koujaku**, Kota Watanabe and Hajime Igarashi. Adaptive profit sharing reinforcement learning for dynamic environment. 10th International Conference on Machine Learning and Applications and Workshops. Hawaii, the United States (2011)
+
+## Commentary
+
+1. **幸若 完壮**. 埋め込み法が拓くネットワーク科学の新展開. 特集号「複雑ネットワーク研究の最前線」 システム制御情報学会論文誌, 65, 5, 185-191 (2021).
+
+## Oral presentations and posters (refereed)
+
+1. **Sadamori Kojaku**, Clara Boothby, Filipi Nascimento Silva, Attila Varga, Xiaoran Yan, Staša Milojević, Alessandro Flammini, Filippo Menczer, and Yong-Yeol Ahn. Mapping Scientific Foraging. ICSSI. Washinton D.C., USA, 6-9 June (2022)
+
+1. **Sadamori Kojaku**, Xiaoran Yan, Jisung Yoon, Filipi N. Silva, Vincent Lariviere, and Yong-Yeol Ahn. ICSSI. Washinton D.C., USA, 6-9 June (2022)
+
+1. **Sadamori Kojaku**, Attila Varga, Xiaoran Yan, Filipi N. Silva, Staša Milojević, Alessandro Flammini, and Yong-Yeol Ahn. The landscape of the COVID-19 research: A neural embedding approach. Netsci. Rome, Italy, 17-25 September (2020)
+
+1. **Sadamori Kojaku**, Giacomo Livan, and Naoki Masuda. Detecting citaion cartels in journal networks. Netsci. Rome, Italy, 17-25 September (2020)
+
+1. **Sadamori Kojaku** ネットワークコアの検出アルゴリズムとその応用. ネットワーク科学セミナー. 統計数理研究所. 8.28-30 (2019)
+
+1. **Sadamori Kojaku** and Naoki Masuda. Constructing networks from correlation matrices: An application to economical data. Threshold Networks. Nottingham 22-24 July (2019) [[poster](/docs/threshold-networks/poster.pdf)]
+
+1. **Sadamori Kojaku**, Giulio Cimini, Guido Caldarelli, Naoki Masuda. Structural changes in the interbank market across the financial crisis from multiple core-periphery analysis. Netsci. Vermont, U.S., May 26-31 (2019) [[slide](/docs/netsci2019/netsci2019.pdf)]
+
+1. **Sadamori Kojaku** and Naoki Masuda. A generalised significance test for individual communities in networks. Netsci. Paris, France, June 11–15 (2018)
+
+1. Xia Cui, **Sadamori Kojaku**, Naoki Masuda and Danushka Bollegala. Solving feature spareness in text classification using core-periphery decomposition. In Proceedings of the 7th Joint Conference on Lexical and Computational Semantics, 225-264 (ACL, New Orleans, USA, 2018)
+
+1. **Sadamori Kojaku** and Naoki Masuda. Core-periphery structure in degree-heterogeneous networks. Netsci-X. Hangzhou, China (2018)
+
+1. **Sadamori Kojaku** and Naoki Masuda. Multi-scale organisation of core-periphery structure in networks. 1st Laten American Conference on Complex Networks. Puebla, Mexico September 25-29 (2017) [poster]
+
+1. **Sadamori Kojaku** and Naoki Masuda. Core-periphery structure of networks: Consideration for random heterogeneous networks. Netsci. Indianapolis, Indiana, USA (2017) [poster]
+
+1. **Sadamori Kojaku** and Naoki Masuda. An extension of modularity for finding multiple core/periphery structure in networks. Netsci-X. Tel Aviv, Israel January 15-18 (2017) [poster]
+
+1. **Sadamori Kojaku** and Naoki Masuda. Finding multiple core-periphery structure with random walks. 5th International Workshop on Complex Networks and their Applications. Milan, Italy November 30-December 2 (2016)
+
+1. Keigo Kimura, Mineichi Kudo, Lu Sun and **Sadamori Kojaku**. Fast random k-labelsets for large-scale multi-label classification. 23rd International Conference on Pattern Recognition. Cancun, Mexico December 4-8 (2016)
+
+## Invited talk
+
+1. **幸若完壮**. ネットワークコアの検出アルゴリズムとその応用. ネットワーク科学セミナー. 統計数理研究所. 8.28-30 (2019)
+
+## Awards
+
+1. **NetSci X Best Contribution on Financial Networks Award** for "An extension of modularity for finding multiple core/periphery structure in networks" (2017)
+1. **Deans' Award** for my doctoral thesis "Finding core communities in social networks." (2015)
+1. **Best Student Award** for *Sadamori Koujaku*, Mineichi Kudo, Ichigaku Takigawa and Hideyuki Imai "Structural change point detection for evolutional networks." The World Congress on Engineering (2013)
+
+## GRANT
+- *Sadamori Kojaku*, Giulio Cimini, Guido Caldarelli, Daigo Uemoto, and Takashi Kamihigashi. Correlation-based reconstruction of financial networks for systemic risk control. JSPS二国間交流事業 2020. (海外転出のため辞退)
+
+## Patents
+- 幸若完壮／上東貴志。学術論文の査読者検索装置、査読者検索方法、及び査読者検索プログラム [特願2020-14904] (English translation: Reviewer search method, program, and device for academic papers).
+- Prediction method, prediction system and program [Patent No: 9087294]
+
+## Referee activities
+
+1. Nature Human Behavior
+1. Nature Communications
+1. Journal of Complex Networks
+1. Journal of Computational Social Science
+1. PLOS ONE
+1. Scientific Reports
+1. PeerJ
