@@ -8,6 +8,9 @@ Hi 👋, I am Sadamori Kojaku. I'm a network scientist and computer scientist wo
 - [CV](./attachments/docs/cv/cv-skojaku.pdf)
 - [Publications](./docs/publications/Publications.md)
 - [My digital garden (my notes and thoughts in process)](https://spontaneous-chebakia-5b4975.netlify.app/)
+- Code
+    - [Github](https://github.com/skojaku)
+    - [Code list](https://spontaneous-chebakia-5b4975.netlify.app/tips/coding/code/)
 
 # Research
 
