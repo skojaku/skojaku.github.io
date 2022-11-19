@@ -1,36 +1,36 @@
-- [CV](/docs/cv/cv-sadamori-kojaku.pdf)
+- [CV](/attachments/docs/cv/cv-skojaku.pdf)
 - [Google Scholar](https://scholar.google.com/citations?user=IyWt4R4AAAAJ&hl=en)
 
 ## Preprints
 
 1.  Dakota Murray, Jisung Yoon, **Sadamori Kojaku**, Rodrigo Costas, Woo-Sung Jung, Staša Milojević, Yong-Yeol Ahn
-    + [[Preprint]](https://arxiv.org/abs/2012.02785)]
+    + [[Preprint](https://arxiv.org/abs/2012.02785)]
 
 ## Journal papers and conference proceedings (refereed)
 
 1. **Sadamori Kojaku**, Jisung Yoon, Isabel Constantino, and Yong-Yeol Ahn. Residual2Vec: Debiasing graph embedding with random graphs. NeurIPS (2021).
-    + [[Preprint]](https://arxiv.org/abs/)], [[Code](https://github.com/skojaku/residual2vec)]
+    + [[Preprint](https://arxiv.org/abs/)], [[Code](https://github.com/skojaku/residual2vec)]
 
 1. **Sadamori Kojaku**, Giacomo Livan, and Naoki Masuda. Detecting citation cartels in journal networks. Scientific Reports. 11, 14524 (2021).
-    + [[Preprint]](https://arxiv.org/abs/2009.09097)], [[Code](https://github.com/skojaku/journal-citation-cartels)]
+    + [[Preprint](https://arxiv.org/abs/2009.09097), [[Code](https://github.com/skojaku/journal-citation-cartels)]
 
 
-1. **Sadamori Kojaku**, Laurent Hébert-Dufresne, Enys Mones, Sune Lehmann, Yong-Yeol Ahn. The effectiveness of backward contact tracing in networks. Nature Physics (2021).
+2. **Sadamori Kojaku**, Laurent Hébert-Dufresne, Enys Mones, Sune Lehmann, Yong-Yeol Ahn. The effectiveness of backward contact tracing in networks. Nature Physics (2021).
     + [[Paper](https://www.nature.com/articles/s41567-021-01187-2)], [[Preprint](https://arxiv.org/abs/2005.02362)], [ [Code](https://github.com/yy/backward-contact-tracing) ]<a name="scola-ref"></a>
 
-1. **Sadamori Kojaku**, Naoki Masuda. Constructing networks by filtering correlation matrices: A null model approach, Proceedings of the Royal Society A, 475, 2231 (2019).
+3. **Sadamori Kojaku**, Naoki Masuda. Constructing networks by filtering correlation matrices: A null model approach, Proceedings of the Royal Society A, 475, 2231 (2019).
     + [[Paper](https://royalsocietypublishing.org/doi/abs/10.1098/rspa.2019.0578?af=R)], [[Preprint](https://arxiv.org/abs/1903.10805)], [ [Python code](https://github.com/skojaku/scola) ]<a name="scola-ref"></a>
 
-1. **Sadamori Kojaku**, Mengqiao Xu, Haoxiang Xia, Naoki Masuda. Multiscale core-periphery structure in a global liner shipping network. Scientific Reports, 9, 404 (2019)
+4. **Sadamori Kojaku**, Mengqiao Xu, Haoxiang Xia, Naoki Masuda. Multiscale core-periphery structure in a global liner shipping network. Scientific Reports, 9, 404 (2019)
     + [[Paper](https://www.nature.com/articles/s41598-018-35922-2)], [[Preprint](https://arxiv.org/abs/1808.04549)], [[Python code](https://github.com/skojaku/multiresolcp)].
 
-1. **Sadamori Kojaku**, Giulio Cimini, Guido Caldarelli, Naoki Masuda. Structural changes in the interbank market across the financial crisis from multiple core-periphery analysis. Journal of Network Theory in Finance, 4, 33-51 (2018)
+5. **Sadamori Kojaku**, Giulio Cimini, Guido Caldarelli, Naoki Masuda. Structural changes in the interbank market across the financial crisis from multiple core-periphery analysis. Journal of Network Theory in Finance, 4, 33-51 (2018)
     + [[Paper](https://doi.org/10.21314/JNTF.2018.044)], [[Preprint](https://arxiv.org/abs/1802.05139)]
 
-1. Naoki Masuda, **Sadamori Kojaku**, Yukie Sano. A configuration model for correlation matrices. Physical Review E, 98, 012312 (2018)
+6. Naoki Masuda, **Sadamori Kojaku**, Yukie Sano. A configuration model for correlation matrices. Physical Review E, 98, 012312 (2018)
     + [[Paper](https://doi.org/10.1103/PhysRevE.98.012312)], [[Preprint](https://arxiv.org/abs/1806.08709)], [[MATLAB code](https://github.com/naokimas/config_corr)]
 
-1. **Sadamori Kojaku**, Naoki Masuda. A generalised significance test for individual communities in networks. Scientific Reports, 8, 7351 (2018)
+7. **Sadamori Kojaku**, Naoki Masuda. A generalised significance test for individual communities in networks. Scientific Reports, 8, 7351 (2018)
 	+ [[Paper](https://www.nature.com/articles/s41598-018-25560-z)], [[Preprint](https://arxiv.org/abs/1712.00298)], [[Python code](https://github.com/skojaku/qstest/)]
 
 1. **Sadamori Kojaku**, Naoki Masuda. Core-periphery structure requires something else in the network. New Journal of Physics, 20, 043012 (2018)
