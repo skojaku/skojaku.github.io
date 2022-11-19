@@ -1,4 +1,3 @@
-##
 - [CV](/docs/cv/cv-sadamori-kojaku.pdf)
 - [Google Scholar](https://scholar.google.com/citations?user=IyWt4R4AAAAJ&hl=en)
 
@@ -90,7 +89,10 @@
 
 ## Invited talk
 
-1. **幸若完壮**. ネットワークコアの検出アルゴリズムとその応用. ネットワーク科学セミナー. 統計数理研究所. 8.28-30 (2019)
+1. *Sadamori Kojaku*. Distilling rich but crude scholarly data using representation learning, IUNI Lunch Colloquium: Science of Science and Networks, Indiana, USA, 28 Oct (2022)
+1. *Sadamori Kojaku*. Residual2Vec: Debiasing graph embedding with random graphs. Network Inequality, NetSci 2022, Shanghai, China, 21 July (2022)
+1. *Sadamori Kojaku*. The effectiveness of backward contact tracing in networks. The State University of New York at Buffalo, 06.04 (2021)
+1. *幸若完壮 ネットワークコアの検出アルゴリズムとその応用. ネットワーク科学セミナー. 統計数理研究所. 8.28-30 (2019)
 
 ## Awards
 
@@ -98,7 +100,7 @@
 1. **Deans' Award** for my doctoral thesis "Finding core communities in social networks." (2015)
 1. **Best Student Award** for *Sadamori Koujaku*, Mineichi Kudo, Ichigaku Takigawa and Hideyuki Imai "Structural change point detection for evolutional networks." The World Congress on Engineering (2013)
 
-## GRANT
+## Grant
 - *Sadamori Kojaku*, Giulio Cimini, Guido Caldarelli, Daigo Uemoto, and Takashi Kamihigashi. Correlation-based reconstruction of financial networks for systemic risk control. JSPS二国間交流事業 2020. (海外転出のため辞退)
 
 ## Patents
