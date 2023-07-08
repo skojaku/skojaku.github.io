@@ -3,6 +3,9 @@
 
 ## Preprints
 
+1.  **Sadamori Kojaku**, Yong-Yeol Ahn, Filippo Radicchi, Santo Fortunato
+    + [[Preprint](https://arxiv.org/abs/2306.13400)]
+
 1.  Dakota Murray, Jisung Yoon, **Sadamori Kojaku**, Rodrigo Costas, Woo-Sung Jung, Staša Milojević, Yong-Yeol Ahn
     + [[Preprint](https://arxiv.org/abs/2012.02785)]
 
