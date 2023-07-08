@@ -23,7 +23,7 @@ As our society is highly interconnected, the macroscope should be able to captur
 
 As an essential foundation for the computational macroscope, my main focus is on representation learning, also known as *embedding*, which involves projecting complex systems onto a high-dimensional vector space. Neural networks, which are the basis of modern artificial intelligence, naturally create an embedding. We can consider this embedding as an internal representation that allows AI to perceive our world. By comprehending this representation, we can achieve a profound understanding of the underlying logic behind powerful yet blackbox AIs, and, more importantly, translate it into human understanding.
 
-Developing a good instrument needs to be tested with good data. And I consider `science` as a great source of good data.
+Developing instruments needs good data. And I consider `science` as a great source of good data.
 In many ways, science is a reflection of our society; it is a collaborative and dynamic system that consists of many different parts including people, ideas and organizations that are connected in a complex way.
 The greater availability and transparency of data about science have paved the way for the development of the macroscope, allowing us to observe and analyze large-scale patterns and trends. By harnessing the power of representation learning, we can unlock valuable insights and accelerate scientific progress.
 
