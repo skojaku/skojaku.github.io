@@ -26,4 +26,9 @@
   "pasteImage.path": "${projectRoot}/attachments",
   "pasteImage.showFilePathConfirmInputBox": true,
   "prettier.singleQuote": false,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#48203A",
+    "titleBar.activeBackground": "#642D51",
+    "titleBar.activeForeground": "#FCF9FB"
+  },
 }
