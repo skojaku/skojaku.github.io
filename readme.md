@@ -2,7 +2,7 @@
 
 <img style="max-height:300px;display:block;margin:1.0rem auto" src="./attachments/mybirds/skojaku-welcome-top-image.png" />
 
-Hi 👋, I am Sadamori Kojaku. I'm a network scientist and computer scientist working at the intersection of Network Science and Machine Learning. I am a postdoctoral researcher working with Dr. Yong-Yeol Ahn at Indiana University (IU), Bloomington. I'll be an Assistant Professor at the Thomas J. Watson College of Engineering and Applied Science (Department of Systems Science and Industrial Engineering), Binghamton University (State University of New York).
+Hi 👋, my name is Sadamori Kojaku. I am a network scientist with a background in computer science. My current work involves developing computational tools that utilize Network Science and Machine Learning to study complex systems. I hold the position of Assistant Professor at the Thomas J. Watson College of Engineering and Applied Science (Department of Systems Science and Industrial Engineering), Binghamton University (State University of New York).
 
 - [About me](./attachments/docs/../../docs/about_me/About_me.md)
 - [CV](./attachments/docs/cv/cv-skojaku.pdf)

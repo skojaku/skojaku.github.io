@@ -2,19 +2,20 @@
 
 <img style="width:30%;max-width:500px;float:right;padding:5px" src="/attachments/selfy/sada-2021.jpg" />
 
-- Luddy School of Informatics, Computing, and Engineering, Indiana University Bloomington
-
 - Thomas J. Watson College of Engineering and Applied Science, Department of Systems Science and Industrial Engineering, Binghamton University, State University of New York
-
 
 [Curriculum Vitae](/attachments/docs/cv/cv-skojaku.pdf)
 
 ### Contact
 
-skojaku@iu.edu
+skojaku@binghamton.edu
 
 ### Teaching
 
+#### Current
+
+- Advanced Topics in Network Science SSIE 641 (2023 Fall; Binghamton University)
+#### Past
 - Data visualization INFO-I 590 (2022 Fall; Indiana University)
 
 ### Research
