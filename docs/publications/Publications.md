@@ -3,10 +3,13 @@
 
 ## Preprints
 
-1.  **Sadamori Kojaku**, Yong-Yeol Ahn, Filippo Radicchi, Santo Fortunato
+1. Isabel Constantino, Sadamori Kojaku, Santo Fortunato, Yong-Yeol Ahn. Representing the Disciplinary Structure of Physics: A Comparative Evaluation of Graph and Text Embedding Methods. 
+    + [[Preprint]](https://arxiv.org/abs/2308.15706)
+
+1.  **Sadamori Kojaku**, Yong-Yeol Ahn, Filippo Radicchi, Santo Fortunato. Network community detection via neural embeddings. 
     + [[Preprint](https://arxiv.org/abs/2306.13400)]
 
-1.  Dakota Murray, Jisung Yoon, **Sadamori Kojaku**, Rodrigo Costas, Woo-Sung Jung, Staša Milojević, Yong-Yeol Ahn
+1.  Dakota Murray, Jisung Yoon, **Sadamori Kojaku**, Rodrigo Costas, Woo-Sung Jung, Staša Milojević, Yong-Yeol Ahn. Unsupervised embedding of trajectories captures the latent structure of mobility.
     + [[Preprint](https://arxiv.org/abs/2012.02785)]
 
 ## Journal papers and conference proceedings (refereed)
