@@ -4,10 +4,6 @@
 
 Hi 👋, my name is Sadamori Kojaku. I am a network scientist with a background in computer science. My current work involves developing computational tools that utilize Network Science and Machine Learning to study complex systems. I hold the position of Assistant Professor at the Thomas J. Watson College of Engineering and Applied Science (Department of Systems Science and Industrial Engineering), Binghamton University (State University of New York).
 
-<div style="background-color:#ebf2eb; text-align:center; vertical-align: middle; padding:40px 0;">
-I am currently looking for a fully-funded graduate student at SSIE Binghamton University starting from Spring 2024! If you are interested, check out <a href="./attachments/docs/call/grad-student-call-spring-2024.pdf">the announcement</a> and feel free to reach out to me at skojaku@binghamton.edu.
-</div>
-
 - [About me](./attachments/docs/../../docs/about_me/About_me.md)
 - [CV](./attachments/docs/cv/cv-skojaku.pdf)
 - [Publications](./docs/publications/Publications.md)
