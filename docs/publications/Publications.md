@@ -9,10 +9,10 @@
 1.  **Sadamori Kojaku**, Yong-Yeol Ahn, Filippo Radicchi, Santo Fortunato. Network community detection via neural embeddings. 
     + [[Preprint](https://arxiv.org/abs/2306.13400)]
 
-1.  Dakota Murray, Jisung Yoon, **Sadamori Kojaku**, Rodrigo Costas, Woo-Sung Jung, Staša Milojević, Yong-Yeol Ahn. Unsupervised embedding of trajectories captures the latent structure of mobility.
-    + [[Preprint](https://arxiv.org/abs/2012.02785)]
-
 ## Journal papers and conference proceedings (refereed)
+
+1.  Dakota Murray, Jisung Yoon, **Sadamori Kojaku**, Rodrigo Costas, Woo-Sung Jung, Staša Milojević, Yong-Yeol Ahn. Unsupervised embedding of trajectories captures the latent structure of mobility.
+    + [[Paper](https://www.pnas.org/doi/10.1073/pnas.2305414120)], [[Preprint](https://arxiv.org/abs/2012.02785)] 
 
 1. **Sadamori Kojaku**, Jisung Yoon, Isabel Constantino, and Yong-Yeol Ahn. Residual2Vec: Debiasing graph embedding with random graphs. NeurIPS (2021).
     + [[Preprint](https://arxiv.org/abs/)], [[Code](https://github.com/skojaku/residual2vec)]
