@@ -13,7 +13,7 @@ I'm unboxing their brain, looking for key mechanisms that allow machine intellig
 
 ### Recent work
 
-#### Network community detection via neural embeddings" 
+#### Network community detection via neural embeddings
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Our paper on the detectability limit of neural embeddings is finally out from <a href="https://twitter.com/NatureComms?ref_src=twsrc%5Etfw">@NatureComms</a>! We showed that a simple shallow neural net w/o non-linear activation can achieve the optimal community detectability limit. Let&#39;s dive in! <a href="https://twitter.com/santo_fortunato?ref_src=twsrc%5Etfw">@santo_fortunato</a> <a href="https://twitter.com/filrad?ref_src=twsrc%5Etfw">@filrad</a> <a href="https://t.co/DJM1NgDEfl">https://t.co/DJM1NgDEfl</a></p>&mdash; Sadamori Kojaku (@skojaku) <a href="https://twitter.com/skojaku/status/1854941022318465354?ref_src=twsrc%5Etfw">November 8, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
