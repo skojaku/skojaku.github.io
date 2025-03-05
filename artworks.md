@@ -22,12 +22,14 @@ Code: [https://github.com/skojaku/bu-art-2025](https://github.com/skojaku/bu-art
 Code [https://github.com/skojaku/art-comp-2024](https://github.com/skojaku/art-comp-2024)
 
 
-### Interactive visualization on institution-level scientific mobility 
+### Interactive visualization on the global institution-level scientific mobility 
 
 
 ![](https://github.com/user-attachments/assets/66f463ab-ec84-4a8c-9e91-eaa2ad95e332)
 
+> [This visualization is based on our PNAS paper on scientific mobility](https://www.pnas.org/doi/full/10.1073/pnas.2305414120)
+
 - [Click here to start the interactive visualization](https://skojaku.github.io/assets/attachments/vis/helios-web/docs/example/?network=scientific-mobility&advanced&dark&density&size=0.5&layout=0&use3d&colorProperty=country&additive&shad)
-- [This visualization is based on our PNAS paper on scientific mobility](https://www.pnas.org/doi/full/10.1073/pnas.2305414120)
+
 
 
