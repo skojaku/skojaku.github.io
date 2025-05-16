@@ -16,11 +16,29 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Teaching" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/teaching","headline":"Teaching","@type":"WebPage","author":{"@type":"Person","name":"Sadamori Kojaku"},"description":"Welcome! This is Sadamori Kojaku’s personal webpage.","@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/teaching","headline":"Teaching","author":{"@type":"Person","name":"Sadamori Kojaku"},"@type":"WebPage","description":"Welcome! This is Sadamori Kojaku’s personal webpage.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="" /><link rel="shortcut icon" type="image/x-icon" href="/logo.png" />
   <link rel="stylesheet" href="/assets/css/main.css" />
-</head><body a="light">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+</head>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (typeof renderMathInElement !== 'undefined') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "\\[", right: "\\]", display: true},
+          {left: "$", right: "$", display: false},
+          {left: "\\(", right: "\\)", display: false}
+        ]
+      });
+    }
+  });
+</script><body a="light">
     <main class="page-content" aria-label="Content">
       <div class="w">
         <a href="/">..</a><article>
@@ -35,13 +53,13 @@
   <li><strong>SSIE 641 Advanced Topics in Network Science</strong>,
     <ul>
       <li>A graduate level course that covers the latest research in the field of network science.</li>
-      <li><a href="https://github.com/skojaku/adv-net-sci-course">Course Webpage</a></li>
+      <li><a href="https://skojaku.github.io/adv-net-sci/home.html">Course Webpage</a></li>
     </ul>
   </li>
   <li><strong>SSIE 419/519 Applied Soft Computing</strong>,
     <ul>
       <li>A graduate and undergraduate level course that covers the latest research in the field of advanced soft computing including neural networks and their applications.</li>
-      <li><a href="https://skojaku-classroom.notion.site/Applied-Soft-Computing-4902112081a5430abfb2471f4c03e6a1">Course Webpage</a></li>
+      <li><a href="https://skojaku.github.io/applied-soft-comp/home.html">Course Webpage</a></li>
     </ul>
   </li>
 </ul>

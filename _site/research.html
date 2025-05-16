@@ -16,11 +16,29 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Research" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/research","headline":"Research","@type":"WebPage","author":{"@type":"Person","name":"Sadamori Kojaku"},"description":"Welcome! This is Sadamori Kojaku’s personal webpage.","@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/research","headline":"Research","author":{"@type":"Person","name":"Sadamori Kojaku"},"@type":"WebPage","description":"Welcome! This is Sadamori Kojaku’s personal webpage.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="" /><link rel="shortcut icon" type="image/x-icon" href="/logo.png" />
   <link rel="stylesheet" href="/assets/css/main.css" />
-</head><body a="light">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+</head>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (typeof renderMathInElement !== 'undefined') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "\\[", right: "\\]", display: true},
+          {left: "$", right: "$", display: false},
+          {left: "\\(", right: "\\)", display: false}
+        ]
+      });
+    }
+  });
+</script><body a="light">
     <main class="page-content" aria-label="Content">
       <div class="w">
         <a href="/">..</a><article>
@@ -30,23 +48,53 @@
   
   <h1>Research</h1>
 
-  <p>Advanced computational intelligence is revolutionalizing our daily lives.
-But how do they make sense of the complex world?
-How do they generate realistic videos, form abstract analogies, and understand human language?
-I’m unboxing their brain, looking for key mechanisms that allow machine intelligence to learn simplicities—generalizable simple regularities—in complexities.</p>
+  <p><strong>Keywords</strong>: Network Science, Representation Learning, Science of Science, Human-Computer Interaction</p>
 
 <ul>
-  <li><strong>Keywords</strong>: Network Science, Representation Learning</li>
+  <li><a href="https://scholar.google.com/citations?user=IyWt4R4AAAAJ&amp;hl=en">Google Scholar</a></li>
 </ul>
 
-<h3 id="recent-work">Recent work</h3>
+<h2 id="selected-works">Selected works</h2>
 
-<h4 id="implicit-degree-bias-in-the-link-prediction-task">Implicit degree bias in the link prediction task</h4>
+<h3 id="implicit-degree-bias-in-the-link-prediction-task">Implicit degree bias in the link prediction task</h3>
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">🚨Paper Alert🚨 Benchmarks guide <a href="https://twitter.com/hashtag/MachineLearning?src=hash&amp;ref_src=twsrc%5Etfw">#MachineLearning</a>, but is the core benchmark for <a href="https://twitter.com/hashtag/GraphML?src=hash&amp;ref_src=twsrc%5Etfw">#GraphML</a>, the link prediction task, guiding us correctly? With <a href="https://twitter.com/RachithAiyappa?ref_src=twsrc%5Etfw">@RachithAiyappa</a> <a href="https://twitter.com/VisonWang1?ref_src=twsrc%5Etfw">@VisonWang1</a> <a href="https://twitter.com/ozgurcanseckin?ref_src=twsrc%5Etfw">@ozgurcanseckin</a> <a href="https://twitter.com/snetsMJ?ref_src=twsrc%5Etfw">@snetsMJ</a> <a href="https://twitter.com/JisungYoon8?ref_src=twsrc%5Etfw">@JisungYoon8</a> and YY Ahn, we question its validity. Dive in! <a href="https://t.co/g5jQRC1yHY">https://t.co/g5jQRC1yHY</a></p>&mdash; Sadamori Kojaku (@skojaku) <a href="https://twitter.com/skojaku/status/1795413358818013431?ref_src=twsrc%5Etfw">May 28, 2024</a></blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>Aiyappa, R., Wang, X., Kim, M., Seckin, O. C., Yoon, J., Ahn, Y. Y., &amp; Kojaku, S. (2025). Implicit degree bias in the link prediction task. ICML 2025.</p>
 
-<h4 id="tbd">TBD</h4>
+<ul>
+  <li>📝 <a href="posts/degree-bias-in-link-prediction">Blog</a></li>
+  <li>💻 <a href="https://github.com/skojaku/degree-corrected-link-prediction-benchmark">Code</a></li>
+  <li>📄 <a href="https://arxiv.org/abs/2505.08092">Paper</a></li>
+  <li>🎞️ <a href="https://drive.google.com/file/d/1G7ducmkgBF8vRwVdBZoGYqtf-ZcV17Ta/view?usp=sharing">Slides</a></li>
+</ul>
+
+<h3 id="network-community-detection-via-neural-embeddings">Network community detection via neural embeddings</h3>
+
+<p>Kojaku, S., Radicchi, F., Ahn, Y. Y., &amp; Fortunato, S. (2024). Network community detection via neural embeddings. Nature Communications, 15(1), 9446.</p>
+
+<ul>
+  <li>▶️ <a href="https://x.com/skojaku/status/1854941022318465354">Post</a></li>
+  <li>💻 <a href="https://github.com/skojaku/community-detection-via-neural-embedding">Code</a></li>
+  <li>📄 <a href="https://www.nature.com/articles/s41467-024-52355-w">Paper</a> <a href="https://arxiv.org/abs/2306.13400">Preprint</a></li>
+  <li>🎞️ <a href="https://drive.google.com/file/d/1g3TN-P0TbJ6Iigt9UNg_ZwNadvQHMYq-/view?usp=sharing">Slides</a></li>
+  <li>🚀 <a href="https://www.rfsuny.org/rf-news/bu-new-research/bu-new-research.html">Our work is featured by SUNY RF!</a></li>
+</ul>
+
+<h3 id="unsupervised-embedding-of-trajectories-captures-the-latent-structure-of-scientific-migration">Unsupervised embedding of trajectories captures the latent structure of scientific migration</h3>
+
+<p>Murray, D., Yoon, J., Kojaku, S., Costas, R., Jung, W. S., Milojević, S., &amp; Ahn, Y. Y. (2023). Unsupervised embedding of trajectories captures the latent structure of scientific migration. Proceedings of the National Academy of Sciences, 120(52), e2305414120.</p>
+
+<ul>
+  <li>▶️ <a href="https://x.com/skojaku/status/1854941022318465354">Post</a></li>
+  <li>💻 <a href="https://github.com/skojaku/community-detection-via-neural-embedding">Code</a></li>
+  <li>📄 <a href="https://www.nature.com/articles/s41586-019-1335-8">Paper</a> <a href="https://arxiv.org/abs/2306.13400">Preprint</a></li>
+  <li>🎞️ Slides
+    <ul>
+      <li><a href="https://www.dropbox.com/scl/fi/z0cce94s6d7c93sjks91a/2021-copenhagen.pdf?rlkey=h83jsnf2zmcp8x4lfzolif0id&amp;e=1&amp;dl=0">Slides by Murray</a></li>
+      <li><a href="https://drive.google.com/file/d/1RfXjy7-v0WG7ezUreFXbrfK9YQf30gRE/view?usp=sharing">My slide</a></li>
+    </ul>
+  </li>
+  <li>🚀 <a href="https://ils.indiana.edu/news/story.html?story=Luddy-researchers-coauthor-paper-to-address-scientific-migration">Our work is featured by ILS News Story!</a></li>
+</ul>
 
 </article>
       </div>

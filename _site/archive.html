@@ -16,17 +16,32 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Archive" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/archive","headline":"Archive","@type":"WebPage","author":{"@type":"Person","name":"Sadamori Kojaku"},"description":"Welcome! This is Sadamori Kojaku’s personal webpage.","@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/archive","headline":"Archive","author":{"@type":"Person","name":"Sadamori Kojaku"},"@type":"WebPage","description":"Welcome! This is Sadamori Kojaku’s personal webpage.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="" /><link rel="shortcut icon" type="image/x-icon" href="/logo.png" />
   <link rel="stylesheet" href="/assets/css/main.css" />
-</head><body a="light">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+</head>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (typeof renderMathInElement !== 'undefined') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "\\[", right: "\\]", display: true},
+          {left: "$", right: "$", display: false},
+          {left: "\\(", right: "\\)", display: false}
+        ]
+      });
+    }
+  });
+</script><body a="light">
     <main class="page-content" aria-label="Content">
       <div class="w">
-        <a href="/">..</a><h1>Archive</h1><ul><li>
-          <span>2020-07-07</span>
-          <a href="/overview-post.html">overview post</a>
-        </li></ul>
+        <a href="/">..</a><h1>Archive</h1>
       </div>
     </main>
   </body>

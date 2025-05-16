@@ -4,20 +4,40 @@ title: "Research"
 category: research
 ---
 
-Intelligent machines are changing our world. But how do these systems discover meaningful patterns in complex information, help us explore new ideas, and inspire creative thinking? I study how machines and humans can team up to uncover hidden connections, generate fresh insights, and push the boundaries of knowledge—transforming complicated data into simple, powerful understandings.
+**Keywords**: Network Science, Representation Learning, Science of Science, Human-Computer Interaction
 
-- **Keywords**: Network Science, Representation Learning, Science of Science, Human-Computer Interaction
+- [Google Scholar](https://scholar.google.com/citations?user=IyWt4R4AAAAJ&hl=en)
 
-### Recent work
+## Selected works
 
-#### Network community detection via neural embeddings
+### Implicit degree bias in the link prediction task
 
-- [Our work is featured by SUNY RF!](https://www.rfsuny.org/rf-news/bu-new-research/bu-new-research.html)
+Aiyappa, R., Wang, X., Kim, M., Seckin, O. C., Yoon, J., Ahn, Y. Y., & Kojaku, S. (2025). Implicit degree bias in the link prediction task. ICML 2025.
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Our paper on the detectability limit of neural embeddings is finally out from <a href="https://twitter.com/NatureComms?ref_src=twsrc%5Etfw">@NatureComms</a>! We showed that a simple shallow neural net w/o non-linear activation can achieve the optimal community detectability limit. Let&#39;s dive in! <a href="https://twitter.com/santo_fortunato?ref_src=twsrc%5Etfw">@santo_fortunato</a> <a href="https://twitter.com/filrad?ref_src=twsrc%5Etfw">@filrad</a> <a href="https://t.co/DJM1NgDEfl">https://t.co/DJM1NgDEfl</a></p>&mdash; Sadamori Kojaku (@skojaku) <a href="https://twitter.com/skojaku/status/1854941022318465354?ref_src=twsrc%5Etfw">November 8, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+- 📝 [Blog](posts/degree-bias-in-link-prediction)
+- 💻 [Code](https://github.com/skojaku/degree-corrected-link-prediction-benchmark)
+- 📄 [Paper](https://arxiv.org/abs/2505.08092)
+- 🎞️ [Slides](https://drive.google.com/file/d/1G7ducmkgBF8vRwVdBZoGYqtf-ZcV17Ta/view?usp=sharing)
 
-#### Implicit degree bias in the link prediction task
+### Network community detection via neural embeddings
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">🚨Paper Alert🚨 Benchmarks guide <a href="https://twitter.com/hashtag/MachineLearning?src=hash&amp;ref_src=twsrc%5Etfw">#MachineLearning</a>, but is the core benchmark for <a href="https://twitter.com/hashtag/GraphML?src=hash&amp;ref_src=twsrc%5Etfw">#GraphML</a>, the link prediction task, guiding us correctly? With <a href="https://twitter.com/RachithAiyappa?ref_src=twsrc%5Etfw">@RachithAiyappa</a> <a href="https://twitter.com/VisonWang1?ref_src=twsrc%5Etfw">@VisonWang1</a> <a href="https://twitter.com/ozgurcanseckin?ref_src=twsrc%5Etfw">@ozgurcanseckin</a> <a href="https://twitter.com/snetsMJ?ref_src=twsrc%5Etfw">@snetsMJ</a> <a href="https://twitter.com/JisungYoon8?ref_src=twsrc%5Etfw">@JisungYoon8</a> and YY Ahn, we question its validity. Dive in! <a href="https://t.co/g5jQRC1yHY">https://t.co/g5jQRC1yHY</a></p>&mdash; Sadamori Kojaku (@skojaku) <a href="https://twitter.com/skojaku/status/1795413358818013431?ref_src=twsrc%5Etfw">May 28, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+Kojaku, S., Radicchi, F., Ahn, Y. Y., & Fortunato, S. (2024). Network community detection via neural embeddings. Nature Communications, 15(1), 9446.
 
-#### TBD
+- ▶️ [Post](https://x.com/skojaku/status/1854941022318465354)
+- 💻 [Code](https://github.com/skojaku/community-detection-via-neural-embedding)
+- 📄 [Paper](https://www.nature.com/articles/s41467-024-52355-w) [Preprint](https://arxiv.org/abs/2306.13400)
+- 🎞️ [Slides](https://drive.google.com/file/d/1g3TN-P0TbJ6Iigt9UNg_ZwNadvQHMYq-/view?usp=sharing)
+- 🚀 [Our work is featured by SUNY RF!](https://www.rfsuny.org/rf-news/bu-new-research/bu-new-research.html)
+
+
+### Unsupervised embedding of trajectories captures the latent structure of scientific migration
+
+Murray, D., Yoon, J., Kojaku, S., Costas, R., Jung, W. S., Milojević, S., & Ahn, Y. Y. (2023). Unsupervised embedding of trajectories captures the latent structure of scientific migration. Proceedings of the National Academy of Sciences, 120(52), e2305414120.
+
+- ▶️ [Post](https://x.com/skojaku/status/1854941022318465354)
+- 💻 [Code](https://github.com/skojaku/community-detection-via-neural-embedding)
+- 📄 [Paper](https://www.nature.com/articles/s41586-019-1335-8) [Preprint](https://arxiv.org/abs/2306.13400)
+- 🎞️ Slides
+  - [Slides by Murray](https://www.dropbox.com/scl/fi/z0cce94s6d7c93sjks91a/2021-copenhagen.pdf?rlkey=h83jsnf2zmcp8x4lfzolif0id&e=1&dl=0)
+  - [My slide](https://drive.google.com/file/d/1RfXjy7-v0WG7ezUreFXbrfK9YQf30gRE/view?usp=sharing)
+- 🚀 [Our work is featured by ILS News Story!](https://ils.indiana.edu/news/story.html?story=Luddy-researchers-coauthor-paper-to-address-scientific-migration)
