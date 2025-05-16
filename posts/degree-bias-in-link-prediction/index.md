@@ -446,7 +446,7 @@ A: No, the degree-corrected benchmark does not introduce unfair bias against low
 
 In the standard benchmark, there is a strong imbalance: most comparisons are between high-degree positive edges and low-degree negative edges. In degree-heterogeneous networks, over 70% of the AUC-ROC score comes from these 'easy' cases, where degree alone is a strong discriminator. This means the benchmark over-represents situations where high-degree nodes are positives and low-degree nodes are negatives, making it unfairly easy for degree-based methods and not representative of all node types.
 
-By matching the degree distributions of positive and negative edges, the degree-corrected benchmark achieves near-perfect parity among all four types of comparisons. This ensures that the model is evaluated fairly across the full spectrum of node degrees, including low-degree nodes. Empirical results show that models trained and evaluated with degree-corrected sampling perform better on tasks that depend on all nodes, not just high-degree ones. (See Supplementary Information Section 3.2 and "Improving representation-learning of networks" above.)
+By matching the degree distributions of positive and negative edges, the degree-corrected benchmark achieves near-perfect parity among all four types of comparisons. This ensures that the model is evaluated fairly across the full spectrum of node degrees, including low-degree nodes. Empirical results show that models trained and evaluated with degree-corrected sampling perform better on tasks that depend on all nodes, not just high-degree ones. (See Supplementary Information Section 3.2)
 {% endcapture %}
 {{ answer_md | markdownify }}
 
