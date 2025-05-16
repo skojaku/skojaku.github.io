@@ -117,9 +117,75 @@ date: 2025-05-16
   font-size: 0.98em;
   margin-left: 8px;
 }
+
+details {
+  margin: 0px 0;
+  background: #fff;
+  border-radius: 0;
+  transition: border-color 0.2s;
+}
+
+details + details {
+  border-top: 1px solid #ececec;
+}
+
+details[open] {
+  border-color: #d0d0d0;
+}
+
+summary {
+  cursor: pointer;
+  padding: 16px 0px 16px 32px;
+  font-size: 1.08em;
+  font-weight: 500;
+  background: none;
+  color: #000;
+  border: none;
+  outline: none;
+  position: relative;
+  transition: background 0.15s;
+  list-style: none;
+  display: block;
+  text-align: left;
+}
+
+summary:hover, summary:focus {
+  background: #fff;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  background: url('data:image/svg+xml;utf8,<svg fill="none" stroke="gray" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"/></svg>') center/contain no-repeat;
+  transform: translateY(-50%);
+  transition: transform 0.2s;
+}
+
+details[open] summary::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+details > *:not(summary) {
+  padding: 18px 24px 18px 24px;
+  font-size: 1em;
+  color: #444;
+  margin-top: 8px;
+  text-align: left;
+}
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/@marimo-team/marimo-snippets@1"></script>
+
+# Implicit degree bias in the link prediction task. ICML 2025.
 
 <div class="button-row">
   <a class="btn" href="paper.pdf" target="_blank" style="color: white;">
@@ -156,16 +222,14 @@ This post explains how this happens and outlines steps to fix the evaluation pip
 ### ▶️ [Click here for frequently asked questions 🙋](#questions-and-answers)
 
 
-## Benchmark scores can be misleading
-
-### Disconnect between benchmark and real-world performance
+## Disconnect between benchmark and real-world performance
 
 Let us showcase the disconnect between benchmark scores and real-world effectiveness using 27 models across 95 real-world networks. We compared standard benchmark performance with a practical retrieval task (recommending the top K connections for a node, similar to social media friend suggestions). We found that over 60% of models that ranked at the top in standard benchmarks failed to be top performers in the retrieval task for about 70% of networks. This shows that high benchmark scores do not always mean good real-world performance.
 
 
 ![](figs/rbo-distribution-3.png)
 
-### Benchmark ranks a crude model as the best
+## Benchmark ranks a crude model as the best
 
 Let us showcase the issue by using __the preferential attachment method__, which predicts edges between two nodes \(i\) and \\(j\\) based on score
 $$
@@ -314,9 +378,7 @@ chart
 {% endraw %}
 
 
-## Implicit degree bias
-
-### How the benchmark works
+## Why does the benchmark favor degree-based prediction?
 
 Standard benchmarks for testing link prediction algorithms follow a simple process: take a complete network, randomly remove some edges to create a test set, and train models on the remaining network.
 The link prediction model then scores both the held-out edges and randomly sampled non-existent edges.
@@ -326,8 +388,6 @@ The link prediction model then scores both the held-out edges and randomly sampl
 Performance is measured using AUC-ROC, which shows how well the model distinguishes between real missing edges and random non-edges. A higher score means the model is better at ranking actual connections above non-connections.
 
 ![](figs/aur-roc-schematics.png)
-
-### A mismatch
 
 The issue of the benchmark stems from *sampling* of the connected and non-connected node pairs. The connected node pairs are sampled uniformly at random **from edges**. On the other hand, the non-connected node pairs are sampled uniformly at random from **nodes**. Since the high-degree nodes appear more frequently in the edge set, they tend to be sampled more frequently as connected node pairs.
 
@@ -340,7 +400,7 @@ This creates a mismatch between the positive and negative edges in terms of the 
 This mismatch makes the degree-based heuristics work so well: we can distinguish easily by just looking at the degree of the nodes. We call this phenomenon the **degree bias** of the benchmark. This bias excessively inflates the performance of the degree-based heuristics like the preferential attachment method, more than what they would achieve in real-world tasks.
 
 
-### A remedy
+## Remedy: Degree-corrected benchmark
 
 ![](figs/idea.png)
 
@@ -349,60 +409,102 @@ Rather, we should sample negative edges with the same degree distribution as the
 
 To this end, we propose the **degree-corrected benchmark**, which samples negative edges that have the same degree distribution as the positive edges. We do this by creating a list of node set with duplicates proportional to the node degrees (i.e., node with degree \\(k\\) appears \\(k\\) times in the list). Then we sample negative edges by uniformly sampling two nodes from this list. This way, the negative edges have the same degree distribution as the positive edges.
 
-![](assets/figs/biased-negative-sampling.png)
+![](figs/biased-negative-sampling.png)
 
-## Results: Improving the alignment between benchmarks and real-world tasks
+## Results
 
 The degree-corrected benchmark improves the alignment between benchmarks and real-world tasks, as is evidenced by more networks with higher RBO scores than the standard benchmark. Namely, the top-performing models in the degree-corrected benchmark are more likely to be the top-performing models in the real-world tasks.
 
-![](assets/figs/rbo-distribution-all.png)
-
-
-## Improving representation-learning of networks
+![](figs/rbo-distribution-all.png)
 
 The link prediction benchmark is often used as a unsupervised training objective for representation-learning of networks.
 We test the utility of the degree-corrected benchmark as a training objective by training graph neural networks (GNNs).
 As a quality metric of the learned representations, we focus on whether the embeddings learned by the GNNs encode community structure of networks, as communities are fundamental structures that inform many tasks, including link prediction, node classification, dynamics, and more.
 We found that when correcting the degree-bias, the community detection accuracy increases for all the GNNs tested. For more details, please refer to our paper.
 
-![](assets/figs/community-detection.png)
+![](figs/community-detection.png)
 
 ---
 
 ## Questions and Answers
+<details>
+<summary><strong>Q: Does the degree-corrected benchmark remove all predictive power of node degree?</strong></summary>
 
-**Q: Does the degree-corrected benchmark remove all predictive power of node degree?**
+{% capture answer_md %}
 
 A: No. If node degree is genuinely predictive of edge formation in the real network (e.g., in rich-club or preferential attachment graphs), degree-based methods will still perform well under the degree-corrected benchmark. The correction only removes the artificial bias introduced by the sampling procedure, not the true signal present in the data. (See biokg_drug discussed in the paper.)
+{% endcapture %}
+{{ answer_md | markdownify }}
 
-**Q: Does the degree-corrected benchmark introduce new biases, for example against low-degree nodes?**
+</details>
+<details>
+<summary><strong>Q: Does the degree-corrected benchmark introduce new biases, for example against low-degree nodes?</strong></summary>
+
+{% capture answer_md %}
 
 A: No, the degree-corrected benchmark does not introduce unfair bias against low-degree nodes. In fact, it restores balance to the types of comparisons made between positive and negative edges. In link prediction evaluation, the model's performance is determined by how well it distinguishes positive from negative edges, and these comparisons can be grouped into four types: (1) high-degree positive vs. high-degree negative, (2) high-degree positive vs. low-degree negative, (3) low-degree positive vs. high-degree negative, and (4) low-degree positive vs. low-degree negative.
 
 In the standard benchmark, there is a strong imbalance: most comparisons are between high-degree positive edges and low-degree negative edges. In degree-heterogeneous networks, over 70% of the AUC-ROC score comes from these 'easy' cases, where degree alone is a strong discriminator. This means the benchmark over-represents situations where high-degree nodes are positives and low-degree nodes are negatives, making it unfairly easy for degree-based methods and not representative of all node types.
 
-The degree-corrected benchmark, by matching the degree distributions of positive and negative edges, achieves near-perfect parity among all four types of comparisons. This ensures that the model is evaluated fairly across the full spectrum of node degrees, including low-degree nodes. Empirical results show that models trained and evaluated with degree-corrected sampling perform better on tasks that depend on all nodes, not just high-degree ones. (See Supplementary Information Section 3.2 and "Improving representation-learning of networks" above.)
+By matching the degree distributions of positive and negative edges, the degree-corrected benchmark achieves near-perfect parity among all four types of comparisons. This ensures that the model is evaluated fairly across the full spectrum of node degrees, including low-degree nodes. Empirical results show that models trained and evaluated with degree-corrected sampling perform better on tasks that depend on all nodes, not just high-degree ones. (See Supplementary Information Section 3.2 and "Improving representation-learning of networks" above.)
+{% endcapture %}
+{{ answer_md | markdownify }}
 
-**Q: How does this benchmark relate to other biases, like distance bias?**
+</details>
+
+<details>
+<summary><strong>Q: How does this benchmark relate to other biases, like distance bias?</strong></summary>
+
+{% capture answer_md %}
 
 A: Degree bias is more fundamental than distance bias, because node degree influences many other structural properties, including shortest path distances. Our results show that correcting for degree bias also reduces distance bias, but the reverse is not necessarily true. Benchmarks that only address distance bias may still be vulnerable to degree-based shortcuts. (See Discussion and comparison with HeaRT benchmark in the paper.)
+{% endcapture %}
+{{ answer_md | markdownify }}
 
-**Q: Is the issue limited to small networks?**
+</details>
+<details>
+<summary><strong>Q: Is the issue limited to small networks?</strong></summary>
+
+{% capture answer_md %}
 
 A: No. The degree bias is present in any non-regular network, regardless of the size. We have observed that the degree bias tends to be more severe for larger networks, as the degree-heterogeneity tends to be higher for larger networks (See the results for OGB and large-scale network experiments.)
+{% endcapture %}
+{{ answer_md | markdownify }}
 
-**Q: Why not just use ranking-based metrics like Hits@K or MRR?**
+</details>
+
+
+<details>
+<summary><strong>Q: Why not just use ranking-based metrics like Hits@K or MRR?</strong></summary>
+
+{% capture answer_md %}
 
 A: The degree bias arises in the benchmark data, which is a problem independent of the choice of evaluation metrics. Indeed, perhaps some metrics are less sensitive to the degree bias, but they can be still affected by it.
 In fact, we have observed qualitatively similar results for Hits@K and MRR as an alternative to AUC-ROC, i.e., degree-based methods still perform well on these metrics when the degree distribution is heterogeneous (See Supplementary Information.)
+{% endcapture %}
+{{ answer_md | markdownify }}
 
-**Q: How does this work relate to OGB and other recent benchmarks?**
+</details>
+<details>
+<summary><strong>Q: How does this work relate to OGB and other recent benchmarks?</strong></summary>
 
-A: Our analysis shows that degree bias is present in many popular benchmarks, including those in the Open Graph Benchmark (OGB) suite. The degree-corrected benchmark can be used to improve the fairness and reliability of these evaluations. (See OGB graphs and Discussion section.)
+{% capture answer_md %}
 
-**Q: Why do we bother with benchmarks? Why not just use retrieval tasks?**
+A: Our analysis shows that degree bias is present in many popular benchmarks, including those in the Open Graph Benchmark (OGB). The degree-corrected benchmark can be used to improve the fairness and reliability of these evaluations. (See OGB graphs and Discussion section.)
+{% endcapture %}
+{{ answer_md | markdownify }}
+
+</details>
+<details>
+<summary><strong>Q: Why do we bother with benchmarks? Why not just use retrieval tasks?</strong></summary>
+
+{% capture answer_md %}
 
 A: Link prediction benchmarks offer a more efficient evaluation method than retrieval tasks. While retrieval tasks require searching across all network nodes—computationally expensive for large networks—benchmarks use pre-sampled positive and negative edges for classification, making model training much faster. In practice, real-world retrieval systems typically use a two-step approach: first, a computationally efficient retriever model (often trained on link prediction benchmarks) generates candidate nodes, then a more sophisticated model ranks these candidates. Therefore, even for retrieval applications, benchmarks remain essential to the training and evaluation pipeline.
+{% endcapture %}
+{{ answer_md | markdownify }}
+
+</details>
 
 ---
 
