@@ -148,7 +148,10 @@ date: 2025-05-16
 
 ## Summary
 
-Link prediction benchmarks are widely used to evaluate models for recommendations and discovery. However, a subtle design flaw---uniform sampling of edges---introduces a **degree bias** that inflates performance scores for trivial heuristics. In a benchmark of 27 models across 95 real-world networks, we find that many models achieve excessively high benchmark performance by merely identifying high-degree nodes, not learning structural patterns. This post explains how this happens and outlines steps to fix the evaluation pipeline.
+Link prediction benchmarks are widely used to evaluate models for recommendations and discovery.
+In a benchmark of 27 models across 95 real-world networks, we find that link prediction models can achieve excessively high benchmark performance by merely predicting edges between high-degree nodes, without learning structural patterns.
+This is attributed to a subtle design flaw, **implicit degree bias**, that makes the benchmark in excessive favor of degree-based prediction.
+This post explains how this happens and outlines steps to fix the evaluation pipeline.
 
 ### ▶️ [Click here for frequently asked questions 🙋](#questions-and-answers)
 
