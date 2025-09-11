@@ -4,7 +4,7 @@ title: "Artworks"
 category: artworks
 ---
 
-### Ideas in Motion 
+### Ideas in Motion
 
 ![](https://github.com/skojaku/bu-art-2025/raw/master/figs/bu-art-2025-image.png)
 
@@ -17,12 +17,12 @@ Code: [https://github.com/skojaku/bu-art-2025](https://github.com/skojaku/bu-art
 
 ![](https://github.com/skojaku/art-comp-2024/raw/main/figs/all-sciences-v2.png)
 
-> Just as slime mold explores and exploits foods, so too do scientists forage for scientific discoveries. The colors represent research topics. The elevation represents the number of scientists publishing in that area. Scientists are mapped by a language model, BERT, trained on 134M scientific papers and visualized with HeliosWeb. 
+> Just as slime mold explores and exploits foods, so too do scientists forage for scientific discoveries. The colors represent research topics. The elevation represents the number of scientists publishing in that area. Scientists are mapped by a language model, BERT, trained on 134M scientific papers and visualized with HeliosWeb.
 
 Code [https://github.com/skojaku/art-comp-2024](https://github.com/skojaku/art-comp-2024)
 
 
-### Interactive visualization on the global institution-level scientific mobility 
+### Interactive visualization on the global institution-level scientific mobility
 
 
 ![](https://github.com/user-attachments/assets/66f463ab-ec84-4a8c-9e91-eaa2ad95e332)
