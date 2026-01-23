@@ -12,3 +12,4 @@ Hi 👋, I'm Sadamori Kojaku, Assistant Professor at Binghamton University, deve
 - [Research](research)
 - [Teaching](teaching)
 - [Artworks](artworks)
+- [Our lab 🧪](https://contexturelab.github.io/)
