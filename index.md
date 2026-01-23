@@ -3,7 +3,7 @@ layout: home
 ---
 <img style="max-height:300px;display:block;margin:1.0rem auto" src="/assets/attachments/mybirds/skojaku-welcome-top-image.png" />
 
-Hi 👋, I'm Sadamori Kojaku, Assistant Professor at Binghamton University, developing computational machines that learn simplicity in complexity.
+Hi 👋, I'm Sadamori Kojaku, Assistant Professor at Binghamton University, developing computational machines that learn simplicity in complexity. I'm also leading [Contexture Lab](https://contexturelab.github.io/), where we explore continuous social reality via representation learning and network science.
 
 - [About me](about)
 - [CV](/assets/attachments/docs/cv/cv-skojaku.pdf)
