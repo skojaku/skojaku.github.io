@@ -9,7 +9,7 @@ title: The invisible cyborgs
 
 I was daydreaming, thinking about an old thought from [Phycho-Pass](https://www.imdb.com/title/tt2379308/). The show is about a society governed by ``digital secretaries''---AI systems that don't just help you, but manage the everything of your life. In this world, people don't just use technology; they are tethered to it. And this is happening in our world too. 
 
-![digital assistant](./images/toyohisa-senguji.webp)
+![digital assistant](images/toyohisa-senguji.webp)
 
 In an episode, [Toyohisa Senguji](https://dic.pixiv.net/a/%E6%B3%89%E5%AE%AE%E5%AF%BA%E8%B1%8A%E4%B9%85), a character who replace every biological cell with mechanical components until he was 110 years of age and entirely synthetic, poses a question that feels less like science fiction now:
 
