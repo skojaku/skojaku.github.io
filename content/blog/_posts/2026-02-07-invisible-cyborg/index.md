@@ -11,9 +11,9 @@ I was daydreaming, thinking about an old thought from [Phycho-Pass](https://www.
 
 ![digital assistant](./images/toyohisa-senguji.webp)
 
-In an episode, [Toyohisa Senguji](https://dic.pixiv.net/a/%E6%B3%89%E5%AE%AE%E5%AF%BA%E8%B1%8A%E4%B9%85), a character who replace every biological cell with mechanical components until he was 110 years of age and entirely synthetic, poses a question that feels less like science fiction and more like a mirror to our current reality:
+In an episode, [Toyohisa Senguji](https://dic.pixiv.net/a/%E6%B3%89%E5%AE%AE%E5%AF%BA%E8%B1%8A%E4%B9%85), a character who replace every biological cell with mechanical components until he was 110 years of age and entirely synthetic, poses a question that feels less like science fiction now:
 
-> "If you cannot live without it, is it not already a part of you?"
+> "You probably have home automation and an digital secretary. What would happen to you if all the data in those devices was lost due to a disaster or accident? When you entrust so much of your everyday life to those electronic devices, the argument that you aren't a cyborg isn't very convincing. To you, those portable terminals are already your second brain. Isn't that right?"
 
 We tend to think of ``cyborgs'' as people with metal limbs or glowing eyes. But Senguji’s logic suggests we are already there.
 
