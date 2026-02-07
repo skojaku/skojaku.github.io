@@ -226,7 +226,7 @@ This post explains how this happens and outlines steps to fix the evaluation pip
 Let us showcase the disconnect between benchmark scores and real-world effectiveness using 27 models across 95 real-world networks. We compared standard benchmark performance with a practical retrieval task (recommending the top K connections for a node, similar to social media friend suggestions). We found that over 60% of models that ranked at the top in standard benchmarks failed to be top performers in the retrieval task for about 70% of networks. This shows that high benchmark scores do not always mean good real-world performance.
 
 
-![](images/figs/rbo-distribution-3.png)
+![](/assets/blog/degree-bias-in-link-prediction/figs/rbo-distribution-3.png)
 
 ## Benchmark ranks a crude model as the best
 
@@ -382,46 +382,46 @@ chart
 Standard benchmarks for testing link prediction algorithms follow a simple process: take a complete network, randomly remove some edges to create a test set, and train models on the remaining network.
 The link prediction model then scores both the held-out edges and randomly sampled non-existent edges.
 
-![](images/figs/random-edge-removal.png)
+![](/assets/blog/degree-bias-in-link-prediction/figs/random-edge-removal.png)
 
 Performance is measured using AUC-ROC, which shows how well the model distinguishes between real missing edges and random non-edges. A higher score means the model is better at ranking actual connections above non-connections.
 
-![](images/figs/aur-roc-schematics.png)
+![](/assets/blog/degree-bias-in-link-prediction/figs/aur-roc-schematics.png)
 
 The issue of the benchmark stems from *sampling* of the connected and non-connected node pairs. The connected node pairs are sampled uniformly at random **from edges**. On the other hand, the non-connected node pairs are sampled uniformly at random from **nodes**. Since the high-degree nodes appear more frequently in the edge set, they tend to be sampled more frequently as connected node pairs.
 
-![](images/figs/edge-sampling.png)
+![](/assets/blog/degree-bias-in-link-prediction/figs/edge-sampling.png)
 
 This creates a mismatch between the positive and negative edges in terms of the node degrees.
 
-<img src="images/figs/degree-distribution.png" width="50%">
+<img src="/assets/blog/degree-bias-in-link-prediction/figs/degree-distribution.png" width="50%">
 
 This mismatch makes the degree-based heuristics work so well: we can distinguish easily by just looking at the degree of the nodes. We call this phenomenon the **degree bias** of the benchmark. This bias excessively inflates the performance of the degree-based heuristics like the preferential attachment method, more than what they would achieve in real-world tasks.
 
 
 ## Remedy: Degree-corrected benchmark
 
-![](images/figs/idea.png)
+![](/assets/blog/degree-bias-in-link-prediction/figs/idea.png)
 
 Think of link prediction benchmarks like clinical trials. In a proper clinical trial, we wouldn't compare patients with a disease (treatment group) to random people (control group) - we'd compare them to other patients with the same disease. Similarly, in link prediction, we shouldn't compare positive edges (treatment group) to randomly sampled negative edges (control group). This leads to inaccurate effectiveness of a link prediction model (drug).
 Rather, we should sample negative edges with the same degree distribution as the positive edges.
 
 To this end, we propose the **degree-corrected benchmark**, which samples negative edges that have the same degree distribution as the positive edges. We do this by creating a list of node set with duplicates proportional to the node degrees (i.e., node with degree \\(k\\) appears \\(k\\) times in the list). Then we sample negative edges by uniformly sampling two nodes from this list. This way, the negative edges have the same degree distribution as the positive edges.
 
-![](images/figs/biased-negative-sampling.png)
+![](/assets/blog/degree-bias-in-link-prediction/figs/biased-negative-sampling.png)
 
 ## Results
 
 The degree-corrected benchmark improves the alignment between benchmarks and real-world tasks, as is evidenced by more networks with higher RBO scores than the standard benchmark. Namely, the top-performing models in the degree-corrected benchmark are more likely to be the top-performing models in the real-world tasks.
 
-![](images/figs/rbo-distribution-all.png)
+![](/assets/blog/degree-bias-in-link-prediction/figs/rbo-distribution-all.png)
 
 The link prediction benchmark is often used as a unsupervised training objective for representation-learning of networks.
 We test the utility of the degree-corrected benchmark as a training objective by training graph neural networks (GNNs).
 As a quality metric of the learned representations, we focus on whether the embeddings learned by the GNNs encode community structure of networks, as communities are fundamental structures that inform many tasks, including link prediction, node classification, dynamics, and more.
 We found that when correcting the degree-bias, the community detection accuracy increases for all the GNNs tested. For more details, please refer to our paper.
 
-![](images/figs/community-detection.png)
+![](/assets/blog/degree-bias-in-link-prediction/figs/community-detection.png)
 
 ---
 
