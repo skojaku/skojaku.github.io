@@ -185,7 +185,9 @@ details > *:not(summary) {
 
 <script src="https://cdn.jsdelivr.net/npm/@marimo-team/marimo-snippets@1"></script>
 
-# Implicit degree bias in the link prediction task. ICML 2025.
+# loosely woven
+
+## Implicit degree bias in the link prediction task. ICML 2025.
 
 <div class="button-row">
   <a class="btn" href="paper.pdf" target="_blank" style="color: white;">
