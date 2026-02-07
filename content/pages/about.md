@@ -10,7 +10,7 @@ title: About
 
 Thomas J. Watson College of Engineering and Applied Science, Department of Systems Science and Industrial Engineering, Binghamton University, State University of New York
 
-[Curriculum Vitae](/attachments/docs/cv/cv-skojaku.pdf)
+[Curriculum Vitae](/assets/attachments/docs/cv/cv-skojaku.pdf)
 
 skojaku@binghamton.edu
 

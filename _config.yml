@@ -23,6 +23,13 @@ theme_config:
 sass:
   style: :compressed
 
+# Collections configuration
+collections_dir: content/blog
+
+# Include content pages for processing
+include:
+  - content/pages
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

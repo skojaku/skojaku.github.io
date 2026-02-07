@@ -14,7 +14,7 @@ category: research
 
 Aiyappa, R., Wang, X., Kim, M., Seckin, O. C., Yoon, J., Ahn, Y. Y., & Kojaku, S. (2025). Implicit degree bias in the link prediction task. ICML 2025.
 
-- 📝 [Blog](posts/degree-bias-in-link-prediction)
+- 📝 [Blog](/content/blog/posts/degree-bias-in-link-prediction)
 - 💻 [Code](https://github.com/skojaku/degree-corrected-link-prediction-benchmark)
 - 📄 [Paper](https://arxiv.org/abs/2505.08092)
 - 🎞️ [Slides](https://drive.google.com/file/d/1G7ducmkgBF8vRwVdBZoGYqtf-ZcV17Ta/view?usp=sharing)
