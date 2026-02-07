@@ -2,6 +2,7 @@
 layout: post
 category: project
 date: 2025-05-16
+title: Implicit degree bias in the link prediction task. ICML 2025.
 ---
 
 <style>
@@ -184,10 +185,6 @@ details > *:not(summary) {
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/@marimo-team/marimo-snippets@1"></script>
-
-# loosely woven
-
-## Implicit degree bias in the link prediction task. ICML 2025.
 
 <div class="button-row">
   <a class="btn" href="paper.pdf" target="_blank" style="color: white;">
