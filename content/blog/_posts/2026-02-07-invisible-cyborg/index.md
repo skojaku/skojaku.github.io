@@ -7,7 +7,7 @@ title: The invisible cyborgs
 
 ### Building my parts
 
-I was daydreaming while coding with Claude Code, thinking about an old thought from [Phycho-Pass](https://www.imdb.com/title/tt2379308/). The show is about a society governed by ``digital secretaries''---AI systems that don't just help you, but manage the everything of your life. In this world, people don't just use technology; they are tethered to it. And this is happening in our world too. 
+I was daydreaming while coding with Claude Code, thinking about an old thought from [Phycho-Pass](https://www.imdb.com/title/tt2379308/). The show is about a society governed by ``Sibyl System''---AI systems that don't just help you, but manage the everything of your life. In this world, people don't just use technology; they are tethered to it. And this is happening in our world too. 
 
 ![digital assistant](/assets/blog/2026-02-07-invisible-cyborg/toyohisa-senguji.webp){: width="50%"}
 
@@ -17,3 +17,6 @@ In an episode, [Toyohisa Senguji](https://dic.pixiv.net/a/%E6%B3%89%E5%AE%AE%E5%
 
 We tend to think of ``cyborgs'' as people with metal limbs. But Senguji’s suggests we are already there.
 
+### Building my parts 
+
+[TBD]
