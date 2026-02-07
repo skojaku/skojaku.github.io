@@ -33,10 +33,29 @@ kramdown:
 
 # Collections configuration
 collections_dir: content/blog
+collections:
+  posts:
+    output: true
+    permalink: /:slug.html
 
 # Include content pages for processing
 include:
   - content/pages
+
+# Include static files from post bundles
+defaults:
+  - scope:
+      path: "content/blog/_posts"
+    values:
+      layout: "post"
+
+# Process images and assets within post folders
+include:
+  - content/blog/_posts/**/*.png
+  - content/blog/_posts/**/*.jpg
+  - content/blog/_posts/**/*.jpeg
+  - content/blog/_posts/**/*.gif
+  - content/blog/_posts/**/*.svg
 
 plugins:
   - jekyll-feed
