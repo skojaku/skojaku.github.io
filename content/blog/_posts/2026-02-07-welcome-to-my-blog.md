@@ -4,7 +4,9 @@ category: blog
 date: 2026-02-07
 ---
 
-# Welcome to My Blog!
+# loosely woven
+
+## Welcome to My Blog
 
 This is a sample blog post demonstrating the markdown capabilities of this Jekyll-powered blog. You can write posts in simple markdown and they'll be automatically formatted and published.
 
