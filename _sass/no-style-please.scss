@@ -68,8 +68,8 @@ table, th, td {
 }
 
 code {
-  color: white;
   background: black;
+  padding: 0.2rem 0.4rem;
 }
 
 div.highlighter-rouge code {
@@ -77,6 +77,26 @@ div.highlighter-rouge code {
   overflow-x: auto;
   white-space: pre-wrap;
   padding: 1rem;
+}
+
+// Inline code should have white text
+code:not(.highlight code) {
+  color: white;
+}
+
+// Syntax highlighted code blocks
+.highlight {
+  background: #272822;
+  border-radius: 3px;
+
+  pre {
+    margin: 0;
+    background: transparent;
+  }
+
+  code {
+    background: transparent;
+  }
 }
 
 blockquote {
