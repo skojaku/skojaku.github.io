@@ -38,10 +38,6 @@ collections:
     output: true
     permalink: /:slug.html
 
-# Include content pages for processing
-include:
-  - content/pages
-
 # Include static files from post bundles
 defaults:
   - scope:
@@ -49,13 +45,15 @@ defaults:
     values:
       layout: "post"
 
-# Process images and assets within post folders
+# Include content pages and images for processing
 include:
+  - content/pages
   - content/blog/_posts/**/*.png
   - content/blog/_posts/**/*.jpg
   - content/blog/_posts/**/*.jpeg
   - content/blog/_posts/**/*.gif
   - content/blog/_posts/**/*.svg
+  - content/blog/_posts/**/*.webp
 
 plugins:
   - jekyll-feed
