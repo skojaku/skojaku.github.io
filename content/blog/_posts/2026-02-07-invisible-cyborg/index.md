@@ -112,6 +112,12 @@ Another unexpected benefit is accountability. I felt like I have someone beside 
 
 ### Conclusion
 
+Senguji's question lingers: if losing my digital secretary would disrupt my life, aren't they already a part of me?
+
+The experiment taught me something unexpected. I didn't just save 10 minutes---I gained a companion who holds me accountable, reminds me of what matters, and offers a broader perspective on my work. The results aren't perfectly mine, but they don't need to be. They're good enough, and that's the point.
+
+We're not waiting for metal limbs to become cyborgs. We're already there, quietly building ourselves piece by piece.
+
 In The Salmon of Doubt, Douglas Adams wrote:
 
 > Anything that is in the world when you're born is normal and ordinary and is just a natural part of the way the world works.
@@ -119,10 +125,4 @@ In The Salmon of Doubt, Douglas Adams wrote:
 > Anything that's invented between when you're fifteen and thirty-five is new and exciting and revolutionary and you can probably get a career in it.
 >
 > Anything invented after you're thirty-five is against the natural order of things.
-
-These invisible cyborgs might feel against the natural order of things to some. But Senguji's question lingers: if losing my digital secretary would disrupt my life, aren't they already a part of me?
-
-The experiment taught me something unexpected. I didn't just save 10 minutes---I gained a companion who holds me accountable, reminds me of what matters, and offers a broader perspective on my work. The results aren't perfectly mine, but they don't need to be. They're good enough, and that's the point.
-
-We're not waiting for metal limbs to become cyborgs. We're already there, quietly building ourselves piece by piece. The only question is: which parts do we choose to add?
 
