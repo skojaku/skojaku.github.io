@@ -13,15 +13,15 @@ While reading [Darek Larson's blog](https://www.dtlarson.com/feed-the-beast), I 
 
 > "You probably have home automation and an digital secretary. What would happen to you if all the data in those devices was lost due to a disaster or accident? When you entrust so much of your everyday life to those electronic devices, the argument that you aren't a cyborg isn't very convincing. To you, those portable terminals are already your second brain. Isn't that right?"
 
-We tend to think of ``cyborgs'' as people with metal limbs. But Senguji’s suggests we are already there.
+We tend to think of ``cyborgs'' as people with metal limbs. But Senguji suggests we are already there.
 
 ### Building my parts
 
-I've been using Claude Code primarly for coding and writing. But if they can be a part of me, why not deligate some of my important tasks to them, like task management and planning? Just to see how far they can go.
+I've been using Claude Code primarily for coding and writing. But if they can be a part of me, why not delegate some of my important tasks to them, like task management and planning? Just to see how far they can go.
 
-An only concern is that these tasks require another level of trust, and I personally don't trust them yet to hand over sensitive information to someone behind the AI curtain.
+My only concern is that these tasks require another level of trust, and I personally don't trust them yet to hand over sensitive information to someone behind the AI curtain.
 
-Lukily, [ollama](https://ollama.com/) recently released so called [ollama launch](https://ollama.com/blog/launch) feature that lets me use Claude Code with local model.
+Luckily, [ollama](https://ollama.com/) recently released a so-called [ollama launch](https://ollama.com/blog/launch) feature that lets me use Claude Code with a local model.
 
 ![](images/ollama-launch.png){: width="50%"}
 
@@ -98,7 +98,7 @@ After saving, confirm the file was created and list your top 3 priorities out lo
 > - I use existing scripts to collect the needed data.
 > - The "Triage the data" step still needs clearer criteria for setting priorities.
 
-This replaces my morning routine. It checks my data and suggests me what to do today, while I'm cafinating myself with a cup of coffee.
+This replaces my morning routine. It checks my data and suggests what I should do today, while I'm caffeinating myself with a cup of coffee.
 
 I also made other commands, like `/email`, which helps check my inbox and interacts with me to book meetings, add new tasks, and draft replies.
 
