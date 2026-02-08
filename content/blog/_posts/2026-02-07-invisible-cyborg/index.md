@@ -3,6 +3,7 @@ layout: post
 category: blog
 date: 2026-02-07
 title: The invisible cyborgs
+slug: invisible-cyborg
 ---
 
 ### Building my parts
