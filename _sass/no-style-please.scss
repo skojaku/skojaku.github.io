@@ -120,7 +120,8 @@ tr:nth-child(even) {
 }
 
 code {
-  background: #1a202c;
+  background: #e8e8e8;
+  color: #1a1a1a;
   padding: 0.2rem 0.4rem;
   border-radius: 3px;
 }
@@ -130,11 +131,14 @@ div.highlighter-rouge code {
   overflow-x: auto;
   white-space: pre-wrap;
   padding: 1rem;
+  background: #272822;
+  color: #ffffff;
 }
 
-// Inline code should have white text
+// Inline code should use subtle styling
 code:not(.highlight code) {
-  color: #e2e8f0;
+  background: #e8e8e8;
+  color: #1a1a1a;
 }
 
 // Syntax highlighted code blocks
