@@ -23,7 +23,7 @@ My only concern is that these tasks require another level of trust, and I person
 
 Luckily, [ollama](https://ollama.com/) recently released a so-called [ollama launch](https://ollama.com/blog/launch) feature that lets me use Claude Code with a local model.
 
-![](images/ollama-launch.png){: width="50%"}
+![](/assets/blog/2026-02-07-invisible-cyborg/ollama-launch.png){: width="50%"}
 
 ### Example
 
@@ -33,6 +33,7 @@ I created a simple Claude Slash Command named `daily` as follows.
 
 <details>
 <summary>Click to view code</summary>
+
 ```md
 You are an assistant for daily planning and review.
 
