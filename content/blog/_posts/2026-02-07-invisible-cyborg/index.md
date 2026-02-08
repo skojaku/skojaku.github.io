@@ -112,7 +112,7 @@ Another unexpected benefit is accountability. I felt like I have someone beside 
 
 ### Conclusion
 
-I've become even more reliant on Claude Code. If I lost access, my productivity would drop more than myself before using Claude Code.
+I've become even more reliant on Claude Code. If I lost access, my productivity would drop more than myself before Claude Code came along.
 
 This resonates with Senguji's point: if losing your digital secretary would disrupt your life, aren't they already a part of you?
 
