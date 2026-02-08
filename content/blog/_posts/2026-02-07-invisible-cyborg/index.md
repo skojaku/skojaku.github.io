@@ -7,7 +7,7 @@ title: The invisible cyborgs
 
 ### Building my parts
 
-While reading [Darek Larson's blog](https://www.dtlarson.com/feed-the-beast), I daydreamed about a scene from [Psycho-Pass](https://www.imdb.com/title/tt2379308/). People in this world are inseparable from AIs---just like us today. [Toyohisa Senguji](https://dic.pixiv.net/a/%E6%B3%89%E5%AE%AE%E5%AF%BA%E8%B1%8A%E4%B9%85), a man who replaced every part of himself with machines, asks a question that no longer seems like science fiction:
+While reading [Darek Larson's blog](https://www.dtlarson.com/feed-the-beast), I daydreamed about a scene from [Psycho-Pass](https://www.imdb.com/title/tt2379308/). People in this world are inseparable from AIs---just like us today. [Toyohisa Senguji](https://psychopass.fandom.com/wiki/Toyohisa_Senguji), a man who replaced every part of himself with machines, asks a question that no longer seems like science fiction:
 
 ![digital assistant](/assets/blog/2026-02-07-invisible-cyborg/toyohisa-senguji.webp){: width="70%"}
 
