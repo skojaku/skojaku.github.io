@@ -25,7 +25,7 @@ Lukily, [ollama](https://ollama.com/) recently released so called [ollama launch
 
 ![](images/ollama-launch.png){: width="50%"}
 
-### Daily reports
+### Example
 
 My day begins with making a daily journal, checking emails and todos, and setting priorities. Then I start my tasks. Sometimes, other work or meetings interrupt me, so I update the journal to reflect changes. Can we automate this process?
 
@@ -93,7 +93,32 @@ $REVIEWS_DIR/{YYYY-MM-DD}-daily.md
 After saving, confirm the file was created and list your top 3 priorities out loud.
 ```
 
-> [!NOTE]
+> [NOTE]
 > - Environment variables (like `TASKS_DIR`, `ROADMAP_DIR`, `REVIEWS_DIR`) are set up for these commands.
 > - I use existing scripts to collect the needed data.
 > - The "Triage the data" step still needs clearer criteria for setting priorities.
+
+This replaces my morning routine. It checks my data and suggests me what to do today, while I'm cafinating myself with a cup of coffee.
+
+I also made other commands, like `/email`, which helps check my inbox and interacts with me to book meetings, add new tasks, and draft replies.
+
+These tasks management commands need to interact with other apps, like my calendar app and my email app, and the bare Claude Code sometimes struggle to communicate with them. A solution is to use Claude Skills to describe how to interact with these apps. For example, I have a `calendar` skill that controls my calendar app and is used by both `/email` and `/daily` commands.
+
+### What do the invisible cyborgs do for me?
+
+My first impression is that the results aren't quite like mine. They're longer and more detailed. But, yeah, I can live with it and it saves me about 10 minutes each day. That's not bad.
+
+Another unexpected benefit is accountability. I felt like I have someone beside me, checking on my progress and reminding me of my tasks. It helps me stick to my plan and gives me second thoughts, so that I have a little bit more broader perspective on what I'm doing.
+
+### Conclusion
+
+In The Salmon of Doubt, Douglas Adams wrote:
+
+> Anything that is in the world when you're born is normal and ordinary and is just a natural part of the way the world works.
+>
+> Anything that's invented between when you're fifteen and thirty-five is new and exciting and revolutionary and you can probably get a career in it.
+>
+> Anything invented after you're thirty-five is against the natural order of things."
+
+The invisible cyborgs are the one that are invented after I'm thirty-five.
+
