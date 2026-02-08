@@ -7,11 +7,11 @@ title: The invisible cyborgs
 
 ### Building my parts
 
-While reading [Darek Larson's blog](https://www.dtlarson.com/feed-the-beast), I daydreamed about a scene from [Psycho-Pass](https://www.imdb.com/title/tt2379308/). People in this world are inseparable from AIs---just like us today. [Toyohisa Senguji](https://dic.pixiv.net/a/%E6%B3%89%E5%AE%AE%E5%AF%BA%E8%B1%8A%E4%B9%85), a man who replaced every part of himself with machines, asks a question that seems not like science fiction now:
+While reading [Darek Larson's blog](https://www.dtlarson.com/feed-the-beast), I daydreamed about a scene from [Psycho-Pass](https://www.imdb.com/title/tt2379308/). People in this world are inseparable from AIs---just like us today. [Toyohisa Senguji](https://dic.pixiv.net/a/%E6%B3%89%E5%AE%AE%E5%AF%BA%E8%B1%8A%E4%B9%85), a man who replaced every part of himself with machines, asks a question that no longer seems like science fiction:
 
 ![digital assistant](/assets/blog/2026-02-07-invisible-cyborg/toyohisa-senguji.webp){: width="70%"}
 
-> "You probably have home automation and an digital secretary. What would happen to you if all the data in those devices was lost due to a disaster or accident? When you entrust so much of your everyday life to those electronic devices, the argument that you aren't a cyborg isn't very convincing. To you, those portable terminals are already your second brain. Isn't that right?"
+> "You probably have home automation and a digital secretary. What would happen to you if all the data in those devices was lost due to a disaster or accident? When you entrust so much of your everyday life to those electronic devices, the argument that you aren't a cyborg isn't very convincing. To you, those portable terminals are already your second brain. Isn't that right?"
 
 We tend to think of ``cyborgs'' as people with metal limbs. But Senguji suggests we are already there.
 
