@@ -160,21 +160,6 @@ blockquote {
   padding: 1rem;
   margin: 1rem 0;
   color: #4a5568;
-  position: relative;
-
-  &:before {
-    content: '❝ ';
-    color: #4299e1;
-    font-style: normal;
-    font-weight: bold;
-  }
-
-  &:after {
-    content: ' ❞';
-    color: #4299e1;
-    font-style: normal;
-    font-weight: bold;
-  }
 
   p { margin: 0; }
 }
