@@ -23,16 +23,13 @@ My only concern is that these tasks require another level of trust, and I person
 
 Luckily, [ollama](https://ollama.com/) recently released a so-called [ollama launch](https://ollama.com/blog/launch) feature that lets me use Claude Code with a local model.
 
-![](/assets/blog/2026-02-07-invisible-cyborg/ollama-launch.png){: width="50%"}
+![](/assets/blog/2026-02-07-invisible-cyborg/ollama-launch.png){: width="70%"}
 
 ### Example
 
 My day begins with making a daily journal, checking emails and todos, and setting priorities. Then I start my tasks. Sometimes, other work or meetings interrupt me, so I update the journal to reflect changes. Can we automate this process?
 
 I created a simple Claude Slash Command named `daily` as follows.
-
-<details>
-<summary>Click to view code</summary>
 
 ```md
 You are an assistant for daily planning and review.
@@ -100,8 +97,6 @@ After saving, confirm the file was created and list your top 3 priorities out lo
 > - Environment variables (like `TASKS_DIR`, `ROADMAP_DIR`, `REVIEWS_DIR`) are set up for these commands.
 > - I use existing scripts to collect the needed data.
 > - The "Triage the data" step still needs clearer criteria for setting priorities.
-
-</details>
 
 This replaces my morning routine. It checks my data and suggests what I should do today, while I'm caffeinating myself with a cup of coffee.
 
