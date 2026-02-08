@@ -129,4 +129,4 @@ In The Salmon of Doubt, Douglas Adams wrote:
 > - Anything that's invented between when you're fifteen and thirty-five is new and exciting and revolutionary and you can probably get a career in it.
 > - Anything invented after you're thirty-five is against the natural order of things.
 
-To me, the invisible cyborgs are the ones that are against the natural order of things---probably because I'm above thirty-five now. But for younger people, they might be the ones that are normal and ordinary and just a natural part of the way the world works, like those in the [Psycho-Pass](https://www.imdb.com/title/tt2379308/) world.
+To me, the invisible cyborgs are the ones that are against the natural order of things, probably because I'm above thirty-five now. But for younger people, they might be the ones that are normal and ordinary and just a natural part of the way the world works, like those in the [Psycho-Pass](https://www.imdb.com/title/tt2379308/) world.
