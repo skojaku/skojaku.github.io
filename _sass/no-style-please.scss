@@ -19,12 +19,12 @@ body[a="dark"] { @include dark-appearance; }
 // bg color is also needed in html in order to
 // block body's background propagation
 // see: https://stackoverflow.com/a/61265706
-html, body { background: white; }
+html, body { background: #fafafa; }
 
 html { height: 100%; }
 
 body {
-  color: black;
+  color: #1a1a1a;
   font-family: monospace;
   font-size: 16px;
   line-height: 1.4;
@@ -33,27 +33,69 @@ body {
   overflow-wrap: break-word;
 }
 
-.post-meta { text-align: right; }
+.post-meta {
+  text-align: right;
+  color: #666;
+  font-size: 0.9em;
+}
 
-h2, h3, h4, h5, h6 { margin-top: 3rem; }
+h1, h2, h3, h4, h5, h6 {
+  color: #2c5282;
+  position: relative;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: 3rem;
+}
+
+h1 {
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+h2:before {
+  content: "▸ ";
+  color: #4299e1;
+}
 
 hr { margin: 2rem 0; }
 
 p { margin: 1rem 0; }
 
-li { margin: 0.4rem 0; }
+li {
+  margin: 0.4rem 0;
 
-*:target { background: yellow; }
+  &::marker {
+    color: #4299e1;
+  }
+}
+
+*:target { background: #fef3c7; }
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-bottom-color: #2563eb;
+  }
+}
 
 .w {
   max-width: 640px;
   margin: 0 auto;
   padding: 4rem 2rem;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-left: 3px solid #e2e8f0;
 }
 
 hr {
   text-align: center;
   border: 0;
+  color: #cbd5e0;
 
   &:before { content: '/////' }
   &:after { content: attr(data-content) '/////' }
@@ -62,14 +104,25 @@ hr {
 table { width: 100%; }
 
 table, th, td {
-  border: thin solid black;
+  border: thin solid #cbd5e0;
   border-collapse: collapse;
   padding: 0.4rem;
 }
 
+th {
+  background: #f7fafc;
+  color: #2d3748;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background: #f7fafc;
+}
+
 code {
-  background: black;
+  background: #1a202c;
   padding: 0.2rem 0.4rem;
+  border-radius: 3px;
 }
 
 div.highlighter-rouge code {
@@ -77,17 +130,19 @@ div.highlighter-rouge code {
   overflow-x: auto;
   white-space: pre-wrap;
   padding: 1rem;
+  border-left: 3px solid #4299e1;
 }
 
 // Inline code should have white text
 code:not(.highlight code) {
-  color: white;
+  color: #e2e8f0;
 }
 
 // Syntax highlighted code blocks
 .highlight {
   background: #272822;
-  border-radius: 3px;
+  border-radius: 5px;
+  border-left: 3px solid #4299e1;
 
   pre {
     margin: 0;
@@ -101,8 +156,11 @@ code:not(.highlight code) {
 
 blockquote {
   font-style: italic;
-  border: thin solid black;
+  border-left: 4px solid #4299e1;
+  background: #f7fafc;
   padding: 1rem;
+  margin: 1rem 0;
+  color: #4a5568;
 
   p { margin: 0; }
 }
