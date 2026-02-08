@@ -31,6 +31,8 @@ My day begins with making a daily journal, checking emails and todos, and settin
 
 I created a simple Claude Slash Command named `daily` as follows.
 
+<details>
+<summary>Click to view code</summary>
 ```md
 You are an assistant for daily planning and review.
 
@@ -98,11 +100,13 @@ After saving, confirm the file was created and list your top 3 priorities out lo
 > - I use existing scripts to collect the needed data.
 > - The "Triage the data" step still needs clearer criteria for setting priorities.
 
+</details>
+
 This replaces my morning routine. It checks my data and suggests what I should do today, while I'm caffeinating myself with a cup of coffee.
 
 I also made other commands, like `/email`, which helps check my inbox and interacts with me to book meetings, add new tasks, and draft replies.
 
-These task management commands need to interact with other apps, like my calendar app and my email app, and the bare Claude Code sometimes struggles to communicate with them. A solution is to use Claude Skills to describe how to interact with these apps. For example, I have a `calendar` skill that controls my calendar app and is used by both `/email` and `/daily` commands.
+These commands often need to access my calendar and email, but Claude Code alone struggles with that. Using Claude Skills solves this; for example, my `calendar` skill lets `/email` and `/daily` work with my calendar app.
 
 ### What do the invisible cyborgs do for me?
 
@@ -112,7 +116,9 @@ Another unexpected benefit is accountability. I felt like I have someone beside 
 
 ### Conclusion
 
-I've become even more reliant on Claude Code. If I lost access, my productivity would drop more than myself before using Claude Code. This resonates with Senguji's point: if losing your digital secretary would disrupt your life, aren't they already a part of you?
+I've become even more reliant on Claude Code. If I lost access, my productivity would drop more than myself before using Claude Code.
+
+This resonates with Senguji's point: if losing your digital secretary would disrupt your life, aren't they already a part of you?
 
 We're not waiting for metal limbs to become cyborgs. We're already there, quietly building ourselves piece by piece.
 
