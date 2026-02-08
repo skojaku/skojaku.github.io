@@ -102,13 +102,13 @@ This replaces my morning routine. It checks my data and suggests what I should d
 
 I also made other commands, like `/email`, which helps check my inbox and interacts with me to book meetings, add new tasks, and draft replies.
 
-These tasks management commands need to interact with other apps, like my calendar app and my email app, and the bare Claude Code sometimes struggle to communicate with them. A solution is to use Claude Skills to describe how to interact with these apps. For example, I have a `calendar` skill that controls my calendar app and is used by both `/email` and `/daily` commands.
+These task management commands need to interact with other apps, like my calendar app and my email app, and the bare Claude Code sometimes struggles to communicate with them. A solution is to use Claude Skills to describe how to interact with these apps. For example, I have a `calendar` skill that controls my calendar app and is used by both `/email` and `/daily` commands.
 
 ### What do the invisible cyborgs do for me?
 
 My first impression is that the results aren't quite like mine. They're longer and more detailed. But, yeah, I can live with it and it saves me about 10 minutes each day. That's not bad.
 
-Another unexpected benefit is accountability. I felt like I have someone beside me, checking on my progress and reminding me of my tasks. It helps me stick to my plan and gives me second thoughts, so that I have a little bit more broader perspective on what I'm doing.
+Another unexpected benefit is accountability. I felt like I have someone beside me, checking on my progress and reminding me of my tasks. It helps me stick to my plan and gives me second thoughts, so that I have a broader perspective on what I'm doing.
 
 ### Conclusion
 
