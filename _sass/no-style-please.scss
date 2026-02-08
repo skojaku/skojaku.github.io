@@ -131,19 +131,19 @@ div.highlighter-rouge code {
   overflow-x: auto;
   white-space: pre-wrap;
   padding: 1rem;
-  background: #ebebeb;
+  background: #F9F5D7;
   color: #1a1a1a;
 }
 
 // Inline code should use subtle styling
 code:not(.highlight code) {
-  background: #e8e8e8;
+  background: #F9F5D7;
   color: #1a1a1a;
 }
 
 // Syntax highlighted code blocks
 .highlight {
-  background: #ebebeb;
+  background: #F9F5D7;
   border-radius: 5px;
 
   pre {
