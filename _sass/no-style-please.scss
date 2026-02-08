@@ -130,7 +130,6 @@ div.highlighter-rouge code {
   overflow-x: auto;
   white-space: pre-wrap;
   padding: 1rem;
-  border-left: 3px solid #4299e1;
 }
 
 // Inline code should have white text
@@ -142,7 +141,6 @@ code:not(.highlight code) {
 .highlight {
   background: #272822;
   border-radius: 5px;
-  border-left: 3px solid #4299e1;
 
   pre {
     margin: 0;
