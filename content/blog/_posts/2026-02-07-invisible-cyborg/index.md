@@ -112,15 +112,20 @@ Another unexpected benefit is accountability. I felt like I have someone beside 
 
 ### Conclusion
 
-I made myself even more dependent on Claude Code. If Claude Code is not available, I would probably lose more productivity than I had before using Claude Code. This is exactly what Senguji's question is about: if losing my digital secretary would disrupt my life, aren't they already a part of me?
+I've become even more reliant on Claude Code. If I lost access, my productivity would drop more than myself before using Claude Code. This resonates with Senguji's point: if losing your digital secretary would disrupt your life, aren't they already a part of you?
 
 We're not waiting for metal limbs to become cyborgs. We're already there, quietly building ourselves piece by piece.
+
+
+### Random thoughts
 
 In The Salmon of Doubt, Douglas Adams wrote:
 
 > Anything that is in the world when you're born is normal and ordinary and is just a natural part of the way the world works.
 >
+>
 > Anything that's invented between when you're fifteen and thirty-five is new and exciting and revolutionary and you can probably get a career in it.
+>
 >
 > Anything invented after you're thirty-five is against the natural order of things.
 
