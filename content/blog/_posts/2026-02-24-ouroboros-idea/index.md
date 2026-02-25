@@ -43,9 +43,9 @@ My main use case is [Snakemake](https://snakemake.github.io), a workflow manager
 
 But Snakemake pipelines break in predictable and tedious ways:
 
-1. you rename a variable or move a file, and five rules quietly point to the wrong path
+1. you rename a variable or move a file, and rules quietly point to the wrong path
 2. conda environment is missing a package, or Python version differs, or a dependency was installed globally on your laptop but nowhere else
-3. a package updates and breaks an API, or a config key changes name
+3. a package updates and breaks an API
 
 None of these errors are hard to fix. All of them require you to stop what you're doing, read a traceback, make a small edit, and rerun. Multiply by many pipelines and you've spent a morning on health checking. 
 

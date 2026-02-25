@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-02-24T23:25:36-05:00</updated><id>http://localhost:4000/feed.xml</id><subtitle>Welcome! This is Sadamori Kojaku&apos;s personal webpage.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-02-24T23:26:34-05:00</updated><id>http://localhost:4000/feed.xml</id><subtitle>Welcome! This is Sadamori Kojaku&apos;s personal webpage.
 </subtitle><author><name>Sadamori Kojaku</name></author><entry><title type="html">The snake that eats its own tail</title><link href="http://localhost:4000/snaketail.html" rel="alternate" type="text/html" title="The snake that eats its own tail" /><published>2026-02-24T00:00:00-05:00</published><updated>2026-02-24T00:00:00-05:00</updated><id>http://localhost:4000/snaketail</id><content type="html" xml:base="http://localhost:4000/snaketail.html">&lt;h3 id=&quot;more-automation-more-babysitting&quot;&gt;More automation, more babysitting&lt;/h3&gt;
 
 &lt;p&gt;The more I automate, the more frequent I babysit them.&lt;/p&gt;
@@ -39,9 +39,9 @@
 &lt;p&gt;But Snakemake pipelines break in predictable and tedious ways:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;you rename a variable or move a file, and five rules quietly point to the wrong path&lt;/li&gt;
+  &lt;li&gt;you rename a variable or move a file, and rules quietly point to the wrong path&lt;/li&gt;
   &lt;li&gt;conda environment is missing a package, or Python version differs, or a dependency was installed globally on your laptop but nowhere else&lt;/li&gt;
-  &lt;li&gt;a package updates and breaks an API, or a config key changes name&lt;/li&gt;
+  &lt;li&gt;a package updates and breaks an API&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;None of these errors are hard to fix. All of them require you to stop what you’re doing, read a traceback, make a small edit, and rerun. Multiply by many pipelines and you’ve spent a morning on health checking.&lt;/p&gt;
