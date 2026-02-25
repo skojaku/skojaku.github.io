@@ -1,5 +1,128 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-02-08T08:16:22-05:00</updated><id>http://localhost:4000/feed.xml</id><subtitle>Welcome! This is Sadamori Kojaku&apos;s personal webpage.
-</subtitle><author><name>Sadamori Kojaku</name></author><entry><title type="html">The invisible cyborgs</title><link href="http://localhost:4000/invisible-cyborg.html" rel="alternate" type="text/html" title="The invisible cyborgs" /><published>2026-02-07T00:00:00-05:00</published><updated>2026-02-07T00:00:00-05:00</updated><id>http://localhost:4000/invisible-cyborg</id><content type="html" xml:base="http://localhost:4000/invisible-cyborg.html">&lt;h3 id=&quot;building-my-parts&quot;&gt;Building my parts&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-02-24T23:09:45-05:00</updated><id>http://localhost:4000/feed.xml</id><subtitle>Welcome! This is Sadamori Kojaku&apos;s personal webpage.
+</subtitle><author><name>Sadamori Kojaku</name></author><entry><title type="html">The snake that eats its own tail</title><link href="http://localhost:4000/snaketail.html" rel="alternate" type="text/html" title="The snake that eats its own tail" /><published>2026-02-24T00:00:00-05:00</published><updated>2026-02-24T00:00:00-05:00</updated><id>http://localhost:4000/snaketail</id><content type="html" xml:base="http://localhost:4000/snaketail.html">&lt;h3 id=&quot;more-automation-more-babysitting&quot;&gt;More automation, more babysitting&lt;/h3&gt;
+
+&lt;p&gt;The more I automate, the more frequent I babysit them.&lt;/p&gt;
+
+&lt;p&gt;Automation promises to free up time. And it does — until something breaks. An automaton is designed to work on a predictable path, but the real world is full of unexpected twists. When an automation fails, it needs a human to read the error, understand what went wrong, patch the issue, and restart it. This is babysitting a machine.&lt;/p&gt;
+
+&lt;p&gt;One automation is manageable. Five automations mean five things that can silently fail while I’m looking elsewhere.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-four-phases&quot;&gt;The four phases&lt;/h3&gt;
+
+&lt;p&gt;An article &lt;a href=&quot;https://cacm.acm.org/practice/documentation-is-automation/&quot;&gt;“Documentation Is Automation”&lt;/a&gt; describes four overlapping phases on the road to full automation:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Document&lt;/strong&gt; the steps&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Find equivalents&lt;/strong&gt; — translate each step into a command or script&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Automate&lt;/strong&gt; — chain the commands into a pipeline&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Autonomous&lt;/strong&gt; — the system runs without supervision&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;A classical example is setting up a new machine. You write down every step — install Homebrew, clone dotfiles, set up SSH keys — then translate each into a shell command, then chain them into a setup script. At phase 4, a fresh machine configures itself without you touching a terminal. But if a tool changes its install method, the script silently fails. Someone has to babysit it back to life.&lt;/p&gt;
+
+&lt;p&gt;But these prototypes can be fragile. When something unexpected happens, they break. They need a regular checkup and repair. They need babysitting.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-ouroboros-idea&quot;&gt;The Ouroboros idea&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/blog/2026-02-24-ouroboros-idea/ouroboros.jpg&quot; alt=&quot;Ouroboros&quot; width=&quot;70%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The Ouroboros is a snake eating its own tail — a symbol of self-reflexivity and cyclicality.&lt;/p&gt;
+
+&lt;p&gt;The idea here is to feed the tail (the error log) back to the head (the system itself), so it can read the error, fix itself, and resume. The intermediary is an agentic coder like Claude Code: it reads the log, understands the error, edits the code, commits the fix, and hands control back.&lt;/p&gt;
+
+&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/blog/2026-02-24-ouroboros-idea/snakemake.png&quot; alt=&quot;snakemake&quot; width=&quot;70%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My main use case is &lt;a href=&quot;https://snakemake.github.io&quot;&gt;Snakemake&lt;/a&gt;, a workflow manager for automating experiment pipelines. You define rules — inputs, outputs, commands — and Snakemake handles execution order, parallelism, and skips already-completed steps. For computational experiments, it’s close to essential.&lt;/p&gt;
+
+&lt;p&gt;But Snakemake pipelines break in predictable and tedious ways:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;you rename a variable or move a file, and five rules quietly point to the wrong path&lt;/li&gt;
+  &lt;li&gt;conda environment is missing a package, or Python version differs, or a dependency was installed globally on your laptop but nowhere else&lt;/li&gt;
+  &lt;li&gt;a package updates and breaks an API, or a config key changes name&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;None of these errors are hard to fix. All of them require you to stop what you’re doing, read a traceback, make a small edit, and rerun. Multiply by many pipelines and you’ve spent a morning on health checking.&lt;/p&gt;
+
+&lt;p&gt;This is mentally hard not because it’s difficult, but because it’s &lt;em&gt;interruptive&lt;/em&gt;. Every fix pulls you out of whatever you were actually thinking about.&lt;/p&gt;
+
+&lt;h3 id=&quot;snaketail&quot;&gt;Snaketail&lt;/h3&gt;
+
+&lt;p&gt;I made a small tool called &lt;a href=&quot;&quot;&gt;snaketail&lt;/a&gt; to handle this loop automatically.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# snaketail — run Snakemake, auto-fix errors with Claude Code, repeat until done&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Usage: ./snaketail.sh [--max-retries N] [--branch NAME] [snakemake args...]&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-uo&lt;/span&gt; pipefail
+
+&lt;span class=&quot;nv&quot;&gt;CHILD_PID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;trap&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;echo &quot;Interrupted.&quot;; [ -n &quot;$CHILD_PID&quot; ] &amp;amp;&amp;amp; kill -9 &quot;$CHILD_PID&quot; 2&amp;gt;/dev/null; exit 1&apos;&lt;/span&gt; INT TERM
+
+&lt;span class=&quot;nv&quot;&gt;DIR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PWD&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;MAX_RETRIES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10
+&lt;span class=&quot;nv&quot;&gt;BRANCH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;snaketail/&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;+%Y%m%d-%H%M%S&apos;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;PASS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$# &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-gt&lt;/span&gt; 0 &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do
+  case&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;--max-retries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MAX_RETRIES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$2&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;shift &lt;/span&gt;2 &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;--branch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;      &lt;span class=&quot;nv&quot;&gt;BRANCH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$2&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;      &lt;span class=&quot;nb&quot;&gt;shift &lt;/span&gt;2 &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;             PASS+&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;     &lt;span class=&quot;nb&quot;&gt;shift&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;esac&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;done
+
+&lt;/span&gt;run_snakemake&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  snakemake &lt;span class=&quot;nt&quot;&gt;--unlock&lt;/span&gt; 2&amp;gt;/dev/null
+  snakemake &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PASS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[@]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; 2&amp;gt;&amp;amp;1 | &lt;span class=&quot;nb&quot;&gt;tee&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$DIR&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/.snaketail_run.log&quot;&lt;/span&gt; &amp;amp; &lt;span class=&quot;nv&quot;&gt;CHILD_PID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$!&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;wait&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CHILD_PID&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;local exit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;CHILD_PID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$exit&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+heal&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;error
+  &lt;span class=&quot;nv&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-E&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Error|Traceback&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$DIR&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/.snaketail_run.log&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-B3&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-A10&lt;/span&gt; 2&amp;gt;/dev/null | &lt;span class=&quot;nb&quot;&gt;tail&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-60&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-z&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$error&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;tail&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-60&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$DIR&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/.snaketail_run.log&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+  claude &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Fix the Snakemake error below. Edit the code, then git add and commit. Do not restart Snakemake.
+Project: &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$DIR&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$error&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;--allowedTools&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Bash,Read,Edit,Write,Grep,Glob,WebFetch,WebSearch&quot;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;--dangerously-skip-permissions&lt;/span&gt; &amp;amp; &lt;span class=&quot;nv&quot;&gt;CHILD_PID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$!&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;wait&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CHILD_PID&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;CHILD_PID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# ── main ──────────────────────────────────────────────────────────────────────&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$DIR&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;git branch &lt;span class=&quot;nt&quot;&gt;--show-current&lt;/span&gt; 2&amp;gt;/dev/null&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$current&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; snaketail/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
+  &lt;/span&gt;git checkout &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$BRANCH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;current&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$BRANCH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;fi
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Starting on branch &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$current&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;attempt &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;seq &lt;/span&gt;1 &lt;span class=&quot;nv&quot;&gt;$MAX_RETRIES&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do
+  &lt;/span&gt;run_snakemake &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Pipeline complete.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; git log &lt;span class=&quot;nt&quot;&gt;--oneline&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$current&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;0&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Attempt &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$attempt&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$MAX_RETRIES&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; failed — healing...&quot;&lt;/span&gt;
+  heal
+&lt;span class=&quot;k&quot;&gt;done
+
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Giving up after &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$MAX_RETRIES&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; attempts.&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This runs Snakemake, captures the log, passed the error to Claude Code with instructions to fix and commit, repeat. If it succeeds, it exits.&lt;/p&gt;
+
+&lt;p&gt;Every repair is committed to a dedicated branch (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;snaketail/YYYYMMDD-HHMMSS&lt;/code&gt;), so I can review exactly what was changed.&lt;/p&gt;
+
+&lt;p&gt;One caveat is that self-healing trades reproducibility for convenience. Each run may produce different code changes. Use it only when you understand the codebase well enough to review the fixes. But I see a lot of practical values for early development or testing on a new machine.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Snaketail closes that gap for a specific class of failures. The idea—feed the error log back to the healer, patch the issue, restart—can be applied to systems that often breaks. The snake eats its own tail and keeps going.&lt;/p&gt;
+
+&lt;p&gt;You still have to do your creative jobs. You shouldn’t have to babysit the machines.&lt;/p&gt;</content><author><name>Sadamori Kojaku</name></author><category term="blog" /><summary type="html">More automation, more babysitting</summary></entry><entry><title type="html">The invisible cyborgs</title><link href="http://localhost:4000/invisible-cyborg.html" rel="alternate" type="text/html" title="The invisible cyborgs" /><published>2026-02-07T00:00:00-05:00</published><updated>2026-02-07T00:00:00-05:00</updated><id>http://localhost:4000/invisible-cyborg</id><content type="html" xml:base="http://localhost:4000/invisible-cyborg.html">&lt;h3 id=&quot;building-my-parts&quot;&gt;Building my parts&lt;/h3&gt;
 
 &lt;p&gt;While reading &lt;a href=&quot;https://www.dtlarson.com/feed-the-beast&quot;&gt;Darek Larson’s blog&lt;/a&gt;, I daydreamed about a scene from &lt;a href=&quot;https://www.imdb.com/title/tt2379308/&quot;&gt;Psycho-Pass&lt;/a&gt;. People in this world are inseparable from AIs—just like us today. &lt;a href=&quot;https://psychopass.fandom.com/wiki/Toyohisa_Senguji&quot;&gt;Toyohisa Senguji&lt;/a&gt;, a man who replaced every part of himself with machines, asks a question that no longer seems like science fiction:&lt;/p&gt;
 
@@ -131,4 +254,4 @@ After saving, confirm the file was created and list your top 3 priorities out lo
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;To me, the invisible cyborgs are the ones that are against the natural order of things—probably because I’m above thirty-five now. But for younger people, they might be the ones that are normal and ordinary and just a natural part of the way the world works, like those in the &lt;a href=&quot;https://www.imdb.com/title/tt2379308/&quot;&gt;Psycho-Pass&lt;/a&gt; world.&lt;/p&gt;</content><author><name>Sadamori Kojaku</name></author><category term="blog" /><summary type="html">Building my parts</summary></entry></feed>
+&lt;p&gt;To me, the invisible cyborgs are the ones that are against the natural order of things, probably because I’m above thirty-five now. But for younger people, they might be the ones that are normal and ordinary and just a natural part of the way the world works, like those in the &lt;a href=&quot;https://www.imdb.com/title/tt2379308/&quot;&gt;Psycho-Pass&lt;/a&gt; world.&lt;/p&gt;</content><author><name>Sadamori Kojaku</name></author><category term="blog" /><summary type="html">Building my parts</summary></entry></feed>
