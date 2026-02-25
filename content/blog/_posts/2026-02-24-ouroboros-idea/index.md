@@ -23,7 +23,7 @@ An article ["Documentation Is Automation"](https://cacm.acm.org/practice/documen
 3. **Automate** — chain the commands into a pipeline
 4. **Autonomous** — the system runs without supervision 
 
-The promise of automation is that once you reach Phase 4, you and your future self are free. But Phase 4 is fragile. When the environment changes and dependencies update, the system silently breaks — pulling you back to Phase 1, manually reading errors and figuring out what went wrong. They need a regular checkup and repair. They need babysitting.
+The promise of automation is that once you reach Phase 4, you and your future self are free. But Phase 4 is fragile. When the environment changes and dependencies update, the system silently breaks — pulling you out of Phase 4 and back to manual intervention. They need a regular checkup and repair. They need babysitting.
 
 ### The Ouroboros idea
 
