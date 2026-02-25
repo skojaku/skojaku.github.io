@@ -39,7 +39,7 @@ The idea here is to feed the tail (the error log) back to the head (the system i
 
 ![snakemake](/assets/blog/2026-02-24-ouroboros-idea/snakemake.png){: width="70%"}
 
-My main use case is [Snakemake](https://snakemake.github.io), a workflow manager for automating experiment pipelines. You define rules — inputs, outputs, commands — and Snakemake handles execution order, parallelism, and skips already-completed steps. For computational experiments, it's close to essential.
+My main use case is [Snakemake](https://snakemake.github.io), a workflow manager for automating experiment pipelines. You define rules — inputs, outputs, commands — and Snakemake handles execution order, parallelism, and skips already-completed steps. This is an indispensable tool for me.
 
 But Snakemake pipelines break in predictable and tedious ways:
 
