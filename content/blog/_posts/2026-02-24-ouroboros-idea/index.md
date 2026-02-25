@@ -8,7 +8,7 @@ slug: snaketail
 
 ### More automation, more babysitting
 
-The more I automate, the more frequent I babysit them.
+The more I automate, the more frequently I babysit them.
 
 Automation promises to free up time. And it does — until something breaks. An automaton is designed to work on a predictable path, but the real world is full of the unexpected. When an automation fails, it needs a human to fix and rerun. 
 
@@ -23,7 +23,7 @@ An article ["Documentation Is Automation"](https://cacm.acm.org/practice/documen
 3. **Automate** — chain the commands into a pipeline
 4. **Autonomous** — the system runs without supervision 
 
-The promise of automation is that once you get to Phase 4, you and future yourself are free from the task to be automated.
+The promise of automation is that once you get to Phase 4, you and your future self are free from the task to be automated.
 But there is a new cost to pay, i.e., maintenance. The automated system that initially works can break when the environment changes and dependencies update.  
 They need a regular checkup and repair. They need babysitting. 
 
@@ -47,7 +47,7 @@ But Snakemake pipelines break in predictable and tedious ways:
 2. conda environment is missing a package, or Python version differs, or a dependency was installed globally on your laptop but nowhere else
 3. a package updates and breaks an API
 
-None of these errors are hard to fix. All of them require you to stop what you're doing, read a traceback, make a small edit, and rerun. Multiply by many pipelines and you've spent a morning on health checking. 
+None of these errors are hard to fix. All of them require you to stop what you're doing, read a traceback, make a small edit, and rerun. Multiply by many pipelines and you've spent a morning on health checks. 
 
 This is mentally hard not because it's difficult, but because it's *interruptive*. Every fix pulls you out of whatever you were actually thinking about.
 
@@ -116,11 +116,11 @@ echo "Giving up after $MAX_RETRIES attempts."
 exit 1
 ```
 
-This runs Snakemake, captures the log, passes the error to Claude Code with instructions to fix and commit, repeat. If it succeeds, it exits.
+This runs Snakemake, captures the log, passes the error to Claude Code with instructions to fix and commit, and repeats. If it succeeds, it exits.
 
 Every repair is committed to a dedicated branch (`snaketail/YYYYMMDD-HHMMSS`), so I can review exactly what was changed.
 
-One caveat is that self-healing trades reproducibility for convenience. Each run may produce different code changes. Use it only when you understand the codebase well enough to review the fixes. But I see a lot of practical values for early development or testing on a new machine.
+One caveat is that self-healing trades reproducibility for convenience. Each run may produce different code changes. Use it only when you understand the codebase well enough to review the fixes. But I see a lot of practical value for early development or testing on a new machine.
 
 ### Conclusion
 
