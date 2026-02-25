@@ -97,7 +97,7 @@ $error" \
   wait "$CHILD_PID"; CHILD_PID=""
 }
 
-# ── main ──────────────────────────────────────────────────────────────────────
+# ── main ────────────────────────
 cd "$DIR"
 current=$(git branch --show-current 2>/dev/null)
 if [[ "$current" != snaketail/* ]]; then
