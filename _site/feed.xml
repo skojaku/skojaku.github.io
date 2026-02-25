@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-02-24T23:09:45-05:00</updated><id>http://localhost:4000/feed.xml</id><subtitle>Welcome! This is Sadamori Kojaku&apos;s personal webpage.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-02-24T23:15:38-05:00</updated><id>http://localhost:4000/feed.xml</id><subtitle>Welcome! This is Sadamori Kojaku&apos;s personal webpage.
 </subtitle><author><name>Sadamori Kojaku</name></author><entry><title type="html">The snake that eats its own tail</title><link href="http://localhost:4000/snaketail.html" rel="alternate" type="text/html" title="The snake that eats its own tail" /><published>2026-02-24T00:00:00-05:00</published><updated>2026-02-24T00:00:00-05:00</updated><id>http://localhost:4000/snaketail</id><content type="html" xml:base="http://localhost:4000/snaketail.html">&lt;h3 id=&quot;more-automation-more-babysitting&quot;&gt;More automation, more babysitting&lt;/h3&gt;
 
 &lt;p&gt;The more I automate, the more frequent I babysit them.&lt;/p&gt;
 
-&lt;p&gt;Automation promises to free up time. And it does — until something breaks. An automaton is designed to work on a predictable path, but the real world is full of unexpected twists. When an automation fails, it needs a human to read the error, understand what went wrong, patch the issue, and restart it. This is babysitting a machine.&lt;/p&gt;
+&lt;p&gt;Automation promises to free up time. And it does — until something breaks. An automaton is designed to work on a predictable path, but the real world is full of unexpected. When an automation fails, it needs a human to fix and rerun.&lt;/p&gt;
 
-&lt;p&gt;One automation is manageable. Five automations mean five things that can silently fail while I’m looking elsewhere.&lt;/p&gt;
+&lt;p&gt;One automation is manageable. Five automations mean five things that can silently fail while I’m looking elsewhere. So more automation can lead to more babysitting a machine paradoxically.&lt;/p&gt;
 
 &lt;h3 id=&quot;the-four-phases&quot;&gt;The four phases&lt;/h3&gt;
 

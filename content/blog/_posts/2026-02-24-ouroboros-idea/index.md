@@ -10,9 +10,9 @@ slug: snaketail
 
 The more I automate, the more frequent I babysit them.
 
-Automation promises to free up time. And it does — until something breaks. An automaton is designed to work on a predictable path, but the real world is full of unexpected twists. When an automation fails, it needs a human to read the error, understand what went wrong, patch the issue, and restart it. This is babysitting a machine.
+Automation promises to free up time. And it does — until something breaks. An automaton is designed to work on a predictable path, but the real world is full of unexpected. When an automation fails, it needs a human to fix and rerun. 
 
-One automation is manageable. Five automations mean five things that can silently fail while I'm looking elsewhere.
+One automation is manageable. Five automations mean five things that can silently fail while I'm looking elsewhere. So more automation can lead to more babysitting a machine paradoxically.
 
 ### The four phases
 
