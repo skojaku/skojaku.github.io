@@ -23,9 +23,7 @@ An article ["Documentation Is Automation"](https://cacm.acm.org/practice/documen
 3. **Automate** — chain the commands into a pipeline
 4. **Autonomous** — the system runs without supervision 
 
-The promise of automation is that once you get to Phase 4, you and your future self are free from the task to be automated.
-But there is a new cost to pay, i.e., maintenance. The automated system that initially works can break when the environment changes and dependencies update.  
-They need a regular checkup and repair. They need babysitting. 
+The promise of automation is that once you reach Phase 4, you and your future self are free. But Phase 4 is fragile. When the environment changes and dependencies update, the system silently breaks — pulling you back to Phase 1, manually reading errors and figuring out what went wrong. They need a regular checkup and repair. They need babysitting.
 
 ### The Ouroboros idea
 
@@ -41,7 +39,7 @@ The idea here is to feed the tail (the error log) back to the head (the system i
 
 My main use case is [Snakemake](https://snakemake.github.io), a workflow manager for automating experiment pipelines. You define rules — inputs, outputs, commands — and Snakemake handles execution order, parallelism, and skips already-completed steps. This is an indispensable tool for me.
 
-But Snakemake pipelines break in predictable and tedious ways:
+But Snakemake pipelines break in predictable and tedious ways — Phase 4 failures that knock you back to Phase 1:
 
 1. you rename a variable or move a file, and rules quietly point to the wrong path
 2. conda environment is missing a package, or Python version differs, or a dependency was installed globally on your laptop but nowhere else
@@ -124,6 +122,6 @@ One caveat is that self-healing trades reproducibility for convenience. Each run
 
 ### Conclusion
 
-Snaketail closes that gap for a specific class of failures. The idea---feed the error log back to the healer, patch the issue, restart---can be applied to systems that often break. The snake eats its own tail and keeps going.
+Snaketail closes that gap for a specific class of failures, keeping the pipeline at Phase 4 by automating the repair loop itself. The idea---feed the error log back to the healer, patch the issue, restart---can be applied to any system that often breaks. The snake eats its own tail and keeps going.
 
 You still have to do your creative jobs. You shouldn't have to babysit the machines.
