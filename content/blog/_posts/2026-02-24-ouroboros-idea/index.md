@@ -10,7 +10,7 @@ slug: snaketail
 
 The more I automate, the more frequent I babysit them.
 
-Automation promises to free up time. And it does — until something breaks. An automaton is designed to work on a predictable path, but the real world is full of unexpected. When an automation fails, it needs a human to fix and rerun. 
+Automation promises to free up time. And it does — until something breaks. An automaton is designed to work on a predictable path, but the real world is full of the unexpected. When an automation fails, it needs a human to fix and rerun. 
 
 One automation is manageable. Five automations mean five things that can silently fail while I'm looking elsewhere. So more automation can lead to more babysitting a machine paradoxically.
 
@@ -116,7 +116,7 @@ echo "Giving up after $MAX_RETRIES attempts."
 exit 1
 ```
 
-This runs Snakemake, captures the log, passed the error to Claude Code with instructions to fix and commit, repeat. If it succeeds, it exits.
+This runs Snakemake, captures the log, passes the error to Claude Code with instructions to fix and commit, repeat. If it succeeds, it exits.
 
 Every repair is committed to a dedicated branch (`snaketail/YYYYMMDD-HHMMSS`), so I can review exactly what was changed.
 
@@ -124,6 +124,6 @@ One caveat is that self-healing trades reproducibility for convenience. Each run
 
 ### Conclusion
 
-Snaketail closes that gap for a specific class of failures. The idea---feed the error log back to the healer, patch the issue, restart---can be applied to systems that often breaks. The snake eats its own tail and keeps going.
+Snaketail closes that gap for a specific class of failures. The idea---feed the error log back to the healer, patch the issue, restart---can be applied to systems that often break. The snake eats its own tail and keeps going.
 
 You still have to do your creative jobs. You shouldn't have to babysit the machines.
