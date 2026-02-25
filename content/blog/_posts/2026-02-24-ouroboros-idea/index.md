@@ -53,7 +53,7 @@ This is mentally hard not because it's difficult, but because it's *interruptive
 
 ### Snaketail
 
-I made a small tool called [snaketail]() to handle this loop automatically.
+I made a small tool called [snaketail](https://github.com/skojaku/snaketail) to handle this loop automatically.
 
 ```bash
 #!/bin/bash
