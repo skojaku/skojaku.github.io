@@ -23,9 +23,9 @@ An article ["Documentation Is Automation"](https://cacm.acm.org/practice/documen
 3. **Automate** — chain the commands into a pipeline
 4. **Autonomous** — the system runs without supervision 
 
-A classical example is setting up a new machine. You write down every step — install Homebrew, clone dotfiles, set up SSH keys — then translate each into a shell command, then chain them into a setup script. At phase 4, a fresh machine configures itself without you touching a terminal. But if a tool changes its install method, the script silently fails. Someone has to babysit it back to life.
-
-But these prototypes can be fragile. When something unexpected happens, they break. They need a regular checkup and repair. They need babysitting. 
+The promise of automation is that once you get to Phase 4, you and future yourself are free from the task to be automated.
+But there is a new cost to pay, i.e., maintenance. The automated system that initially works can break when the environment changes and dependencies update.  
+They need a regular checkup and repair. They need babysitting. 
 
 ### The Ouroboros idea
 

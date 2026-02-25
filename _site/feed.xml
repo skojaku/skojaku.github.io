@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-02-24T23:27:05-05:00</updated><id>http://localhost:4000/feed.xml</id><subtitle>Welcome! This is Sadamori Kojaku&apos;s personal webpage.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-02-25T05:47:31-05:00</updated><id>http://localhost:4000/feed.xml</id><subtitle>Welcome! This is Sadamori Kojaku&apos;s personal webpage.
 </subtitle><author><name>Sadamori Kojaku</name></author><entry><title type="html">The snake that eats its own tail</title><link href="http://localhost:4000/snaketail.html" rel="alternate" type="text/html" title="The snake that eats its own tail" /><published>2026-02-24T00:00:00-05:00</published><updated>2026-02-24T00:00:00-05:00</updated><id>http://localhost:4000/snaketail</id><content type="html" xml:base="http://localhost:4000/snaketail.html">&lt;h3 id=&quot;more-automation-more-babysitting&quot;&gt;More automation, more babysitting&lt;/h3&gt;
 
 &lt;p&gt;The more I automate, the more frequent I babysit them.&lt;/p&gt;
@@ -18,9 +18,9 @@
   &lt;li&gt;&lt;strong&gt;Autonomous&lt;/strong&gt; — the system runs without supervision&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;A classical example is setting up a new machine. You write down every step — install Homebrew, clone dotfiles, set up SSH keys — then translate each into a shell command, then chain them into a setup script. At phase 4, a fresh machine configures itself without you touching a terminal. But if a tool changes its install method, the script silently fails. Someone has to babysit it back to life.&lt;/p&gt;
-
-&lt;p&gt;But these prototypes can be fragile. When something unexpected happens, they break. They need a regular checkup and repair. They need babysitting.&lt;/p&gt;
+&lt;p&gt;The promise of automation is that once you get to Phase 4, you and future yourself are free from the task to be automated.
+But there is a new cost to pay, i.e., maintenance. The automated system that initially works can break when the environment changes and dependencies update.&lt;br /&gt;
+They need a regular checkup and repair. They need babysitting.&lt;/p&gt;
 
 &lt;h3 id=&quot;the-ouroboros-idea&quot;&gt;The Ouroboros idea&lt;/h3&gt;
 
