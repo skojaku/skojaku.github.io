@@ -2,6 +2,7 @@
 layout: post
 title: "Research"
 category: research
+permalink: /research
 ---
 
 **Keywords**: Network Science, Representation Learning, Science of Science, Human-Computer Interaction

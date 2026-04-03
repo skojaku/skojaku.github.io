@@ -2,6 +2,7 @@
 layout: post
 title: "Artworks"
 category: artworks
+permalink: /artworks
 ---
 
 ### Ideas in Motion

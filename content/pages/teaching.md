@@ -2,6 +2,7 @@
 layout: post
 title: "Teaching"
 category: teaching
+permalink: /teaching
 ---
 
 I'm teaching:
