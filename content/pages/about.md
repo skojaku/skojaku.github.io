@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /about
+permalink: /about/
 ---
 
 <img style="width:25%;max-width:500px;float:right;padding:5px" src="/assets/attachments/selfy/sada-2021.jpg" />
