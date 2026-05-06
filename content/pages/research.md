@@ -9,6 +9,14 @@ permalink: /research/
 
 - [Google Scholar](https://scholar.google.com/citations?user=IyWt4R4AAAAJ&hl=en)
 
+## Keynote Talks
+
+### Turning Spatial Intuition into Modeling with Neural Embeddings
+
+CompleNet 2026, Zaragoza, Spain (May 4-8, 2026)
+
+- 🎞️ [Slides](https://drive.google.com/file/d/13PnzBjOGL7KcF9TJHYfcjIz0-sZP7SyM/view?usp=sharing)
+
 ## Selected works
 
 ### Implicit degree bias in the link prediction task
