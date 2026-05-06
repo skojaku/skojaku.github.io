@@ -9,7 +9,7 @@ permalink: /research/
 
 - [Google Scholar](https://scholar.google.com/citations?user=IyWt4R4AAAAJ&hl=en)
 
-## Keynote Talks
+## Talks
 
 ### Turning Spatial Intuition into Modeling with Neural Embeddings
 
