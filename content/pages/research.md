@@ -16,6 +16,7 @@ permalink: /research/
 CompleNet 2026, Zaragoza, Spain (May 4-8, 2026)
 
 - 🎞️ [Slides](https://drive.google.com/file/d/13PnzBjOGL7KcF9TJHYfcjIz0-sZP7SyM/view?usp=sharing)
+- 💻 [Code](https://github.com/skojaku/talks-networks-space)
 
 ## Selected works
 
