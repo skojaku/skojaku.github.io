@@ -6,13 +6,13 @@ title: Local LLMs are fun!
 slug: localllm
 ---
 
-### The data I can't paste
+### Local LLMs are a rabbit hole
 
-There are tasks I won't hand to a cloud model. My inbox has student grades, family medical appointments, a colleague's unpublished draft. My notes have half-formed ideas I'd rather not have indexed anywhere. This isn't about distrusting a particular vendor. Most of that data isn't only mine to share.
+I started running models locally because it was fun. A 30B-class mixture-of-experts model now fits on my laptop and answers on battery, which still strikes me as absurd. Nothing is metered, so I can leave it running overnight on something pointless just to see what comes back. Much of what I did in the first month was pointless.
 
-So I never automated any of it. I read the email myself, drafted the reply myself, dug up the context myself.
+My other habit is trying to automate boring work. Anything that isn't hard but eats an hour: sorting the inbox, writing the same reply for the fifth time, digging up what I already know about a task before I start on it. So I pointed the local model at those, one at a time, to see how far it would get.
 
-Open-weight models changed the arithmetic. A 30B-class mixture-of-experts model now runs on my laptop, on battery, with nothing leaving the machine. Email triage, drafting replies from my own notes, gathering what I already know about a task before I sit down to it. These are now possible without a byte crossing the network.
+It turned out to matter that the model was local. Those tasks sit on top of the data I never wanted to paste anywhere: student grades, family medical appointments, a colleague's unpublished draft, notes full of half-formed ideas. This isn't about distrusting a particular vendor. Most of that data isn't only mine to share, so I had left all of it manual. On my own machine the question doesn't come up, and the boring tasks become automatable again.
 
 ### They are not smart
 
