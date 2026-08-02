@@ -8,11 +8,19 @@ slug: localllm
 
 ### Local LLMs are a rabbit hole
 
-I started running models locally because it was fun. A 30B-class mixture-of-experts model now fits on my laptop and answers on battery, which still strikes me as absurd. Nothing is metered, so I can leave it running overnight on something pointless just to see what comes back. Much of what I did in the first month was pointless.
+Local LLMs are fun to play with. They hallucinate, ignore instructions, and stop in the middle of their reasoning. But if I can get one to run properly, a lot of automation becomes possible.
 
-My other habit is trying to automate boring work. Anything that isn't hard but eats an hour: sorting the inbox, writing the same reply for the fifth time, digging up what I already know about a task before I start on it. So I pointed the local model at those, one at a time, to see how far it would get.
+I took that as an engineering challenge and spent a while on it, trying many local models and many harness designs. Here is what I learned.
 
-It turned out to matter that the model was local. Those tasks sit on top of the data I never wanted to paste anywhere: student grades, family medical appointments, a colleague's unpublished draft, notes full of half-formed ideas. This isn't about distrusting a particular vendor. Most of that data isn't only mine to share, so I had left all of it manual. On my own machine the question doesn't come up, and the boring tasks become automatable again.
+### Why not simply use cloud LLMs?
+
+Part of the motivation is to connect an LLM to my wiki and my email. They hold things I cannot send to someone else's servers, including OpenAI's and Anthropic's, however sincerely they promise not to use it for "training": student grades, family medical appointments, a colleague's unpublished draft, notes full of half-formed ideas.
+
+So anything touching that data has to be done by hand. Sorting the inbox, writing the same reply for the fifth time, digging up what I already know about a task before I start on it. Before 2022 this was acceptable. In the age of AIs I have grown less tolerant of it, and I keep looking for ways to hand it off and spend the time on the creative work I actually want to do.
+
+Local LLMs are one answer. The model runs on my own hardware, so it can read my wiki and my email without a byte leaving the laptop, and without me working out which regulation covers which file.
+
+In its bare form, though, a local LLM fails a lot.
 
 ### They are not smart
 
