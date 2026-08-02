@@ -1,9 +1,137 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-02-25T05:47:31-05:00</updated><id>http://localhost:4000/feed.xml</id><subtitle>Welcome! This is Sadamori Kojaku&apos;s personal webpage.
-</subtitle><author><name>Sadamori Kojaku</name></author><entry><title type="html">The snake that eats its own tail</title><link href="http://localhost:4000/snaketail.html" rel="alternate" type="text/html" title="The snake that eats its own tail" /><published>2026-02-24T00:00:00-05:00</published><updated>2026-02-24T00:00:00-05:00</updated><id>http://localhost:4000/snaketail</id><content type="html" xml:base="http://localhost:4000/snaketail.html">&lt;h3 id=&quot;more-automation-more-babysitting&quot;&gt;More automation, more babysitting&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="https://skojaku.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://skojaku.github.io/" rel="alternate" type="text/html" /><updated>2026-08-02T05:47:23-04:00</updated><id>https://skojaku.github.io/feed.xml</id><subtitle>Welcome! This is Sadamori Kojaku&apos;s personal webpage.
+</subtitle><author><name>Sadamori Kojaku</name></author><entry><title type="html">Local LLMs are fun!</title><link href="https://skojaku.github.io/localllm.html" rel="alternate" type="text/html" title="Local LLMs are fun!" /><published>2026-08-02T00:00:00-04:00</published><updated>2026-08-02T00:00:00-04:00</updated><id>https://skojaku.github.io/localllm</id><content type="html" xml:base="https://skojaku.github.io/localllm.html">&lt;h3 id=&quot;the-data-i-cant-paste&quot;&gt;The data I can’t paste&lt;/h3&gt;
 
-&lt;p&gt;The more I automate, the more frequent I babysit them.&lt;/p&gt;
+&lt;p&gt;There is a class of tasks I will never hand to a cloud model.&lt;/p&gt;
 
-&lt;p&gt;Automation promises to free up time. And it does — until something breaks. An automaton is designed to work on a predictable path, but the real world is full of unexpected. When an automation fails, it needs a human to fix and rerun.&lt;/p&gt;
+&lt;p&gt;My inbox has my students’ grades, my family’s medical appointments, a colleague’s unpublished draft. My notes have half-formed ideas I’d rather not have indexed by anyone. It’s not that I distrust a particular vendor. It’s that most of this data isn’t only mine to share.&lt;/p&gt;
+
+&lt;p&gt;So for years the answer was: don’t automate it. Read the email myself, draft the reply myself, dig up the context myself.&lt;/p&gt;
+
+&lt;p&gt;Then the open-weight models — DeepSeek, Qwen, gpt-oss and friends — got good enough that a 30B-class mixture-of-experts model runs on my laptop, on battery, with nothing leaving the machine. Suddenly the answer changes. Email triage, drafting replies in my own voice from my own wiki, pulling together everything I know about a task before I sit down to it — all of it becomes possible without a single byte crossing the network.&lt;/p&gt;
+
+&lt;p&gt;That’s worth learning now, while it’s still slightly awkward.&lt;/p&gt;
+
+&lt;h3 id=&quot;they-are-not-smart&quot;&gt;They are not smart&lt;/h3&gt;
+
+&lt;p&gt;Let me be honest about what you get. A local model fails in three ways:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Slow.&lt;/strong&gt; A cloud model answers before you finish reading the question. A local one thinks out loud for a minute.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Hallucination.&lt;/strong&gt; It invents command-line flags. It invents email addresses. It invents URLs that look exactly right and go nowhere.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Reasoning loops.&lt;/strong&gt; It re-plans, re-searches, re-reads the same file, and spirals until the context window is full of its own confusion.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Every one of these is real. None of them is fatal, and this is the interesting part.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Slow stops mattering when nobody is waiting.&lt;/strong&gt; If the unit of work is “by the time I wake up,” latency is free. So I stopped thinking of the local model as a chat partner and started thinking of it as a batch worker: a queue, a cron line, a job that either finished or didn’t. I don’t sit and watch it. I read what it produced.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Hallucination and looping are design problems, not model problems.&lt;/strong&gt; A model invents a flag because your tool has too many. It loops because you gave it a task with no obvious next step. Both are fixed by the thing around the model, not the model.&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation-is-automation&quot;&gt;Documentation is automation&lt;/h3&gt;
+
+&lt;p&gt;I keep coming back to Thomas A. Limoncelli’s &lt;a href=&quot;https://cacm.acm.org/practice/documentation-is-automation/&quot;&gt;“Documentation Is Automation”&lt;/a&gt;, which I wrote about &lt;a href=&quot;/snaketail.html&quot;&gt;before&lt;/a&gt;. His four phases on the road to automation:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Document&lt;/strong&gt; the steps&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Find equivalents&lt;/strong&gt; — translate each step into a command&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Automate&lt;/strong&gt; — chain the commands&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Autonomous&lt;/strong&gt; — it runs without supervision&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;With a local model, this ladder reads differently. The model isn’t going to leap to phase 4. It lives in phases 2 and 3: it can run your commands and chain them, if the commands exist and the doc is short enough to hold in its head.&lt;/p&gt;
+
+&lt;p&gt;Which means writing the documentation &lt;em&gt;is&lt;/em&gt; building the harness. Not a metaphor — the doc file is the prompt. A skill file is documentation that happens to be read by a colleague who reads fast, follows instructions literally, and forgets everything the moment the job ends.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-harness&quot;&gt;The harness&lt;/h3&gt;
+
+&lt;p&gt;My harness is two things: a &lt;strong&gt;CLI tool&lt;/strong&gt; and a &lt;strong&gt;skill file&lt;/strong&gt;. That’s it. The skill file says what the workflow is and which command to run. The CLI does everything else. Mine is called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hq&lt;/code&gt;, and it fronts my mail, calendar, drive, and wiki. What it does isn’t the point here — how it’s &lt;em&gt;shaped&lt;/em&gt; is, because the shape is what I got wrong for months.&lt;/p&gt;
+
+&lt;p&gt;Six rules I converged on.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. The skill file is 100 lines, hard cap.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Local models degrade fast as context grows. Not gracefully — they fall off a cliff and start ignoring the middle of what you told them. Every line in the skill file competes for attention with the actual task.&lt;/p&gt;
+
+&lt;p&gt;So compress. Telegraphese. Drop articles, drop hedging, drop the paragraph explaining why. Show the invocation instead of describing it:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;del&gt;“If you would like to look for messages from a particular person within the last week, you can use the find subcommand together with the –from flag, which accepts an email address or a name…”&lt;/del&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hq mail find --from someone --newer-than 7d&lt;/code&gt; — one precise query beats broad scans.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Twenty words instead of a hundred, and the second version is the one the model actually copies.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. Keep the verbose junk out of the context.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;API keys, account IDs, calendar IDs, absolute paths. None of it should ever appear in the model’s context. It all goes into a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;config.yaml&lt;/code&gt; that the CLI loads itself.&lt;/p&gt;
+
+&lt;p&gt;A 40-character opaque ID is a dozen tokens spent on nothing, plus a chance to typo it, plus a failed call, plus a repair attempt, plus a loop. Multiply by every command in a session. The model should type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hq cal free --from today&lt;/code&gt;, never an ID.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3. Speak the model’s dialect.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the one that surprised me most.&lt;/p&gt;
+
+&lt;p&gt;Every model has priors about what subcommands are named. Ask one to search your email and it types &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mail search&lt;/code&gt;. Another types &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mail find&lt;/code&gt;. A third confidently tries &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mail list&lt;/code&gt;. If your CLI disagrees, you get an error, then a repair attempt, then a re-read of the help text, then a spiral — and the context window is gone to a naming disagreement.&lt;/p&gt;
+
+&lt;p&gt;The fix costs five lines:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# whatever the model reaches for, it lands in the same place
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_parser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;find&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aliases&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;search&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;query&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;grep&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;list&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Either rename to match what your model reaches for, or accept all of them. This removed more failures than any prompt tuning I did.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4. Put retrieval inside the tool.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Never let the model run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;grep&lt;/code&gt;. One grep on a real corpus returns a wall of text, and the context is gone — along with the plan, the instructions, and any hope of finishing the task.&lt;/p&gt;
+
+&lt;p&gt;Give it a search command instead, with a hard result cap and an embedding index behind it. Semantic search matters more here than you’d expect: a weak model is bad at guessing the exact keyword a note was written with, and good at describing what it wants.&lt;/p&gt;
+
+&lt;p&gt;And return small JSON that admits what it hid:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;count&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;143&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;shown&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;truncated&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;results&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;...&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;truncated: true&lt;/code&gt; tells the model it didn’t see everything, so it narrows the query instead of confidently summarizing five items as if they were all of them.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;5. Test by watching it fail.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The test is not “was the answer good.” The test is &lt;strong&gt;what did it type&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Give the model a task, then read the transcript line by line and look only at the commands. Every wrong invocation is a bug — in your CLI’s naming, in your skill file’s wording, in a default you didn’t set. Almost never in the model. Fix the harness, rerun, watch again. Two or three rounds of this beat a week of prompt tweaking.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;6. Boundaries go in the code, not the prompt.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;My agent can read anything and draft anything. It cannot send email, book a meeting, or delete a note.&lt;/p&gt;
+
+&lt;p&gt;Not because I asked it nicely. Because &lt;strong&gt;there is no send verb in the CLI&lt;/strong&gt;. It doesn’t exist. No amount of confusion, hallucination, or misread instruction produces a sent email, because the capability isn’t there to be reached. Ten lines of prompt saying “never send” is a suggestion. A missing subcommand is a fact.&lt;/p&gt;
+
+&lt;p&gt;Everything the model produces is a draft in my drafts folder, a proposal on a task card, a comment I read. The machine collects; I decide.&lt;/p&gt;
+
+&lt;h3 id=&quot;scope-before-you-point-it-at-your-life&quot;&gt;Scope, before you point it at your life&lt;/h3&gt;
+
+&lt;p&gt;Two questions worth answering deliberately before a model touches your personal data:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What sits on disk in plaintext?&lt;/strong&gt; A local model doesn’t protect you if the index it searches is a world-readable pile of your email in a repo you might one day push somewhere. Decide what gets extracted to disk, and what stays in the source system.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Can it reach the internet?&lt;/strong&gt; A model with your inbox and a network connection is a different risk than a model with your inbox alone. Mine has neither an outbound send path nor a browser.&lt;/p&gt;
+
+&lt;p&gt;If you’re experimenting and not sure yet, run it in a container, or start with a small model on a restricted directory. The blast radius of a confused agent is whatever you handed it.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-this-is-fun&quot;&gt;Why this is fun&lt;/h3&gt;
+
+&lt;p&gt;Here’s the part I didn’t expect: the weak model made me build a better system.&lt;/p&gt;
+
+&lt;p&gt;A frontier model in the cloud papers over a badly designed tool. It guesses the right flag, recovers from the error, finds the file anyway. You never learn that your interface is bad. A small model on your laptop has no slack. It fails loudly on every rough edge, and each failure is a precise, reproducible bug report about your own design.&lt;/p&gt;
+
+&lt;p&gt;What you end up with is a set of commands that are short, well-named, hard to misuse, and documented in a hundred readable lines. That’s just a good tool. The model was the excuse to finally build one — and it runs on hardware I own, over data I never had to hand to anyone.&lt;/p&gt;
+
+&lt;p&gt;That’s the fun part.&lt;/p&gt;</content><author><name>Sadamori Kojaku</name></author><category term="blog" /><summary type="html">The data I can’t paste</summary></entry><entry><title type="html">The snake that eats its own tail</title><link href="https://skojaku.github.io/snaketail.html" rel="alternate" type="text/html" title="The snake that eats its own tail" /><published>2026-02-24T00:00:00-05:00</published><updated>2026-02-24T00:00:00-05:00</updated><id>https://skojaku.github.io/snaketail</id><content type="html" xml:base="https://skojaku.github.io/snaketail.html">&lt;h3 id=&quot;more-automation-more-babysitting&quot;&gt;More automation, more babysitting&lt;/h3&gt;
+
+&lt;p&gt;The more I automate, the more frequently I babysit them.&lt;/p&gt;
+
+&lt;p&gt;Automation promises to free up time. And it does — until something breaks. An automaton is designed to work on a predictable path, but the real world is full of the unexpected. When an automation fails, it needs a human to fix and rerun.&lt;/p&gt;
 
 &lt;p&gt;One automation is manageable. Five automations mean five things that can silently fail while I’m looking elsewhere. So more automation can lead to more babysitting a machine paradoxically.&lt;/p&gt;
 
@@ -18,9 +146,7 @@
   &lt;li&gt;&lt;strong&gt;Autonomous&lt;/strong&gt; — the system runs without supervision&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;The promise of automation is that once you get to Phase 4, you and future yourself are free from the task to be automated.
-But there is a new cost to pay, i.e., maintenance. The automated system that initially works can break when the environment changes and dependencies update.&lt;br /&gt;
-They need a regular checkup and repair. They need babysitting.&lt;/p&gt;
+&lt;p&gt;The promise of automation is that once you reach Phase 4, you and your future self are free. But Phase 4 is fragile. When the environment changes and dependencies update, the system silently breaks — pulling you out of Phase 4 and back to manual intervention. They need a regular checkup and repair. They need babysitting.&lt;/p&gt;
 
 &lt;h3 id=&quot;the-ouroboros-idea&quot;&gt;The Ouroboros idea&lt;/h3&gt;
 
@@ -36,7 +162,7 @@ They need a regular checkup and repair. They need babysitting.&lt;/p&gt;
 
 &lt;p&gt;My main use case is &lt;a href=&quot;https://snakemake.github.io&quot;&gt;Snakemake&lt;/a&gt;, a workflow manager for automating experiment pipelines. You define rules — inputs, outputs, commands — and Snakemake handles execution order, parallelism, and skips already-completed steps. This is an indispensable tool for me.&lt;/p&gt;
 
-&lt;p&gt;But Snakemake pipelines break in predictable and tedious ways:&lt;/p&gt;
+&lt;p&gt;But Snakemake pipelines break in predictable and tedious ways — Phase 4 failures that knock you back to manual intervention:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;you rename a variable or move a file, and rules quietly point to the wrong path&lt;/li&gt;
@@ -44,7 +170,7 @@ They need a regular checkup and repair. They need babysitting.&lt;/p&gt;
   &lt;li&gt;a package updates and breaks an API&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;None of these errors are hard to fix. All of them require you to stop what you’re doing, read a traceback, make a small edit, and rerun. Multiply by many pipelines and you’ve spent a morning on health checking.&lt;/p&gt;
+&lt;p&gt;None of these errors are hard to fix. All of them require you to stop what you’re doing, read a traceback, make a small edit, and rerun. Multiply by many pipelines and you’ve spent a morning on health checks.&lt;/p&gt;
 
 &lt;p&gt;This is mentally hard not because it’s difficult, but because it’s &lt;em&gt;interruptive&lt;/em&gt;. Every fix pulls you out of whatever you were actually thinking about.&lt;/p&gt;
 
@@ -112,17 +238,17 @@ Project: &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$DIR&lt;/span&gt;&lt;span
 &lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;This runs Snakemake, captures the log, passed the error to Claude Code with instructions to fix and commit, repeat. If it succeeds, it exits.&lt;/p&gt;
+&lt;p&gt;This runs Snakemake, captures the log, passes the error to Claude Code with instructions to fix and commit, and repeats. If it succeeds, it exits.&lt;/p&gt;
 
 &lt;p&gt;Every repair is committed to a dedicated branch (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;snaketail/YYYYMMDD-HHMMSS&lt;/code&gt;), so I can review exactly what was changed.&lt;/p&gt;
 
-&lt;p&gt;One caveat is that self-healing trades reproducibility for convenience. Each run may produce different code changes. Use it only when you understand the codebase well enough to review the fixes. But I see a lot of practical values for early development or testing on a new machine.&lt;/p&gt;
+&lt;p&gt;One caveat is that self-healing trades reproducibility for convenience. Each run may produce different code changes. Use it only when you understand the codebase well enough to review the fixes. But I see a lot of practical value for early development or testing on a new machine.&lt;/p&gt;
 
 &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
 
-&lt;p&gt;Snaketail closes that gap for a specific class of failures. The idea—feed the error log back to the healer, patch the issue, restart—can be applied to systems that often breaks. The snake eats its own tail and keeps going.&lt;/p&gt;
+&lt;p&gt;Snaketail closes that gap for a specific class of failures, keeping the pipeline at Phase 4 by automating the repair loop itself. The idea—feed the error log back to the healer, patch the issue, restart—can be applied to any system that often breaks. The snake eats its own tail and keeps going.&lt;/p&gt;
 
-&lt;p&gt;You still have to do your creative jobs. You shouldn’t have to babysit the machines.&lt;/p&gt;</content><author><name>Sadamori Kojaku</name></author><category term="blog" /><summary type="html">More automation, more babysitting</summary></entry><entry><title type="html">The invisible cyborgs</title><link href="http://localhost:4000/invisible-cyborg.html" rel="alternate" type="text/html" title="The invisible cyborgs" /><published>2026-02-07T00:00:00-05:00</published><updated>2026-02-07T00:00:00-05:00</updated><id>http://localhost:4000/invisible-cyborg</id><content type="html" xml:base="http://localhost:4000/invisible-cyborg.html">&lt;h3 id=&quot;building-my-parts&quot;&gt;Building my parts&lt;/h3&gt;
+&lt;p&gt;You still have to do your creative jobs. You shouldn’t have to babysit the machines.&lt;/p&gt;</content><author><name>Sadamori Kojaku</name></author><category term="blog" /><summary type="html">More automation, more babysitting</summary></entry><entry><title type="html">The invisible cyborgs</title><link href="https://skojaku.github.io/invisible-cyborg.html" rel="alternate" type="text/html" title="The invisible cyborgs" /><published>2026-02-07T00:00:00-05:00</published><updated>2026-02-07T00:00:00-05:00</updated><id>https://skojaku.github.io/invisible-cyborg</id><content type="html" xml:base="https://skojaku.github.io/invisible-cyborg.html">&lt;h3 id=&quot;building-my-parts&quot;&gt;Building my parts&lt;/h3&gt;
 
 &lt;p&gt;While reading &lt;a href=&quot;https://www.dtlarson.com/feed-the-beast&quot;&gt;Darek Larson’s blog&lt;/a&gt;, I daydreamed about a scene from &lt;a href=&quot;https://www.imdb.com/title/tt2379308/&quot;&gt;Psycho-Pass&lt;/a&gt;. People in this world are inseparable from AIs—just like us today. &lt;a href=&quot;https://psychopass.fandom.com/wiki/Toyohisa_Senguji&quot;&gt;Toyohisa Senguji&lt;/a&gt;, a man who replaced every part of himself with machines, asks a question that no longer seems like science fiction:&lt;/p&gt;
 
