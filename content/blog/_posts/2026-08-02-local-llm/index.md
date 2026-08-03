@@ -8,7 +8,7 @@ lang_alt_url: /localllm-jp.html
 lang_alt_label: 日本語(Japanese)
 ---
 
-<p style="color: #888; font-style: italic;">Note: This blog is something I write in the limited time I have. I write in Japanese (mother's tongue) and have an AI turn it into English, followed by light final touch. That is why it may read a little AI-ish here and there. Do forgive me!</p>
+<p style="color: #888; font-style: italic;">Note: This blog is something I write in the limited time I have. I wrote it in Japanese (mother's tongue) and had an AI turn it into English, followed by light final touch. That is why it may read a little AI-ish here and there. Do forgive me!</p>
 
 ![](/assets/blog/2026-08-02-local-llm/caged-bird.webp){: width="90%"}
 
