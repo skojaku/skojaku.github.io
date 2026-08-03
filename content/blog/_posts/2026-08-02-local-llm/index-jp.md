@@ -94,7 +94,7 @@ CLIの使い方は、理想的にはCLIのヘルプに全部書くべきなの�
 
 これを電報式にするとこうなる。
 
-> `mail search --from <person> --newer-than 7d` 結果は5件まで。
+> 送信者・直近1週間でメール検索: `mail search --from <person> --newer-than 7d`。結果は5件まで。
 
 トークン数にして、ざっくり5分の1になる。
 
