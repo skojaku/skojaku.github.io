@@ -83,6 +83,16 @@ Ideally, how to use a tool should all be written in the tool's help text. But th
 
 On top of that, skill files written by an LLM are full of needless decoration and wordy instructions. They crowd the model's working memory. So I write skills in telegram style. This saves quite a lot of tokens.
 
+Here is an example. When an LLM writes a skill, it comes out like this:
+
+> If you would like to search for emails from a particular person within the last week, you can use the search subcommand together with the --from option, which accepts an email address or a name. Please note that too many results can crowd the context, so it is recommended to limit the number of results.
+
+In telegram style, the same instruction becomes this:
+
+> `mail search --from <person> --newer-than 7d` Max 5 results.
+
+The token count drops to about a fifth.
+
 I also keep skills in line with a project-wide policy. Once you start writing skills that stray from the policy, you end up scratching your head, and maintenance becomes a pain.
 
 #### 4. Autonomous: let it run unsupervised
