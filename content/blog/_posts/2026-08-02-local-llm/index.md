@@ -71,10 +71,7 @@ This is also the heart of my hallucination fix. If I move the whole procedure of
 
 One more thing matters here. I design the command-line tools local-LLM-first. The way to do it is simple. I run the model for real, keep a log of failed tool calls, and watch for the mistakes it makes again and again. Then I redesign the tool to fit those mistakes. I fix an argument, or I turn search into lookup, and so on.
 
-For example:
-
-> The model kept typing `mail lookup` when the command was `mail search`.
-> So I renamed the command to lookup and kept search as an alias.
+For example, the model kept typing mail lookup when the command was mail search. So I renamed the command to lookup and kept search as an alias.
 
 #### 3. Automate: connect them with a meta-skill
 
