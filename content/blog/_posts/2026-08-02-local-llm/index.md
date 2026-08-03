@@ -2,112 +2,89 @@
 layout: post
 category: blog
 date: 2026-08-02
-title: Local LLMs are fun!
+title: The case for local LLMs
 slug: localllm
 ---
 
-### Local LLMs are a rabbit hole
+Local LLMs are a lot of fun. So much fun that I have wasted hours on them.
 
-Local LLMs are fun to play with. They hallucinate, ignore instructions, and stop in the middle of no where. But if I can get one to run properly, a lot of automation becomes possible.
+A local LLM can touch data that I cannot let a cloud LLM touch, which means it can automate all sorts of everyday tasks. I am in the middle of automating various things right now, and I have learned a lot along the way, so today I want to write about what I learned.
 
-I took that as an engineering challenge and spent a while on it, trying many local models and many harness designs. Here is what I learned.
+### The problem with cloud LLMs
 
-### Why not simply use cloud LLMs?
+Frontier models are straight-A students that handle almost anything well. The recent ones in particular integrate smoothly with Office, Gmail, and Google Workspace; they are easy to set up and often ready to use right away.
 
-Part of the motivation is to connect an LLM to protected data like emails, my wikis, and calender, which I cannot send to someone else's servers (e.g., ChatGPT, Cluade, etc). There are a lot of attractive LLM app and skills like Obsidian Cluade and Google Workspace skill. But I cannot simply use them due to this regulation.   
+Whether I may actually hand them my data, though, is a separate question. At my university, regulations forbid sharing many kinds of data, and I myself am reluctant to hand over personal information about me and my family. So I split my data into what I send to frontier models and what I do not.
 
-So anything touching that data has to be done manually, and remain almost unchanged since 2022. In the age of AIs I have grown less tolerant of it, and I keep looking for ways to hand it off and spend the time on the creative work I actually want to do.
+This is not paranoia; accidents have actually happened. At Samsung, employees pasted confidential source code and meeting notes into ChatGPT, and [the company ended up banning generative AI internally](https://www.forbes.com/sites/siladityaray/2023/05/02/samsung-bans-chatgpt-and-other-chatbots-for-employees-after-sensitive-code-leak/). ChatGPT's link-sharing feature put [thousands of conversations into Google search results](https://www.malwarebytes.com/blog/news/2025/08/openai-kills-short-lived-experiment-where-chatgpt-chats-could-be-found-on-google). Just recently, shared conversations and Artifacts from Anthropic's Claude [showed up in Google search](https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/) as well, and some of them reportedly contained [medical records of real patients and internal-only company documents](https://fortune.com/2026/07/27/a-trove-of-users-seemingly-private-conversations-with-anthropics-claude-ai-chatbot-showed-up-in-google-search-results/). DeepSeek went as far as [leaving a database of chat histories and API keys wide open on the internet](https://www.wiz.io/blog/wiz-research-uncovers-exposed-deepseek-database-leak). Once your data is on someone else's cloud, you no longer control what happens to it.
 
-Local LLMs are a very attractive answer. The model runs on my own hardware, so it can read my wiki and my email without leaving my laptop.
+But once I split my data this way, some tasks can use an LLM and some cannot. And many of the small daily tasks are exactly the ones that deal with data I cannot send to someone's cloud, so those stay manual and tedious.
 
-In its bare form, though, a local LLM fails a lot.
+So there is plenty to gain from a local LLM.
 
-### They are not smart
+### The problem with local LLMs
 
-There are roughly three ways a local model fails.
+Can you use one as-is, then? Not really. A raw local LLM is completely useless. It hallucinates a lot, stalls in the middle of its reasoning, forgets the instructions partway through, and looks at the same file over and over.
 
-First, it is slow. A cloud model answers almost instantly, while a local model spends a minute thinking out loud before it starts typing.
+The problems come down to roughly three.
 
-Second, it hallucinates. It makes up command-line flags, email addresses, and URLs that look plausible but do not exist.
+First, it can only follow a limited number of instructions. Recent benchmarks report that frontier models can follow [around 2,000 instructions at once](https://arize.com/blog/llm-instruction-following-benchmark-2026/), while [small models fall apart exponentially as the instructions pile up](https://arxiv.org/abs/2507.11538). In my experience too, a local LLM can reliably keep to a few dozen instructions at most; beyond that, it loses track of them.
 
-Third, it loops. It re-plans, searches again, and reads the same file again, until the context window is filled with its own confusion.
+Second, it hallucinates easily. A local LLM has been trained on less data and holds less knowledge inside, so when it strains to produce an answer anyway, it makes things up. Its memory is not great either: pile enough turns on top of a piece of information it got early on, and it forgets it.
 
-The slowness stopped bothering me once I stopped chatting with the model. If the deadline is "by the time I wake up," a minute per step costs nothing. So I run the model as a batch worker: a queue, a cron job, a task that either finished or did not. I don't watch it work. I just read what it produced in the morning.
+Third, it does not deal well with vague instructions. Given a vague instruction, a local LLM reasons its way to an interpretation and a plan, but the planning is often sloppy or wobbly, and the same input can produce completely different plans and fail.
 
-The other two are design problems, I believe. The model invents a flag because the tool has too many flags. It loops because the task has no clear next step. Waiting for a smarter model fixes neither of them.
+Put these three together and you get a loop: the model forgets the original instruction in the middle of its reasoning, forgets the file it read at the start, reads the same file again, the reasoning gets longer, and it forgets the instructions even more.
+
+Flip that around: if I can cover for these weaknesses by design, a whole lot of tasks become possible. This engineering problem is very fun.
 
 ### Documentation is automation
 
-Thomas A. Limoncelli's ["Documentation Is Automation"](https://cacm.acm.org/practice/documentation-is-automation/), which I wrote about [before](/snaketail.html), describes four phases on the road to automation:
+The principle at the root of how I solve this is Thomas A. Limoncelli's [Documentation Is Automation](https://cacm.acm.org/practice/documentation-is-automation/). It explains that automation happens in four stages. It is a guide for human engineering rather than for LLMs, but it is very helpful when building a system around a local LLM, so let me introduce it here.
 
-1. **Document** the steps
-2. **Find equivalents** — translate each step into a command
-3. **Automate** — chain the commands
-4. **Autonomous** — it runs without supervision
+1. **Document** — write down the steps
+2. **Find equivalents** — replace each step with a command
+3. **Automate** — chain the commands together
+4. **Autonomous** — let it run unsupervised
 
-A local model cannot reach phase 4 on its own. But it is good at phases 2 and 3: it can run commands and chain them, as long as the commands exist and the document is short enough to hold in its head.
+Automate, and the time spent on repeated tasks goes down. It takes an upfront investment of time, of course, but I think of it as paying off a time debt that would otherwise stretch far into the future.
 
-This changed how I write documentation. Writing the documentation is building the harness, because the document is the prompt itself. I write it for a colleague who reads fast, follows instructions literally, and forgets everything once the job is done.
+And the concrete way I ended up realizing these four stages is with command-line tools and skills. My system follows the four stages exactly, so let me walk through them in order.
 
-### The harness
+#### 1. Document — record first, then write it down
 
-My harness consists of a CLI tool and a skill file. The skill file describes the workflow and which command to run at each step, and the CLI does everything else. My CLI is called `hq`, and it wraps my mail, calendar, drive, and wiki. What it does is not so important here. What matters is its shape, which took me months to get right.
+To write things down, I first need a record of my daily work. For me, that record is the session with the LLM itself. As long as I save the sessions, every concrete step of the work stays there.
 
-**Keep the skill file short.** Mine is 100 lines, and I treat that as a hard cap. Local models degrade quickly as the context grows, and not gracefully. They fall off a cliff and start ignoring the middle part of the instructions. Every line in the skill file competes with the actual task for attention.
+On top of that, whenever a piece of work comes up, I have made it a habit to first create a task on [Forgejo](https://forgejo.org/) (a GitHub-like thing you can host yourself). This lets me look back later and see what tasks there were. Each task is tied to its session, so if I want the concrete steps, I just go look at the session. I use this to hunt, after the fact, for spots that could be automated.
 
-So I compress the file aggressively, almost like a telegram. No articles, no hedging, no paragraphs explaining why. Where possible, I show the command instead of describing it:
+Then, for work that keeps coming back, I write a skill — a short instruction file that tells the model how to do that work smoothly. In other words, my documentation has two layers: Forgejo (the record of tasks and sessions) and skills (the written-down procedures).
 
-> ~~"If you would like to look for messages from a particular person within the last week, you can use the find subcommand together with the --from flag, which accepts an email address or a name..."~~
->
-> `hq mail find --from someone --newer-than 7d` — one precise query beats broad scans.
+#### 2. Find equivalents — turn steps and skills into commands
 
-The model copies the second version, not the first.
+Next, I replace the documented steps and skills with command-line tools wherever I can.
 
-**Long opaque strings go into a config file.** API keys, account IDs, calendar IDs, absolute paths: none of these should enter the model's context. They all live in a `config.yaml` that the CLI reads by itself. A 40-character ID costs a dozen tokens for nothing, and the model may typo it, fail the call, and then try to repair it. With the config file, the model just types `hq cal free --from today` and never sees an ID.
+A local LLM cannot be trusted, so if I hand it the whole job, tasks go unfinished, or it gets stuck in a loop somewhere unexpected. So whatever can be automated, I automate with command-line tools, to lighten the model's load. Concretely, I have command-line tools that look things up in Gmail, write email drafts, check my calendar for conflicts, access Google Drive, and so on.
 
-**Match the model's vocabulary.** This one surprised me. Every model has its own prior about what subcommands should be called. When I ask it to search my email, one model types `mail search`, another types `mail find`, and another `mail list`. If the CLI disagrees with the model's guess, I get an error, a repair attempt, a re-read of the help text, and often a loop. All of this is paid from the context window.
+#### 3. Automate — connect them with a meta-skill
 
-The fix is five lines:
+Real tasks do not arrive politely one at a time. Some stretch across several tasks; some new tasks arrive with an existing task tucked inside. So I write what I call a meta-skill. A meta-skill is a skill for using the other skills and commands. It describes the overall flow of the work: which tool or skill to use at which moment.
 
-```python
-# whatever the model reaches for, it lands in the same place
-sub.add_parser("find", aliases=["search", "query", "grep", "list"])
-```
+There is a knack to writing skills. As I said above, a local LLM cannot follow many instructions. So I push most of the work into the command-line tools and keep the skills short.
 
-Rename the command to whatever your model likes to type, or just accept all of them. This one change removed more failures than anything else I tried.
+Ideally, how to use a tool should all be written in the tool's own help text. But then the model has to run a command every time to read it, and that wastes time. So I deliberately write the usage into the skill.
 
-**Retrieval belongs inside the tool.** I do not let the model run `grep`. A single grep over a real corpus returns a wall of text, and the context is gone, together with the plan and the instructions.
+On top of that, skill files written by an LLM are full of needless decoration and wordy instructions, which crowd the model's working memory. So I write skills in telegram style. This saves quite a lot of tokens.
 
-Instead, I give the model a search command with a result cap and an embedding index behind it. Semantic search matters more than I expected here. A weak model is bad at guessing the exact keyword a note was written with, but it is fine at describing what it is looking for.
+I also keep skills in line with a project-wide policy. Once you start writing skills that stray from the policy, you end up scratching your head, and maintenance becomes a pain.
 
-The output should also be honest about what it hid:
+#### 4. Autonomous — let it run unsupervised
 
-```json
-{"count": 143, "shown": 5, "truncated": true, "results": ["..."]}
-```
+With all of this in place, the LLM can finally do tasks fully on its own. Hand it a Forgejo task, and it runs to the end, following the flow written in the meta-skill and calling the command-line tools along the way.
 
-Without the `truncated` field, the model happily summarizes five results as if they were all 143.
+What matters most when running unsupervised is the safety net. I first decide which parts get automated and which parts do not, and then I put only the allowed operations into the command-line tools, deliberately leaving the rest out. For example, so that the local LLM cannot send an email by mistake, the mail tool simply has no send function. And so that it cannot invite people to meetings on its own, the calendar tool has no invitation function either.
 
-**Test by reading what it typed, not what it answered.** I give the model a task and read the transcript, looking only at the commands it typed. Almost every wrong invocation turns out to be a bug on my side: the CLI's naming, the skill file's wording, or a default I forgot to set. It is almost never the model's fault. I fix it, rerun, and read again. Two or three rounds of this improved things more than a week of rewording prompts.
+My boundary line is whether the work can be redone. Work that can be redone gets automated; work that cannot be redone does not. Drawing the line inside the tools is far more reliable than pleading "never send" in a prompt — and in fact, the LLM has never once crossed that line on its own.
 
-**Boundaries live in the code, not in the prompt.** My agent can read anything and draft anything. But it cannot send an email, book a meeting, or delete a note, simply because the CLI has no such commands. I never wrote them. A prompt saying "never send" works only if the model reads it correctly every single time. A missing subcommand does not depend on that.
+### In closing
 
-So what comes out of the agent is a draft in my drafts folder or a comment on a task card. The agent collects and drafts, and I make the final call.
-
-### Scope
-
-Before letting a model touch your personal data, I think two questions are worth asking.
-
-First, what sits on disk in plaintext? Running the model locally does not help much if the search index is a readable pile of your emails, sitting in a repo you might push somewhere one day. It is worth deciding what gets extracted to disk and what stays in the source system.
-
-Second, can it reach the internet? A model with your inbox and a network connection is a different risk from a model with your inbox alone. Mine has no way to send anything out, and no browser.
-
-If you are still experimenting, run it in a container, or start with a small model on a restricted directory. A confused agent can only break what you handed to it.
-
-### Why this is fun
-
-The weak model forced me to build a better system.
-
-A frontier model in the cloud covers up a badly designed tool. It guesses the right flag, recovers from errors, and finds the file anyway, so I never notice that my interface is bad. A small local model has no such slack. It fails at every rough edge, and each failure is a reproducible bug report about my own design.
-
-What I ended up with is a handful of commands that are short, well named, hard to misuse, and documented in a hundred lines. That is simply a good tool. The weak model was a good excuse to finally build one.
+All sorts of local LLMs are available now, and new models and checkpoints keep coming. The better local LLMs get, the more tasks I can hand over. I am very much looking forward to what comes next.
