@@ -67,6 +67,12 @@ Next, I replace the documented steps and skills with command-line tools wherever
 
 A local LLM cannot be trusted. If I hand it the whole job, it leaves tasks unfinished or gets stuck in a loop somewhere unexpected. So I automate whatever can be automated with command-line tools, to lighten the model's load. Concretely, I have command-line tools that look things up in Gmail, write email drafts, check my calendar for conflicts, access Google Drive, and so on.
 
+This is also the heart of my hallucination fix. If I move the whole procedure of a task into the command-line tool, the model has no room to invent steps. The hallucination has nowhere to start.
+
+On top of that, I run the model for real and record the habits it shows when it fails to use a tool. Then I change the tool to fit those habits. For example, say I make a mail command that takes a search argument. Some LLMs will hallucinate a different argument, like find or lookup. So I keep a log of failed tool calls, check which failures repeat, and fold that into the design of the tool. In this case, the tool just accepts find and lookup as aliases too.
+
+Another example: I do not let the model use grep to search my wiki. grep is a search command that LLMs love. But grep spits out a huge amount of text, the context fills up right away, and the model's performance falls off a cliff. To avoid this, I use a command called [rtk](https://github.com/rtk-ai/rtk) and I built a vector database of my own, and I make the model pull information from there. For details, [this blog](https://dev.to/arshtechpro/how-rtk-reduces-llm-token-usage-for-ai-coding-agents-2kfd) covers rtk well, and [this article](https://www.pinecone.io/learn/vector-database/) covers vector databases.
+
 #### 3. Automate: connect them with a meta-skill
 
 Real tasks do not arrive politely one at a time. Some stretch across several tasks. Some new tasks arrive with an existing task tucked inside. So I write what I call a meta-skill. A meta-skill is a skill for using the other skills and commands. It describes the overall flow of the work: which tool or skill to use at which moment.
