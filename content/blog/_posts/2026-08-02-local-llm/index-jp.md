@@ -8,8 +8,7 @@ slug: localllm-jp
 
 (この記事の英語版は[こちら](/localllm.html)にあります。)
 
-![](https://pbs.twimg.com/media/Dm-Whl1U4AAJPcz.jpg){: width="70%"}
-<p style="color: #888; font-size: 0.85em; text-align: center;">シビュラシステム、『<a href="https://psychopass.fandom.com/wiki/Sibyl_System">PSYCHO-PASS サイコパス</a>』(Production I.G.) より</p>
+![](/assets/blog/2026-08-02-local-llm/caged-bird.webp){: width="90%"}
 
 ローカルLLMはとても面白い。面白すぎて何時間も無駄にしてしまった。
 

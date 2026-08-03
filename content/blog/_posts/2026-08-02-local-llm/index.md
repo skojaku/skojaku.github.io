@@ -8,8 +8,7 @@ slug: localllm
 
 <p style="color: #888; font-style: italic;">Note: This is an English version of a post I originally <a href="/localllm-jp.html" style="text-decoration: underline;">wrote in Japanese</a>. This blog is something I write in the limited time I have, and writing in Japanese is faster for me, so I write in Japanese first and have an AI turn it into English. I touch it up in places myself. That is why it may read a little AI-ish here and there. Do forgive me!</p>
 
-![](https://pbs.twimg.com/media/Dm-Whl1U4AAJPcz.jpg){: width="70%"}
-<p style="color: #888; font-size: 0.85em; text-align: center;">The Sibyl System, from <a href="https://psychopass.fandom.com/wiki/Sibyl_System">PSYCHO-PASS</a> (Production I.G.)</p>
+![](/assets/blog/2026-08-02-local-llm/caged-bird.webp){: width="90%"}
 
 Local LLMs are a lot of fun. So much fun that I have wasted hours on them.
 
