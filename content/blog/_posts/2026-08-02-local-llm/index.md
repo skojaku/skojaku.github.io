@@ -6,7 +6,7 @@ title: The case for local LLMs
 slug: localllm
 ---
 
-*Note: This is an English version of a post I originally [wrote in Japanese](/localllm-jp.html). I had an AI translate it and touched it up in places myself, but it is still largely AI-generated — which is why it may read a little AI-ish here and there.*
+*Note: This is an English version of a post I originally [wrote in Japanese](/localllm-jp.html). This blog is something I write in the limited time I have, and writing in Japanese is faster for me, so I write in Japanese first and have an AI turn it into English. I touch it up in places myself, but it is still largely AI-generated — which is why it may read a little AI-ish here and there. Do forgive me!*
 
 Local LLMs are a lot of fun. So much fun that I have wasted hours on them.
 
