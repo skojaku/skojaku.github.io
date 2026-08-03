@@ -69,9 +69,12 @@ A local LLM cannot be trusted. If I hand it the whole job, it leaves tasks unfin
 
 This is also the heart of my hallucination fix. If I move the whole procedure of a task into the command-line tool, the model has no room to invent steps. The hallucination has nowhere to start.
 
-On top of that, I run the model for real and record the habits it shows when it fails to use a tool. Then I change the tool to fit those habits. For example, say I make a mail command that takes a search argument. Some LLMs will hallucinate a different argument, like find or lookup. So I keep a log of failed tool calls, check which failures repeat, and fold that into the design of the tool. In this case, the tool just accepts find and lookup as aliases too.
+One more thing matters here. I design the command-line tools local-LLM-first. The way to do it is simple. I run the model for real, keep a log of failed tool calls, and watch for the mistakes it makes again and again. Then I redesign the tool to fit those mistakes. I fix an argument, or I turn search into lookup, and so on.
 
-Another example: I do not let the model use grep to search my wiki. grep is a search command that LLMs love. But grep spits out a huge amount of text, the context fills up right away, and the model's performance falls off a cliff. To avoid this, I use a command called [rtk](https://github.com/rtk-ai/rtk) and I built a vector database of my own, and I make the model pull information from there. For details, [this blog](https://dev.to/arshtechpro/how-rtk-reduces-llm-token-usage-for-ai-coding-agents-2kfd) covers rtk well, and [this article](https://www.pinecone.io/learn/vector-database/) covers vector databases.
+For example:
+
+> The model kept typing `mail lookup` when the command was `mail search`.
+> So I renamed the command to lookup and kept search as an alias.
 
 #### 3. Automate: connect them with a meta-skill
 
@@ -102,6 +105,10 @@ With all of this in place, the LLM can finally do whole tasks without me. When I
 The important part of running unsupervised is the safety net. I first decide which parts to automate and which parts not to. Then I put only the allowed operations into the command-line tools and deliberately leave the rest out. For example, the mail tool has no send function, so the local LLM cannot send an email by mistake. The calendar tool has no invitation function either, so it cannot invite people to meetings.
 
 My boundary line is whether the work can be redone. If the work can be redone, I automate it. If it cannot, I do not. Drawing the line inside the tools is far more reliable than pleading "never send" in a prompt. In fact, the LLM has never once crossed that line.
+
+#### Optional: do not let the model use grep
+
+This one is optional, but it helped a lot. I do not let the model use grep to search my wiki. grep is a search command that LLMs love. But grep spits out a huge amount of text, the context fills up right away, and the model's performance falls off a cliff. To avoid this, I use a command called [rtk](https://github.com/rtk-ai/rtk) and I built a vector database of my own, and I make the model pull information from there. For details, [this blog](https://dev.to/arshtechpro/how-rtk-reduces-llm-token-usage-for-ai-coding-agents-2kfd) covers rtk well, and [this article](https://www.pinecone.io/learn/vector-database/) covers vector databases.
 
 ### In closing
 
