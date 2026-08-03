@@ -8,6 +8,9 @@ slug: localllm-jp
 
 (この記事の英語版は[こちら](/localllm.html)にあります。)
 
+![](https://pbs.twimg.com/media/Dm-Whl1U4AAJPcz.jpg){: width="70%"}
+<p style="color: #888; font-size: 0.85em; text-align: center;">シビュラシステム、『<a href="https://psychopass.fandom.com/wiki/Sibyl_System">PSYCHO-PASS サイコパス</a>』(Production I.G.) より</p>
+
 ローカルLLMはとても面白い。面白すぎて何時間も無駄にしてしまった。
 
 ローカルLLMは、クラウドLLMには触らせられないデータを触ることができ、日常の様々なタスクを自動化できる。僕はいろいろ自動化を今している途中なのだが、その過程で色々学びがあったので、今日はそれを書きたい。
@@ -17,6 +20,8 @@ slug: localllm-jp
 フロンティアモデルは何でもそつなくこなせる優等生である。特に最近のフロンティアモデルは、Office周りやGmail、Google Workspaceとの統合がスムーズで、導入も簡単で、すぐに使えることが多い。
 
 一方で、実際にデータを渡してよいかは別の問題である。僕の大学ではレギュレーションによって渡せないデータが多くあり、かつ僕自身も自分や家族の個人情報を渡すことに抵抗があるため、フロンティアモデルに送るデータと送らないデータを分けている。
+
+![](/assets/blog/2026-08-02-local-llm/data-split-jp.svg){: width="70%"}
 
 これは杞憂ではなく、実際に事故は起きている。Samsung では社員が機密のソースコードや会議録を ChatGPT に貼り付けてしまい、[社内で生成AIの利用が禁止になった](https://www.forbes.com/sites/siladityaray/2023/05/02/samsung-bans-chatgpt-and-other-chatbots-for-employees-after-sensitive-code-leak/)。ChatGPT の共有リンク機能では、[数千件の会話が Google 検索に載ってしまった](https://www.malwarebytes.com/blog/news/2025/08/openai-kills-short-lived-experiment-where-chatgpt-chats-could-be-found-on-google)。つい最近も、Anthropic の Claude で[共有した会話や Artifact が Google 検索に載っていた](https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/)ことが話題になったばかりで、その中には[実在の患者の医療記録や社外秘の文書まで含まれていた](https://fortune.com/2026/07/27/a-trove-of-users-seemingly-private-conversations-with-anthropics-claude-ai-chatbot-showed-up-in-google-search-results/)という。DeepSeek に至っては、[チャット履歴やAPIキーを含むデータベースを丸ごとインターネットに公開してしまっていた](https://www.wiz.io/blog/wiz-research-uncovers-exposed-deepseek-database-leak)。一度誰かのクラウドに送ったデータは、その後どうなるか自分ではコントロールできない。
 

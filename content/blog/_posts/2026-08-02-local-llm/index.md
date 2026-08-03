@@ -8,6 +8,9 @@ slug: localllm
 
 <p style="color: #888; font-style: italic;">Note: This is an English version of a post I originally <a href="/localllm-jp.html" style="text-decoration: underline;">wrote in Japanese</a>. This blog is something I write in the limited time I have, and writing in Japanese is faster for me, so I write in Japanese first and have an AI turn it into English. I touch it up in places myself. That is why it may read a little AI-ish here and there. Do forgive me!</p>
 
+![](https://pbs.twimg.com/media/Dm-Whl1U4AAJPcz.jpg){: width="70%"}
+<p style="color: #888; font-size: 0.85em; text-align: center;">The Sibyl System, from <a href="https://psychopass.fandom.com/wiki/Sibyl_System">PSYCHO-PASS</a> (Production I.G.)</p>
+
 Local LLMs are a lot of fun. So much fun that I have wasted hours on them.
 
 A local LLM can touch data that I cannot let a cloud LLM touch. That means it can automate all sorts of everyday tasks. I am in the middle of automating various things right now. I have learned a lot along the way, so today I want to write about it.
@@ -17,6 +20,8 @@ A local LLM can touch data that I cannot let a cloud LLM touch. That means it ca
 Frontier models are straight-A students that handle almost anything well. The recent ones in particular integrate smoothly with Office, Gmail, and Google Workspace. They are easy to set up and often ready to use right away.
 
 Handing them my data is a separate question, though. At my university, regulations forbid sharing many kinds of data, and I myself am reluctant to hand over personal information. So I split my data into what I send to frontier models and what I do not.
+
+![](/assets/blog/2026-08-02-local-llm/data-split-en.svg){: width="70%"}
 
 I am not just being paranoid here. Accidents have actually happened. At Samsung, employees pasted confidential source code and meeting notes into ChatGPT, and [the company ended up banning generative AI internally](https://www.forbes.com/sites/siladityaray/2023/05/02/samsung-bans-chatgpt-and-other-chatbots-for-employees-after-sensitive-code-leak/). ChatGPT's link-sharing feature put [thousands of conversations into Google search results](https://www.malwarebytes.com/blog/news/2025/08/openai-kills-short-lived-experiment-where-chatgpt-chats-could-be-found-on-google). Just recently, shared conversations and Artifacts from Anthropic's Claude [showed up in Google search](https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/) as well. Some of them reportedly contained [medical records of real patients and internal-only company documents](https://fortune.com/2026/07/27/a-trove-of-users-seemingly-private-conversations-with-anthropics-claude-ai-chatbot-showed-up-in-google-search-results/). DeepSeek went as far as [leaving a database of chat histories and API keys wide open on the internet](https://www.wiz.io/blog/wiz-research-uncovers-exposed-deepseek-database-leak). Once your data is on someone else's cloud, you no longer control what happens to it.
 

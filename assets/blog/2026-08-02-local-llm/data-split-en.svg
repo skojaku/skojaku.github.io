@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" font-family="Menlo, Consolas, 'Courier New', monospace">
+  <defs>
+    <marker id="arrow-en" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+  </defs>
+
+  <!-- my data -->
+  <rect x="175" y="14" width="130" height="34" rx="4" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="240" y="36" text-anchor="middle" font-size="14" fill="#1a1a1a">my data</text>
+
+  <!-- arrow down -->
+  <line x1="240" y1="48" x2="240" y2="82" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arrow-en)"/>
+
+  <!-- can I send this? -->
+  <rect x="150" y="84" width="180" height="34" rx="4" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="240" y="106" text-anchor="middle" font-size="14" fill="#1a1a1a">can I send this?</text>
+
+  <!-- branch lines -->
+  <path d="M 200 118 C 160 140, 120 150, 105 168" fill="none" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arrow-en)"/>
+  <path d="M 280 118 C 320 140, 360 150, 375 168" fill="none" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arrow-en)"/>
+
+  <text x="140" y="140" text-anchor="middle" font-size="12" fill="#666">yes</text>
+  <text x="345" y="140" text-anchor="middle" font-size="12" fill="#666">no</text>
+
+  <!-- cloud LLM box -->
+  <rect x="25" y="170" width="160" height="60" rx="4" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="105" y="196" text-anchor="middle" font-size="14" fill="#1a1a1a">cloud LLM</text>
+  <text x="105" y="215" text-anchor="middle" font-size="11" fill="#666">(frontier models)</text>
+
+  <!-- local LLM box -->
+  <rect x="295" y="170" width="160" height="60" rx="4" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="375" y="196" text-anchor="middle" font-size="14" fill="#1a1a1a">local LLM</text>
+  <text x="375" y="215" text-anchor="middle" font-size="11" fill="#666">(on my machine)</text>
+
+  <!-- footnotes -->
+  <text x="105" y="248" text-anchor="middle" font-size="11" fill="#888">Office, Gmail, Calendar…</text>
+  <text x="375" y="248" text-anchor="middle" font-size="11" fill="#888">everyday tasks on private data</text>
+</svg>
