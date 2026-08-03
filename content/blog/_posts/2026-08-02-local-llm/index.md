@@ -8,6 +8,8 @@ lang_alt_url: /localllm-jp.html
 lang_alt_label: 日本語(Japanese)
 ---
 
+<p style="color: #888; font-style: italic;">Note: This blog is something I write in the limited time I have, and writing in Japanese is faster for me, so I write in Japanese first and have an AI turn it into English. I touch it up in places myself. That is why it may read a little AI-ish here and there. Do forgive me!</p>
+
 ![](/assets/blog/2026-08-02-local-llm/caged-bird.webp){: width="90%"}
 
 Local LLMs are a lot of fun. So much fun that I have wasted hours on them.
