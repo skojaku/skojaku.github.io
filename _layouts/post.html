@@ -13,5 +13,11 @@ layout: default
     <time datetime="{{ page.date }}">{{ page.date | date: site.theme_config.date_format }}</time>
   </p>
 
+  {%- if page.lang_alt_url -%}
+  <p style="margin: -0.8rem 0 1.5rem 1rem; color: #888;">
+    <a href="{{ page.lang_alt_url | relative_url }}" style="text-decoration: underline;">{{ page.lang_alt_label }}</a>
+  </p>
+  {%- endif -%}
+
   {{ content }}
 </article>

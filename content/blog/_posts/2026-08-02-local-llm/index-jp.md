@@ -4,9 +4,10 @@ category: blog
 date: 2026-08-02
 title: ローカルLLMのすすめ
 slug: localllm-jp
+hidden: true
+lang_alt_url: /localllm.html
+lang_alt_label: English
 ---
-
-(この記事の英語版は[こちら](/localllm.html)にあります。)
 
 ![](/assets/blog/2026-08-02-local-llm/caged-bird.webp){: width="90%"}
 

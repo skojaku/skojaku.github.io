@@ -20,6 +20,14 @@ CompleNet 2026, Zaragoza, Spain (May 4-8, 2026)
 
 ## Selected works
 
+### Uncovering simultaneous breakthroughs with a robust measure of disruptiveness
+
+Kim, M., Kojaku, S., & Ahn, Y. Y. (2025). Uncovering simultaneous breakthroughs with a robust measure of disruptiveness. Science Advances.
+
+- 📝 [Blog](https://munjungkim.github.io/embedding-disruptiveness-blog/)
+- 💻 [Code](https://github.com/yy/embedding-disruptiveness)
+- 📄 [Paper](https://doi.org/10.1126/sciadv.adx3420)
+
 ### Implicit degree bias in the link prediction task
 
 Aiyappa, R., Wang, X., Kim, M., Seckin, O. C., Yoon, J., Ahn, Y. Y., & Kojaku, S. (2025). Implicit degree bias in the link prediction task. ICML 2025.

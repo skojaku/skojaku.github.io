@@ -4,9 +4,9 @@ category: blog
 date: 2026-08-02
 title: Invitation to Local LLMs for Daily Tasks
 slug: localllm
+lang_alt_url: /localllm-jp.html
+lang_alt_label: 日本語(Japanese)
 ---
-
-<p style="color: #888; font-style: italic;">Note: This is an English version of a post I originally <a href="/localllm-jp.html" style="text-decoration: underline;">wrote in Japanese</a>. This blog is something I write in the limited time I have, and writing in Japanese is faster for me, so I write in Japanese first and have an AI turn it into English. I touch it up in places myself. That is why it may read a little AI-ish here and there. Do forgive me!</p>
 
 ![](/assets/blog/2026-08-02-local-llm/caged-bird.webp){: width="90%"}
 
@@ -93,7 +93,7 @@ Here is an example. When an LLM writes a skill, it comes out like this:
 
 In telegram style, the same instruction becomes this:
 
-> `mail search --from <person> --newer-than 7d` Max 5 results.
+> Search mail from person, last week: `mail search --from <person> --newer-than 7d`. Max 5 results.
 
 The token count drops to about a fifth.
 
