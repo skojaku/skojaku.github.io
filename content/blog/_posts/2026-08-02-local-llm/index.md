@@ -34,7 +34,7 @@ First, it can only follow a limited number of instructions. Recent benchmarks re
 
 Second, it hallucinates easily. A local LLM has been trained on less data and holds less knowledge inside. So when it strains to produce an answer anyway, it makes things up. Its memory is not great either. After many turns, it forgets what it learned at the start.
 
-Third, it does not deal well with vague instructions. When the instruction is vague, a local LLM tries to interpret it and make a plan through its reasoning. But the planning is often sloppy and unstable. The same input can produce completely different plans, and the task fails.
+Third, it does not deal well with vague instructions. It tries to interpret them and make a plan through its reasoning. But the planning is often sloppy and unstable. The same input can produce completely different plans, and the task fails.
 
 Put these three together and you get a loop. The model forgets the original instruction in the middle of its reasoning, forgets the file it read at the start, and reads the same file again. The reasoning gets longer, and it forgets the instructions even more.
 
@@ -57,7 +57,7 @@ In my case, the four stages took the shape of command-line tools and skills. My 
 
 To write things down, I first need a record of my daily work. For me, that record is the session with the LLM. If I save the sessions, every concrete step of the work stays there.
 
-On top of that, whenever a piece of work comes up, I have made it a habit to first create a task on [Forgejo](https://forgejo.org/) (a GitHub-like thing you can host yourself). This lets me look back later and see what tasks there were. Each task is tied to its session, so if I want the concrete steps, I just go look at the session. Later, I look back over these tasks to find spots that could be automated.
+On top of that, whenever a piece of work comes up, I make it a habit to first create a task on [Forgejo](https://forgejo.org/) (a GitHub-like thing you can host yourself). This lets me look back later and see what tasks there were. Each task is tied to its session, so if I want the concrete steps, I just go look at the session. Later, I look back over these tasks to find spots that could be automated.
 
 Then, for work that keeps coming back, I write a skill, a short instruction file that tells the model how to do that work smoothly. In other words, my documentation has two layers: Forgejo (the record of tasks and sessions) and skills (the written-down procedures).
 
@@ -65,11 +65,11 @@ Then, for work that keeps coming back, I write a skill, a short instruction file
 
 Next, I replace the documented steps and skills with command-line tools wherever I can.
 
-A local LLM cannot be trusted. If I hand it the whole job, it leaves tasks unfinished or gets stuck in a loop somewhere unexpected. So I automate whatever can be automated with command-line tools, to lighten the model's load. Concretely, I have command-line tools that look things up in Gmail, write email drafts, check my calendar for conflicts, access Google Drive, and so on.
+A local LLM cannot be trusted. If I hand it the whole job, it leaves tasks unfinished or gets stuck in a loop somewhere unexpected. So I automate whatever I can with command-line tools, to lighten the model's load. Concretely, I have command-line tools that look things up in Gmail, write email drafts, check my calendar for conflicts, access Google Drive, and so on.
 
 This is also the heart of my hallucination fix. If I move the whole procedure of a task into the command-line tool, the model has no room to invent steps. The hallucination has nowhere to start.
 
-One more thing matters here. I design the command-line tools local-LLM-first. The way to do it is simple. I run the model for real, keep a log of failed tool calls, and watch for the mistakes it makes again and again. Then I redesign the tool to fit those mistakes. I fix an argument, or I turn search into lookup, and so on.
+One more thing matters here. I design the command-line tools local-LLM-first. I run the model for real, keep a log of failed tool calls, and watch for the mistakes it makes again and again. Then I redesign the tool to fit those mistakes. I fix an argument, or I turn search into lookup, and so on.
 
 For example, the model kept typing mail lookup when the command was mail search. So I renamed the command to lookup and kept search as an alias.
 
