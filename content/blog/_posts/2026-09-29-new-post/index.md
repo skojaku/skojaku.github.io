@@ -5,38 +5,42 @@ date: 2026-09-29
 title: More is less
 slug: more-is-less
 published: false
+lang_alt_url: /more-is-less-jp.html
+lang_alt_label: 日本語(Japanese)
 ---
 
-最近、AIで書かれた論文をたくさん読むようになった。僕自身、AIで論文を書くことも増え、それによって論文はだいぶ書きやすくなった。その一方で、AIに論文を書かせすぎると、とても疲れる作業が待っている。それはレビューである。
+<p style="color: #888; font-style: italic;">Note: This blog is something I write in the limited time I have. I wrote it in Japanese (mother's tongue) and had an AI turn it into English, followed by light final touch. That is why it may read a little AI-ish here and there. Do forgive me!</p>
 
-AIが書いた文章は読みやすいというのは、ChatGPTが出た時に思ったことだが、AIが自律性を持って論文を書く場合、書かれた文章はとても読みにくい。これは特定のAIモデルに限ったことではなく、どのモデルでも読みにくい文章が出てくる。学生もAIを使って論文をたくさん書いて僕にレビューを求めてくるが、読むのがとても大変である。
+Lately I have been reading a lot of papers written by AI. I also write papers with AI myself now, and it has made writing much easier. The flip side is that if you let AI write too much, a very tiring job awaits: review.
 
-なぜ大変なのかを考えてみた。まず、AIが書く文章の傾向を整理する。
+When ChatGPT came out, I thought AI-written text was easy to read. But when an AI writes a paper autonomously, the text is very hard to read. This is not tied to a particular model; whichever model I try, the output is hard to read. My students also use AI to write lots of papers and ask me to review them, and reading them is a real burden.
 
-AIが書く論文には、情報が詰め込まれている。図や表が多く、しかもそれぞれが密で、とてもカラフルである。定義されていない言葉が散りばめられ、学術界の用語ではなくソフトウェアエンジニアの用語が多用される。
+I tried to work out why. First, let me lay out the tendencies I see in AI-written text.
 
-また、簡単なことを短く言えばいいのに、長ったらしく書く。情報はスカスカなのに、文章の量は多い。読むのに時間がかかるうえ、結局何が言いたかったのか分かりにくい。
+AI-written papers are packed with information. There are many figures and tables, each of them dense and very colorful. Terms are scattered around without definitions, and the vocabulary is that of software engineering rather than the terms used in academia.
 
-加えて、文章中に数字が本当に細かく書かれている。数字を一つ一つ取り上げて、「だからこうである」と説明する。僕はこのような書き方をこれまでしてこなかったし、そのような論文を読み慣れてはいない。
+The text also says simple things at great length. The information is thin, yet the amount of text is large. It takes time to read, and in the end it is hard to tell what the paper wanted to say.
 
-書き手の負担を考えて、細かい数字を文章中に書くということはこれまで避けてきた。なぜなら、数字が変わったら本文を全て直さなければならないし、誤りなく表の数値を本文に移すことはとても労力のかかることであったからだ。また、読者が必ずしも細かい結果に注意を払っているとも考えられなかったので、僕はこれまで基本的に文章中での細かい結果の記述は控え、テキストでは鍵となるトレンド、そしてそれを説明する文といった情報の統合に重きを置いて書いてきた。こちらの方が文章は少なくて済むし、全体像がぼやけず、また著者の観点から見てもメンテナンスがしやすかったからである。
+In addition, the text spells out numbers in fine detail. It picks up the numbers one by one and explains "therefore this holds." I have never written this way, and I am not used to reading papers written this way.
 
-論文は一度書けば終わりというものではなくて、書いている途中に新しい実験の必要性が分かったり、追加で実験をして結果を変える必要があったり、表や図を全く新しく変えることが多々ある。文章を数字に紐づけると、その都度直す労力が増える。だから僕はやってこなかった。
+For the writer, I have avoided putting detailed numbers in the text. If a number changes, the whole text has to be fixed, and copying table values into the text without error is laborious. I also doubted that readers pay close attention to fine results. So I have generally kept detailed results out of the prose and focused on integrating information: the key trends, and sentences that explain them. This takes less text, keeps the big picture in focus, and is easier for the author to maintain.
 
-AIが入ってくると、それはどうやら違うようだ。AIは書かれた文章を細かく理解できるので、彼らは「情報はたくさんあればあるほど良い」と考えているように見える。しかし人間は情報が多すぎると注意が散って理解が阻害されるということがあり、どうやらAIには認知の制約が無いので、人間の事情を知らないようである。
+A paper is not finished once written. While writing, I find that a new experiment is needed, or that extra experiments change the results, and tables and figures often get replaced entirely. Tying the text to the numbers adds work every time, so I have not done it.
 
-似たようなことが数式の導出にも見て取れる。AIに数式を導出させると、大抵このような型にはまっている。まず記号を最初に一気に定義してしまう。「Xがこうで、Yがこうで、Zがこう」。その後に、その全て定義された記号を使って式をどんどん書いていく。これは非常に読みにくい。なぜなら人間は、その全ての記号を1つずつ記憶してからでないと式が理解できないからである。理解しやすい形というのは、情報を小出しにしていって一つ一つ積み上げるスタイルが良いと僕は思っている。AIはどちらかというと、最初に全て材料を出して、その後に全体の写真を一気に焼き付けるという方法を好むようだ。
+With AI, things seem to be different. AI can understand the written text in fine detail, so it seems to believe that the more information, the better. But humans lose focus and understand less when given too much information. AI has no such cognitive limit, so it does not seem to know the human side of the story.
 
-似たような構造が、結果（Results）の章を書かせる時にも見て取れる。AIに論文を書かせると、まず実験の設定とデータについての章を作る。そこに後の実験にわたる全ての設定を書き込む。まるでその章に全てを押し込んでいるように見える。しかし人間が読もうとすると、とても難しい。なぜなら、まだ見ていない実験の内容だからである。
+Something similar shows up in derivations of equations. When asked to derive an equation, AI usually follows a fixed pattern. It first defines all the symbols at once: "X is this, Y is that, Z is this." Then it writes out equations using all of them. This is very hard to read, because a human has to memorize every symbol before understanding any equation. I think the easy-to-follow form is to release information in small pieces and build up step by step. AI seems to prefer laying out all the ingredients first and then taking a single snapshot of the whole.
 
-これらはまとめると、AIと人間の認知負担の差から来るのではないかと僕は考えている。AIは全ての情報、コンテキストになる情報を細かく理解することができるので、人間が持っている認知のボトルネックから来る情報の処理の仕方をあまり理解していない。
+The same structure appears when AI writes the Results section. AI first makes a section on the experimental setup and data, and puts all the settings for the later experiments in it. It looks to me as if everything is being pushed into that one section. But for a human, me included, it is very hard to read, because these are experiments I have not seen yet.
 
-なので僕は以下の点をAIに伝えるようにしている。
+Taken together, I think this comes from the difference in cognitive load between AI and humans. AI can take in all the context in detail, so it does not much understand how humans process information through their cognitive bottleneck.
 
-- 新しく出す情報は、その前の情報から理解できるようにする。
-- 細かい数字は文の中には書かず、表や図で全ての結果が説明できるようにする。
-- 細かい話は付録につけ、大事な点に絞って本文に書く。
+So I tell the AI the following:
 
-その他には、言葉をきちっと定義させるために実際に論文を読んで一つ一つ細かく指示を出す必要があって、この部分は一発でうまくいく方法を僕はまだ見つけていない。実際に読んで何が分かりにくいのか、何が不明瞭なのかをいちいち伝えるか、自分で直してしまう必要がある。
+- Make new information understandable from the information that came before it.
+- Do not write detailed numbers in sentences; let tables and figures carry all the results.
+- Put fine details in the appendix, and keep only the important points in the main text.
 
-これらをやると多少文章は読みやすくなるのだが、結局大部分を自分が書いているようにも感じてしまうので、AIライティングの使い方については今後も研究していきたい。
+Beyond that, to get terms defined properly, I have to actually read the paper and give detailed instructions one by one. I have not yet found a way to get this right in one shot. I either have to point out what is hard to follow and what is unclear, or fix it myself.
+
+Doing these things makes the text somewhat more readable, but I still feel I end up writing most of it myself. I want to keep studying how to use AI for writing.
