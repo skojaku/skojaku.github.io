@@ -14,7 +14,7 @@ lang_alt_label: 日本語(Japanese)
 
 Lately, I’ve been reading a lot of papers written by AI. I’ve also been using AI to write my own papers more often, which has made the process much easier. On the other hand, if you rely too heavily on AI to write papers, a very exhausting task awaits: the review process.
 
-I thought that AI-generated text was easy to read when ChatGPT first came out, but when AI writes papers autonomously, the resulting text is very difficult to read. This isn’t limited to any specific AI model; every model produces text that’s hard to read. Students also use AI to write many papers and ask me to review them, but reading them is very difficult.
+I thought that AI-generated text was easy to read when ChatGPT first came out, but when AI writes papers autonomously, the resulting text is very difficult to read. This isn’t limited to any specific AI model; every model produces text that’s hard to read.
 
 I’ve been thinking about why this is so difficult. My hypothesis is this: Since AI can understand written text in minute detail, it seems to operate under the assumption that “the more information, the better.” However, humans have a limit to the amount of information they can process at once (a cognitive bottleneck). Too much information scatters our attention and hinders understanding. In other words, for humans, “More is less,” but for AI, “More is more.” This difference leads to various cognitive misalignments, resulting in text that is hard to read. Below, I’ll cite two typical examples where this occurs.
 
