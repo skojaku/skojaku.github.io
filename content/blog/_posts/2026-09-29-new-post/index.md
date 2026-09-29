@@ -4,7 +4,6 @@ category: blog
 date: 2026-09-29
 title: More is less
 slug: more-is-less
-published: false
 lang_alt_url: /more-is-less-jp.html
 lang_alt_label: 日本語(Japanese)
 ---
