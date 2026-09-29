@@ -10,6 +10,8 @@ lang_alt_label: 日本語(Japanese)
 
 <p style="color: #888; font-style: italic;">Note: This blog is something I write in the limited time I have. I wrote it in Japanese (mother's tongue) and had an AI turn it into English, followed by light final touch. That is why it may read a little AI-ish here and there. Do forgive me!</p>
 
+![Programming with an AI assistant](/assets/blog/2026-09-29-new-post/ai-assistant-comic.webp){: width="70%"}
+
 Lately, I’ve been reading a lot of papers written by AI. I’ve also been using AI to write my own papers more often, which has made the process much easier. On the other hand, if you rely too heavily on AI to write papers, a very exhausting task awaits: the review process.
 
 I thought that AI-generated text was easy to read when ChatGPT first came out, but when AI writes papers autonomously, the resulting text is very difficult to read. This isn’t limited to any specific AI model; every model produces text that’s hard to read. Students also use AI to write many papers and ask me to review them, but reading them is very difficult.
