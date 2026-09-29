@@ -19,7 +19,7 @@ I tried to work out why. First, let me lay out the tendencies I see in AI-writte
 
 AI-written papers are packed with information. There are many figures and tables, each of them dense and very colorful. Terms are scattered around without definitions, and the vocabulary is that of software engineering rather than the terms used in academia.
 
-The text also says simple things at great length. The information is thin, yet the amount of text is large. It takes time to read, and in the end it is hard to tell what the paper wanted to say.
+The text also says simple things at great length. It takes time to read, and in the end it is hard to tell what the paper wanted to say.
 
 In addition, the text spells out numbers in fine detail. It picks up the numbers one by one and explains "therefore this holds." I have never written this way, and I am not used to reading papers written this way.
 
