@@ -23,15 +23,13 @@ The text also says simple things at great length. The information is thin, yet t
 
 In addition, the text spells out numbers in fine detail. It picks up the numbers one by one and explains "therefore this holds." I have never written this way, and I am not used to reading papers written this way.
 
-For the writer, I have avoided putting detailed numbers in the text. If a number changes, the whole text has to be fixed, and copying table values into the text without error is laborious. I also doubted that readers pay close attention to fine results. So I have generally kept detailed results out of the prose and focused on integrating information: the key trends, and sentences that explain them. This takes less text, keeps the big picture in focus, and is easier for the author to maintain.
+For the writer, I have avoided putting detailed numbers in the text. A paper changes while it is being written: new experiments become necessary, and tables and figures get replaced entirely. Each time, the whole text has to be fixed, and copying table values into the text without error is laborious. I also doubted that readers pay close attention to fine results. So I have generally kept detailed results out of the prose and focused on integrating information: the key trends, and sentences that explain them. This takes less text, keeps the big picture in focus, and is easier for the author to maintain.
 
-A paper is not finished once written. While writing, I find that a new experiment is needed, or that extra experiments change the results, and tables and figures often get replaced entirely. Tying the text to the numbers adds work every time, so I have not done it.
-
-With AI, things seem to be different. AI can understand the written text in fine detail, so it seems to believe that the more information, the better. But humans lose focus and understand less when given too much information. AI has no such cognitive limit, so it does not seem to know the human side of the story.
+With AI, things seem to be different. AI can understand the written text in fine detail, so it seems to believe that the more information, the better. But humans lose focus and understand less when given too much information.
 
 Something similar shows up in derivations of equations. When asked to derive an equation, AI usually follows a fixed pattern. It first defines all the symbols at once: "X is this, Y is that, Z is this." Then it writes out equations using all of them. This is very hard to read, because a human has to memorize every symbol before understanding any equation. I think the easy-to-follow form is to release information in small pieces and build up step by step. AI seems to prefer laying out all the ingredients first and then taking a single snapshot of the whole.
 
-The same structure appears when AI writes the Results section. AI first makes a section on the experimental setup and data, and puts all the settings for the later experiments in it. It looks to me as if everything is being pushed into that one section. But for a human, me included, it is very hard to read, because these are experiments I have not seen yet.
+The same structure appears when AI writes the Results section. AI first makes a section on the experimental setup and data, and puts all the settings for the later experiments in it. But the settings of experiments I have not yet seen do not stay in my head.
 
 Taken together, I think this comes from the difference in cognitive load between AI and humans. AI can take in all the context in detail, so it does not much understand how humans process information through their cognitive bottleneck.
 
