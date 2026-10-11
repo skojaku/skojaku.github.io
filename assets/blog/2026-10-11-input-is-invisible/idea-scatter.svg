@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" font-family="'Bradley Hand', 'Comic Sans MS', 'Hiragino Maru Gothic ProN', sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" font-family="'Bradley Hand', 'Comic Sans MS', sans-serif">
   <defs>
     <filter id="rough">
       <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="3" result="noise"/>
@@ -83,10 +83,10 @@
     <path d="M260 110 Q 350 60 410 130" />
   </g>
   <g fill="#333" font-size="19">
-    <text x="60" y="390" font-size="16" fill="#555">アイデア空間（点 = 一つのアイデア）</text>
-    <text x="75" y="252" font-size="17">よく知っている場所</text>
-    <text x="395" y="210" font-size="17">少し知っている場所</text>
-    <text x="350" y="345" font-size="17">あまり知らない場所</text>
+    <text x="60" y="390" font-size="16" fill="#555">Idea space (each dot = one idea)</text>
+    <text x="75" y="252" font-size="17">Well known</text>
+    <text x="395" y="210" font-size="17">Somewhat known</text>
+    <text x="350" y="345" font-size="17">Little known</text>
   </g>
   <g filter="url(#rough)" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round">
     <path d="M310 290 L 262 232" marker-end="url(#arr)"/>
@@ -96,5 +96,5 @@
       <path d="M0 0 L8 4 L0 8 z" fill="#333"/>
     </marker>
   </defs>
-  <text x="272" y="226" font-size="15" fill="#333">新しい発想</text>
+  <text x="272" y="226" font-size="15" fill="#333">New idea</text>
 </svg>
