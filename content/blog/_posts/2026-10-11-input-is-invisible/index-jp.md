@@ -4,6 +4,7 @@ category: blog
 date: 2026-10-11
 title: 出力は評価されるが、入力は評価されない
 slug: input-output-asymmetry-jp
+hidden: true
 lang_alt_url: /input-output-asymmetry.html
 lang_alt_label: English
 ---
