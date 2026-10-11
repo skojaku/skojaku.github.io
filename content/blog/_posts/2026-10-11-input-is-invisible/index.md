@@ -17,7 +17,7 @@ lang_alt_label: 日本語(Japanese)
 I participated in the warm-up session for YRCCS2026. It was a very fruitful session that gave me plenty of food for thought. One of the most interesting ideas came from Laurent Hébert-Dufresne's talk, [How to talk and listen and write and read](https://docs.google.com/presentation/d/1hATYTdReo78Wplg8secTXuB3QktIqOXo5uc8wPUYuYo/edit?usp=sharing). In his talk, he mentioned an asymmetry between the input and output of information in terms of rewards. This made clear to me why I have prioritized output over input, and what this habit could lead to.
 
 
-I always think that I should read more papers. I read papers I have been asked to review, and I read some papers from arXiv RSS feeds. But I do not think I read enough papers. Many researchers I respect not only know foundational work within and outside of their home fields but also keep up with the fast-growing literature. I wish I could do the same. Below are my thoughts after listening to the presentation.
+I read papers I have been asked to review, and I read some papers from arXiv RSS feeds. But I do not think I read enough papers. Many researchers I respect not only know foundational work within and outside of their home fields but also keep up with the fast-growing literature. I wish I could do the same. Below are my thoughts after listening to the presentation.
 
 ## Society Evaluates Output, Not Input
 
@@ -41,7 +41,7 @@ The difference from a steam engine is that if you allocate time toward output, t
 
 While reading papers and listening with interest to others' ideas and stories is important, the asymmetry in rewards between input and output (as mentioned earlier) and the delay in response make it difficult to maintain a steady flow of input.
 
-One researcher is tackling this problem with a personal approach. Molecular biologist Olivia Rissland began reading one paper every day starting January 1, 2018. She says it started as ''a bit of a lark,'' but within a month, it had become a habit. By June 2020, she had read a paper every day for 899 consecutive days. She shares the papers she reads in a dedicated Slack channel for her lab and records each one, line by line, in a Google Sheet. She believes that setting aside time to read papers is more important to the lab's success than answering emails. (Source: [Nature Index, September 8, 2020](https://www.nature.com/nature-index/news/this-scientist-read-research-academic-paper-every-day-what-she-learned))
+One researcher is tackling this problem. [Molecular biologist Olivia Rissland began reading one paper every day starting January 1, 2018](https://www.nature.com/nature-index/news/this-scientist-read-research-academic-paper-every-day-what-she-learned). She says it started as ''a bit of a lark,'' but within a month, it had become a habit. By June 2020, she had read a paper every day for 899 consecutive days. She shares the papers she reads in a dedicated Slack channel for her lab and records each one, line by line, in a Google Sheet. She believes that setting aside time to read papers is more important to the lab's success than answering emails. (Source: [Nature Index, September 8, 2020](https://www.nature.com/nature-index/news/this-scientist-read-research-academic-paper-every-day-what-she-learned))
 
 Based on this article and Laurent's presentation, I'll outline below what I can do, taking my own tendencies into account.
 
@@ -53,7 +53,7 @@ Reading can be in two ways: broad mode and depth mode.
 
 The broad mode is a mode for gaining a broad, superficial understanding of the papers that come my way every day. I read the titles and abstracts and select the ones that interest me.
 
-We can broaden the search and reduce the cost by using large-scale language models. One idea, which was suggested by one of my students, is to turn a paper into a podcast and listen it while driving. I'd like to try these new ways to quickly grasp the high-level idea of papers.
+We can broaden the search and reduce the cost by using large language models. One idea, which was suggested by one of my students, is to turn a paper into a podcast and listen it while driving. I'd like to try these new ways to quickly grasp the high-level idea of papers.
 
 On in-depth reading mode, it is a mode to read a paper thoroughly. 
 I actually like to read the paper from start to finish thoroughly, when I decide to read. However, it is hard to find time to read even when I try to set time aside. That's why, as Olivia Rissland did, it is a good idea to set aside specific reading times in advance each week and make sure to stick to them regularly. And the way she keep this habit is very useful (e.g., accountability, set aside reading time). 

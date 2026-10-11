@@ -1,111 +1,229 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="https://skojaku.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://skojaku.github.io/" rel="alternate" type="text/html" /><updated>2026-08-02T06:35:48-04:00</updated><id>https://skojaku.github.io/feed.xml</id><subtitle>Welcome! This is Sadamori Kojaku&apos;s personal webpage.
-</subtitle><author><name>Sadamori Kojaku</name></author><entry><title type="html">Local LLMs are fun!</title><link href="https://skojaku.github.io/localllm.html" rel="alternate" type="text/html" title="Local LLMs are fun!" /><published>2026-08-02T00:00:00-04:00</published><updated>2026-08-02T00:00:00-04:00</updated><id>https://skojaku.github.io/localllm</id><content type="html" xml:base="https://skojaku.github.io/localllm.html">&lt;h3 id=&quot;local-llms-are-a-rabbit-hole&quot;&gt;Local LLMs are a rabbit hole&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="https://skojaku.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://skojaku.github.io/" rel="alternate" type="text/html" /><updated>2026-08-03T17:14:43-04:00</updated><id>https://skojaku.github.io/feed.xml</id><subtitle>Welcome! This is Sadamori Kojaku&apos;s personal webpage.
+</subtitle><author><name>Sadamori Kojaku</name></author><entry><title type="html">ローカルLLMのすすめ</title><link href="https://skojaku.github.io/localllm-jp.html" rel="alternate" type="text/html" title="ローカルLLMのすすめ" /><published>2026-08-02T00:00:00-04:00</published><updated>2026-08-02T00:00:00-04:00</updated><id>https://skojaku.github.io/localllm-jp</id><content type="html" xml:base="https://skojaku.github.io/localllm-jp.html">&lt;p&gt;&lt;img src=&quot;/assets/blog/2026-08-02-local-llm/caged-bird.webp&quot; alt=&quot;&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Local LLMs are fun to play with. They hallucinate, ignore instructions, and stop in the middle of their reasoning. But if I can get one to run properly, a lot of automation becomes possible.&lt;/p&gt;
+&lt;p&gt;ローカルLLMはとても面白い。面白すぎて何時間も無駄にしてしまった。&lt;/p&gt;
 
-&lt;p&gt;I took that as an engineering challenge and spent a while on it, trying many local models and many harness designs. Here is what I learned.&lt;/p&gt;
+&lt;p&gt;ローカルLLMは、クラウドLLMには触らせられないデータを触ることができ、日常の様々なタスクを自動化できる。僕はいろいろ自動化を今している途中なのだが、その過程で色々学びがあったので、今日はそれを書きたい。&lt;/p&gt;
 
-&lt;h3 id=&quot;why-not-simply-use-cloud-llms&quot;&gt;Why not simply use cloud LLMs?&lt;/h3&gt;
+&lt;h3 id=&quot;クラウドllmの問題&quot;&gt;クラウドLLMの問題&lt;/h3&gt;
 
-&lt;p&gt;Part of the motivation is to connect an LLM to my wiki and my email. They hold things I cannot send to someone else’s servers, including OpenAI’s and Anthropic’s, however sincerely they promise not to use it for “training”: student grades, family medical appointments, a colleague’s unpublished draft, notes full of half-formed ideas.&lt;/p&gt;
+&lt;p&gt;フロンティアモデルは何でもそつなくこなせる優等生である。特に最近のフロンティアモデルは、Office周りやGmail、Google Workspaceとの統合がスムーズで、導入も簡単で、すぐに使えることが多い。&lt;/p&gt;
 
-&lt;p&gt;So anything touching that data has to be done by hand. Sorting the inbox, writing the same reply for the fifth time, digging up what I already know about a task before I start on it. Before 2022 this was acceptable. In the age of AIs I have grown less tolerant of it, and I keep looking for ways to hand it off and spend the time on the creative work I actually want to do.&lt;/p&gt;
+&lt;p&gt;一方で、実際にデータを渡してよいかは別の問題である。僕の大学ではレギュレーションによって渡せないデータが多くあり、かつ僕自身も自分や家族の個人情報を渡すことに抵抗があるため、フロンティアモデルに送るデータと送らないデータを分けている。&lt;/p&gt;
 
-&lt;p&gt;Local LLMs are one answer. The model runs on my own hardware, so it can read my wiki and my email without a byte leaving the laptop, and without me working out which regulation covers which file.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/blog/2026-08-02-local-llm/data-split-jp.svg&quot; alt=&quot;&quot; width=&quot;70%&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;In its bare form, though, a local LLM fails a lot.&lt;/p&gt;
+&lt;p&gt;これは杞憂ではなく、実際に事故は起きている。Samsung では社員が機密のソースコードや会議録を ChatGPT に貼り付けてしまい、&lt;a href=&quot;https://www.forbes.com/sites/siladityaray/2023/05/02/samsung-bans-chatgpt-and-other-chatbots-for-employees-after-sensitive-code-leak/&quot;&gt;社内で生成AIの利用が禁止になった&lt;/a&gt;。ChatGPT の共有リンク機能では、&lt;a href=&quot;https://www.malwarebytes.com/blog/news/2025/08/openai-kills-short-lived-experiment-where-chatgpt-chats-could-be-found-on-google&quot;&gt;数千件の会話が Google 検索に載ってしまった&lt;/a&gt;。つい最近も、Anthropic の Claude で&lt;a href=&quot;https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/&quot;&gt;共有した会話や Artifact が Google 検索に載っていた&lt;/a&gt;ことが話題になったばかりで、その中には&lt;a href=&quot;https://fortune.com/2026/07/27/a-trove-of-users-seemingly-private-conversations-with-anthropics-claude-ai-chatbot-showed-up-in-google-search-results/&quot;&gt;実在の患者の医療記録や社外秘の文書まで含まれていた&lt;/a&gt;という。DeepSeek に至っては、&lt;a href=&quot;https://www.wiz.io/blog/wiz-research-uncovers-exposed-deepseek-database-leak&quot;&gt;チャット履歴やAPIキーを含むデータベースを丸ごとインターネットに公開してしまっていた&lt;/a&gt;。一度誰かのクラウドに送ったデータは、その後どうなるか自分ではコントロールできない。&lt;/p&gt;
 
-&lt;h3 id=&quot;they-are-not-smart&quot;&gt;They are not smart&lt;/h3&gt;
+&lt;p&gt;ただ、こうやってデータを分けると、LLMが使えるタスクと使えないタスクが出てくる。そして日常の多くの小さなタスクは、まさに誰かのクラウドに送れないデータばかりを扱うため、そこだけ手作業のまま残って煩雑になる。&lt;/p&gt;
 
-&lt;p&gt;A local model fails in three ways.&lt;/p&gt;
+&lt;p&gt;なので、ローカルLLMを使う旨味は十分にある。&lt;/p&gt;
 
-&lt;p&gt;It is slow. A cloud model answers before I finish reading the question; a local one spends a minute thinking out loud first.&lt;/p&gt;
+&lt;h3 id=&quot;ローカルllmの問題&quot;&gt;ローカルLLMの問題&lt;/h3&gt;
 
-&lt;p&gt;It hallucinates. It invents command-line flags, email addresses, and URLs that look right and go nowhere.&lt;/p&gt;
+&lt;p&gt;じゃあそのまま使えるかというと、そうでもない。生のローカルLLMは全く使えない。ハルシネーションはたくさん起こすし、リーズニングの途中で止まってしまうし、指示文を途中で忘れて何度も同じファイルを見てしまう。&lt;/p&gt;
 
-&lt;p&gt;It loops. It re-plans, re-searches, and re-reads the same file until the context window is full of its own confusion.&lt;/p&gt;
+&lt;p&gt;問題を整理すると、だいたい3つある。&lt;/p&gt;
 
-&lt;p&gt;The first one stopped bothering me when I stopped chatting with it. If the deadline is “by the time I wake up,” a minute per step costs nothing. So I run the model as a batch worker: a queue, a cron line, a job that either finished or didn’t. I don’t watch it work, I read what it produced.&lt;/p&gt;
+&lt;p&gt;1つ目、従える指示の数が限られている。最近のベンチマークでは、フロンティアモデルは&lt;a href=&quot;https://arize.com/blog/llm-instruction-following-benchmark-2026/&quot;&gt;2,000件程度の同時指示にも従える&lt;/a&gt;と報告されている一方、&lt;a href=&quot;https://arxiv.org/abs/2507.11538&quot;&gt;小型モデルは指示が増えると早い段階から指数関数的に精度が崩れる&lt;/a&gt;ことが知られている。体感でも、ローカルLLMに確実に守らせられる指示はせいぜい数十件で、それを超えると指示を見失う。&lt;/p&gt;
 
-&lt;p&gt;The other two are design problems. A model invents a flag because the tool has too many flags. It loops because the task has no obvious next step. Neither is fixed by waiting for a better model.&lt;/p&gt;
+&lt;p&gt;2つ目、ハルシネーションを起こしやすい。ローカルLLMはそもそも学習量が少なく、内部記憶もあまり持っていないので、無理やり答えを出そうとして嘘をつく。記憶力も良くないので、たくさんのターンを重ねると最初に得た情報を忘れてしまう。&lt;/p&gt;
+
+&lt;p&gt;3つ目、曖昧な指示にはうまく対処できない。曖昧な指示が与えられると、ローカルLLMはリーズニングで指示を解釈してプランを立てる。だが、プランの組み方が甘く、揺らぎも大きい。同じ入力から全く違うプランを立てて、失敗することが多い。&lt;/p&gt;
+
+&lt;p&gt;これらの3つの問題が組み合わさると、リーズニングの途中で最初の指示を忘れ、最初に読み込んだファイルも忘れ、何度も同じファイルを読み、その分リーズニングが長くなってさらに指示を忘れる、というループに入る。&lt;/p&gt;
+
+&lt;p&gt;逆に言えば、ここを設計でカバーできれば、可能になるタスクがたくさん増える。この工学的問題はとても面白い。&lt;/p&gt;
 
 &lt;h3 id=&quot;documentation-is-automation&quot;&gt;Documentation is automation&lt;/h3&gt;
 
-&lt;p&gt;Thomas A. Limoncelli’s &lt;a href=&quot;https://cacm.acm.org/practice/documentation-is-automation/&quot;&gt;“Documentation Is Automation”&lt;/a&gt;, which I wrote about &lt;a href=&quot;/snaketail.html&quot;&gt;before&lt;/a&gt;, describes four phases on the road to automation:&lt;/p&gt;
+&lt;p&gt;この問題を解決するにあたって、僕が根幹に据えている原則は、Thomas A. Limoncelli の &lt;a href=&quot;https://cacm.acm.org/practice/documentation-is-automation/&quot;&gt;Documentation Is Automation&lt;/a&gt; である。ここでは、自動化には4つの段階があると説明されている。これはLLMというよりは、人間のエンジニアリングのための一つのガイドだが、ローカルLLMのシステムを作る際にとても参考になるので、ここで紹介したい。&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Document&lt;/strong&gt; the steps&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Find equivalents&lt;/strong&gt; — translate each step into a command&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Automate&lt;/strong&gt; — chain the commands&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Autonomous&lt;/strong&gt; — it runs without supervision&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Document&lt;/strong&gt; — 手順を文書化する&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Find equivalents&lt;/strong&gt; — 各手順をコマンドに置き換える&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Automate&lt;/strong&gt; — コマンドをつないで自動化する&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Autonomous&lt;/strong&gt; — 無監督で走るようにする&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;A local model won’t get you to phase 4 on its own. It works in phases 2 and 3: it can run your commands and chain them, provided the commands exist and the document is short enough to hold in its head.&lt;/p&gt;
+&lt;p&gt;自動化をすれば、繰り返しのタスクにかける時間は減る。もちろん最初の投資の時間は必要だが、将来にわたる時間的負債を解消できると考えている。&lt;/p&gt;
 
-&lt;p&gt;So writing the documentation is building the harness. The document &lt;em&gt;is&lt;/em&gt; the prompt. It is written for a colleague who reads fast, follows instructions literally, and forgets everything when the job ends.&lt;/p&gt;
+&lt;p&gt;そして、この4段階を具体的に実現する方法として僕が行き着いたのが、CLIとスキルである。僕のシステムはこの4段階にそのまま沿って組んであるので、順に見ていこう。&lt;/p&gt;
 
-&lt;h3 id=&quot;the-harness&quot;&gt;The harness&lt;/h3&gt;
+&lt;h4 id=&quot;1-document--まず記録して文書にする&quot;&gt;1. Document — まず記録して、文書にする&lt;/h4&gt;
 
-&lt;p&gt;My harness is a CLI tool plus a skill file. The skill file describes the workflow and which command to run for each step. The CLI does everything else. Mine is called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hq&lt;/code&gt;, and it fronts my mail, calendar, drive, and wiki. What it does isn’t the point here; how it is shaped is, because the shape took me months to get right.&lt;/p&gt;
+&lt;p&gt;文書化するには、まず日々の作業を記録する必要がある。僕にとっての記録の実体は、LLMとのセッションそのものである。セッションを保存しておけば、具体的な作業ステップはすべてそこに残る。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;The skill file is 100 lines, hard cap.&lt;/strong&gt; Local models degrade fast as the context grows, and not gracefully. They fall off a cliff and start ignoring the middle of what you told them. Every line in the skill file competes for attention with the actual task.&lt;/p&gt;
+&lt;p&gt;その上で、作業が発生したらまず &lt;a href=&quot;https://forgejo.org/&quot;&gt;Forgejo&lt;/a&gt;(セルフホストできるGitHubのようなもの)上にタスクを作ることを癖にしている。こうしておくと、どんなタスクがあったか後から見返せる。タスクにはセッションが紐付いているので、具体的なステップを知りたければセッションを参照すればよい。あとで見返して、自動化できるポイントを探すのに役立てている。&lt;/p&gt;
 
-&lt;p&gt;So I compress, close to telegraphese. Articles dropped, no hedging, no paragraph explaining why. Where I can, I show the invocation instead of describing it:&lt;/p&gt;
+&lt;p&gt;そして、繰り返し発生する作業には、その作業を円滑に行うためのスキルを作る。つまり、Forgejo(タスクとセッションの記録)とスキル(手順の文書)の2段構えで、僕はドキュメンテーションをやっている。&lt;/p&gt;
+
+&lt;h4 id=&quot;2-find-equivalents--手順やスキルをcliに置き換える&quot;&gt;2. Find equivalents — 手順やスキルをCLIに置き換える&lt;/h4&gt;
+
+&lt;p&gt;次に、文書化した手順やスキルを、なるべくCLIに置き換えていく。&lt;/p&gt;
+
+&lt;p&gt;ローカルLLMは信頼ならないので、すべての作業を委任してしまうとタスクが完了されなかったり、思わぬところでループにはまったりする。そのため、自動化できる部分はコマンドラインツールで自動化して、LLMの負担を下げる。具体的には、僕は Gmail のルックアップやドラフトの作成、カレンダーの時間の衝突確認、Google Drive のアクセス等々を全てCLIで自動化している。&lt;/p&gt;
+
+&lt;p&gt;このCLI化は、ハルシネーション対策の中核でもある。あるべきタスクの手順をすべてCLI側に移してしまえば、モデルが手順を自分でひねり出す余地がなくなり、そもそもハルシネーションが起こらない。&lt;/p&gt;
+
+&lt;p&gt;もう一つ大事なのが、CLIツールをローカルLLMファーストで設計することである。実際にモデルを走らせ、ツールコールに失敗した記録を取り、どの間違いを何度もするかを観察する。そして、その間違いに合わせてツールを再設計する。アーギュメントを直したり、search を lookup に変えたり、といった具合である。&lt;/p&gt;
+
+&lt;p&gt;例えば、モデルが mail search を何度も mail lookup と打ち間違えるので、コマンドを lookup に改名し、search もエイリアスとして受け付けるようにした。&lt;/p&gt;
+
+&lt;h4 id=&quot;3-automate--メタスキルでつなぐ&quot;&gt;3. Automate — メタスキルでつなぐ&lt;/h4&gt;
+
+&lt;p&gt;現実のタスクは行儀よく一つずつやってこない。複数のタスクにまたがるものがあったり、新しいタスクが既存のタスクを含む形でやってきたりする。そこで僕は、メタスキルというものを作っている。メタスキルとは、スキルやコマンドを使うためのスキルである。どのタイミングでどのCLIやスキルを使うかという全体のワークフローを、メタスキルに書いておく。&lt;/p&gt;
+
+&lt;p&gt;スキルの書き方にはコツがある。前述の通り、ローカルLLMはたくさんの指示には従えない。なので、仕事のほとんどをCLI側に押し込んで、スキルは短く保つ。&lt;/p&gt;
+
+&lt;p&gt;CLIの使い方は、理想的にはCLIのヘルプに全部書くべきなのだが、そうするとLLMが毎回コマンドを叩く必要があって時間のロスになる。なので、あえてスキルに書いている。&lt;/p&gt;
+
+&lt;p&gt;加えて、LLMに書かせたスキルファイルは不要なデコレーションが多く指示も冗長で、コンテキストを圧迫する。なので僕は電報式でスキルを書いている。これでかなりのトークンを節約できる。&lt;/p&gt;
+
+&lt;p&gt;例えば、LLMにスキルを書かせるとこうなる。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;del&gt;“If you would like to look for messages from a particular person within the last week, you can use the find subcommand together with the –from flag, which accepts an email address or a name…”&lt;/del&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hq mail find --from someone --newer-than 7d&lt;/code&gt; — one precise query beats broad scans.&lt;/p&gt;
+  &lt;p&gt;特定の送信者からのメールを直近1週間分探したい場合は、search サブコマンドと –from オプションを使うことができます。–from にはメールアドレスまたは名前を指定できます。なお、結果が多すぎるとコンテキストを圧迫しますので、結果の件数を絞ることをおすすめします。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;The second version is the one the model copies.&lt;/p&gt;
+&lt;p&gt;これを電報式にするとこうなる。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Verbose strings go in a config file.&lt;/strong&gt; API keys, account IDs, calendar IDs, absolute paths: none of it should reach the model’s context. It all sits in a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;config.yaml&lt;/code&gt; that the CLI loads by itself. A 40-character opaque ID is a dozen tokens spent on nothing, plus a chance to typo it, plus a failed call, plus a repair attempt. The model types &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hq cal free --from today&lt;/code&gt; and never sees an ID.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;送信者・直近1週間でメール検索: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mail search --from &amp;lt;person&amp;gt; --newer-than 7d&lt;/code&gt;。結果は5件まで。&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;&lt;strong&gt;Match the model’s vocabulary.&lt;/strong&gt; This one I didn’t expect. Every model has a prior about what subcommands are called. Asked to search my email, one model types &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mail search&lt;/code&gt;, another &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mail find&lt;/code&gt;, another &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mail list&lt;/code&gt;. When the CLI disagrees, you get an error, a repair attempt, a re-read of the help text, and then a loop, all of it paid for out of the context window.&lt;/p&gt;
+&lt;p&gt;トークン数にして、ざっくり5分の1になる。&lt;/p&gt;
 
-&lt;p&gt;The fix is five lines:&lt;/p&gt;
+&lt;p&gt;また、スキルはプロジェクトのポリシーとして、システム全般に浸透するようにしている。方針から外れたスキルを作り始めると、頭を悩ませることになり、メンテナンスも大変だからである。&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# whatever the model reaches for, it lands in the same place
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sub&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_parser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;find&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aliases&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;search&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;query&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;grep&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;list&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;4-autonomous--無監督で走らせる&quot;&gt;4. Autonomous — 無監督で走らせる&lt;/h4&gt;
 
-&lt;p&gt;Rename the command to whatever your model reaches for, or accept all of them. This removed more failures than anything else I tried.&lt;/p&gt;
+&lt;p&gt;ここまで揃うと、LLMが完全に自動でタスクをこなせるようになる。Forgejo のタスクを渡せば、メタスキルに書かれたワークフローに沿って、CLIを叩きながら最後まで走ってくれる。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Retrieval belongs inside the tool.&lt;/strong&gt; Don’t let the model run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;grep&lt;/code&gt;. One grep over a real corpus returns a wall of text and the context is gone, along with the plan and the instructions.&lt;/p&gt;
+&lt;p&gt;無監督で走らせるにあたって大事なのが安全策である。僕は、自動化する部分としない部分をまず決め、CLIには自動化してよい操作だけを入れ、させたくない操作はあえて入れない。例えば、誤ってメールを送らないように送信機能は実装していないし、勝手にインビテーションを送らないようにインビテーション機能も入れていない。&lt;/p&gt;
 
-&lt;p&gt;A search command with a result cap and an embedding index behind it works much better. Semantic search matters more here than I assumed. A weak model is bad at guessing the exact keyword a note was written with, and fine at describing what it is looking for.&lt;/p&gt;
+&lt;p&gt;僕の境界線は、やり直せるかどうかである。やり直せる仕事は自動化し、やり直せない仕事は自動化しない。プロンプトで「送るな」と念押しするより、CLIのレベルで境界線を引くほうがずっと確実である。実際、これまで一度もLLMがこの境界線を超えて勝手に何かをしたことはない。&lt;/p&gt;
 
-&lt;p&gt;The output should also admit what it hid:&lt;/p&gt;
+&lt;h4 id=&quot;optional-検索にgrepを使わせない&quot;&gt;Optional: 検索にgrepを使わせない&lt;/h4&gt;
 
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;count&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;143&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;shown&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;truncated&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;results&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;...&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;これはオプションだが、効果が大きかったものを一つ。Wikiの検索にgrepを使わせないことである。grepはLLMが好んで使う検索コマンドだが、大量のテキストを吐き出すので、すぐにコンテキストがいっぱいになり、LLMの性能がガタ落ちする。そうならないように、僕は &lt;a href=&quot;https://github.com/rtk-ai/rtk&quot;&gt;rtk&lt;/a&gt; というコマンドを使ったり、独自のベクターデータベースを作ったりして、そこから情報を引き出させるようにしている。rtk については&lt;a href=&quot;https://dev.to/arshtechpro/how-rtk-reduces-llm-token-usage-for-ai-coding-agents-2kfd&quot;&gt;このブログ&lt;/a&gt;が、ベクターデータベースについては&lt;a href=&quot;https://www.pinecone.io/learn/vector-database/&quot;&gt;この記事&lt;/a&gt;が詳しいので、参考にされたい。&lt;/p&gt;
 
-&lt;p&gt;Without &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;truncated&lt;/code&gt;, the model summarizes five results as if they were all 143.&lt;/p&gt;
+&lt;h3 id=&quot;おわりに&quot;&gt;おわりに&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;Test by reading what it typed, not what it answered.&lt;/strong&gt; Give the model a task and read the transcript, looking only at the commands. Every wrong invocation is a bug in the CLI’s naming, in the skill file’s wording, or in a default I forgot to set. Almost never in the model. Fix, rerun, read again. Two or three rounds of this did more than a week of rewording prompts.&lt;/p&gt;
+&lt;p&gt;現在、様々なローカルLLMが利用可能になっており、今後も新しいモデルやチェックポイントが出てくる。ローカルLLMの性能が向上すればするほど、任せられるタスクが増えるので、今後もとても楽しみである。&lt;/p&gt;</content><author><name>Sadamori Kojaku</name></author><category term="blog" /><summary type="html"></summary></entry><entry><title type="html">Invitation to Local LLMs for Daily Tasks</title><link href="https://skojaku.github.io/localllm.html" rel="alternate" type="text/html" title="Invitation to Local LLMs for Daily Tasks" /><published>2026-08-02T00:00:00-04:00</published><updated>2026-08-02T00:00:00-04:00</updated><id>https://skojaku.github.io/localllm</id><content type="html" xml:base="https://skojaku.github.io/localllm.html">&lt;p style=&quot;color: #888; font-style: italic;&quot;&gt;Note: This blog is something I write in the limited time I have. I wrote it in Japanese (mother&apos;s tongue) and had an AI turn it into English, followed by light final touch. That is why it may read a little AI-ish here and there. Do forgive me!&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Boundaries live in the code, not the prompt.&lt;/strong&gt; My agent reads anything and drafts anything. It cannot send email, book a meeting, or delete a note, because there is no send verb in the CLI. I never wrote one. A prompt saying “never send” works only if the model reads it correctly every time, and a missing subcommand doesn’t depend on that.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/blog/2026-08-02-local-llm/caged-bird.webp&quot; alt=&quot;&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;What comes out is a draft in my drafts folder or a comment on a task card. The machine collects, I decide.&lt;/p&gt;
+&lt;p&gt;Local LLMs are a lot of fun. So much fun that I have wasted hours on them.&lt;/p&gt;
 
-&lt;h3 id=&quot;scope&quot;&gt;Scope&lt;/h3&gt;
+&lt;p&gt;A local LLM can touch data that I cannot let a cloud LLM touch. That means it can automate all sorts of everyday tasks. I am in the middle of automating various things right now. I have learned a lot along the way, so today I want to write about it.&lt;/p&gt;
 
-&lt;p&gt;Two questions worth answering before a model touches your personal data.&lt;/p&gt;
+&lt;h3 id=&quot;the-problem-with-cloud-llms&quot;&gt;The problem with cloud LLMs&lt;/h3&gt;
 
-&lt;p&gt;What sits on disk in plaintext? Running the model locally doesn’t help if the index it searches is a readable pile of your email in a repo you might push somewhere one day. Decide what gets extracted to disk and what stays in the source system.&lt;/p&gt;
+&lt;p&gt;Frontier models are straight-A students that handle almost anything well. The recent ones in particular integrate smoothly with Office, Gmail, and Google Workspace. They are easy to set up and often ready to use right away.&lt;/p&gt;
 
-&lt;p&gt;Can it reach the internet? A model with your inbox and a network connection is a different risk from a model with your inbox alone. Mine has no outbound send path and no browser.&lt;/p&gt;
+&lt;p&gt;Handing them my data is a separate question, though. At my university, regulations forbid sharing many kinds of data, and I myself am reluctant to hand over personal information. So I split my data into what I send to frontier models and what I do not.&lt;/p&gt;
 
-&lt;p&gt;If you are still experimenting, run it in a container, or start with a small model on a restricted directory. A confused agent’s blast radius is whatever you handed it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/blog/2026-08-02-local-llm/data-split-en.svg&quot; alt=&quot;&quot; width=&quot;70%&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;why-this-is-fun&quot;&gt;Why this is fun&lt;/h3&gt;
+&lt;p&gt;I am not just being paranoid here. Accidents have actually happened. At Samsung, employees pasted confidential source code and meeting notes into ChatGPT, and &lt;a href=&quot;https://www.forbes.com/sites/siladityaray/2023/05/02/samsung-bans-chatgpt-and-other-chatbots-for-employees-after-sensitive-code-leak/&quot;&gt;the company ended up banning generative AI internally&lt;/a&gt;. ChatGPT’s link-sharing feature put &lt;a href=&quot;https://www.malwarebytes.com/blog/news/2025/08/openai-kills-short-lived-experiment-where-chatgpt-chats-could-be-found-on-google&quot;&gt;thousands of conversations into Google search results&lt;/a&gt;. Just recently, shared conversations and Artifacts from Anthropic’s Claude &lt;a href=&quot;https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/&quot;&gt;showed up in Google search&lt;/a&gt; as well. Some of them reportedly contained &lt;a href=&quot;https://fortune.com/2026/07/27/a-trove-of-users-seemingly-private-conversations-with-anthropics-claude-ai-chatbot-showed-up-in-google-search-results/&quot;&gt;medical records of real patients and internal-only company documents&lt;/a&gt;. DeepSeek went as far as &lt;a href=&quot;https://www.wiz.io/blog/wiz-research-uncovers-exposed-deepseek-database-leak&quot;&gt;leaving a database of chat histories and API keys wide open on the internet&lt;/a&gt;. Once your data is on someone else’s cloud, you no longer control what happens to it.&lt;/p&gt;
 
-&lt;p&gt;The weak model made me build a better system.&lt;/p&gt;
+&lt;p&gt;But once I split my data this way, some tasks can use an LLM and some cannot. And many small daily tasks deal with exactly the kind of data I cannot send to someone’s cloud. So those tasks stay manual and tedious.&lt;/p&gt;
 
-&lt;p&gt;A frontier model in the cloud papers over a badly designed tool. It guesses the right flag, recovers from the error, and finds the file anyway, so you never learn that your interface is bad. A small local model has no slack. It fails on every rough edge, and each failure is a reproducible bug report about your own design.&lt;/p&gt;
+&lt;p&gt;So there is plenty to gain from a local LLM.&lt;/p&gt;
 
-&lt;p&gt;What I ended up with is a handful of commands that are short, well named, hard to misuse, and documented in a hundred lines. That is just a good tool. The weak model was the excuse to finally build one.&lt;/p&gt;</content><author><name>Sadamori Kojaku</name></author><category term="blog" /><summary type="html">Local LLMs are a rabbit hole</summary></entry><entry><title type="html">The snake that eats its own tail</title><link href="https://skojaku.github.io/snaketail.html" rel="alternate" type="text/html" title="The snake that eats its own tail" /><published>2026-02-24T00:00:00-05:00</published><updated>2026-02-24T00:00:00-05:00</updated><id>https://skojaku.github.io/snaketail</id><content type="html" xml:base="https://skojaku.github.io/snaketail.html">&lt;h3 id=&quot;more-automation-more-babysitting&quot;&gt;More automation, more babysitting&lt;/h3&gt;
+&lt;h3 id=&quot;the-problem-with-local-llms&quot;&gt;The problem with local LLMs&lt;/h3&gt;
+
+&lt;p&gt;Can you use one as-is, then? Not really. A raw local LLM is completely useless. It hallucinates a lot, stalls in the middle of its reasoning, forgets the instructions partway through, and looks at the same file over and over.&lt;/p&gt;
+
+&lt;p&gt;The problems come down to roughly three.&lt;/p&gt;
+
+&lt;p&gt;First, it can only follow a limited number of instructions. Recent benchmarks report that frontier models can follow &lt;a href=&quot;https://arize.com/blog/llm-instruction-following-benchmark-2026/&quot;&gt;around 2,000 instructions at once&lt;/a&gt;, while &lt;a href=&quot;https://arxiv.org/abs/2507.11538&quot;&gt;small models fall apart exponentially as the instructions pile up&lt;/a&gt;. This matches my experience. A local LLM can reliably keep to a few dozen instructions at most. Beyond that, it loses track of them.&lt;/p&gt;
+
+&lt;p&gt;Second, it hallucinates easily. A local LLM has been trained on less data and holds less knowledge inside. So when it strains to produce an answer anyway, it makes things up. Its memory is not great either. After many turns, it forgets what it learned at the start.&lt;/p&gt;
+
+&lt;p&gt;Third, it does not deal well with vague instructions. It tries to interpret them and make a plan through its reasoning. But the planning is often sloppy and unstable. The same input can produce completely different plans, and the task fails.&lt;/p&gt;
+
+&lt;p&gt;Put these three together and you get a loop. The model forgets the original instruction in the middle of its reasoning, forgets the file it read at the start, and reads the same file again. The reasoning gets longer, and it forgets the instructions even more.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, if I can cover for these weaknesses with good design, a whole lot of tasks become possible. This engineering problem is very fun.&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation-is-automation&quot;&gt;Documentation is automation&lt;/h3&gt;
+
+&lt;p&gt;The principle behind my solution is Thomas A. Limoncelli’s &lt;a href=&quot;https://cacm.acm.org/practice/documentation-is-automation/&quot;&gt;Documentation Is Automation&lt;/a&gt;. It explains that automation happens in four stages. It was written as a guide for human engineers, but it is very helpful when you build a system around a local LLM, so let me introduce it here.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Document&lt;/strong&gt;: write down the steps&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Find equivalents&lt;/strong&gt;: replace each step with a command&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Automate&lt;/strong&gt;: chain the commands together&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Autonomous&lt;/strong&gt;: let it run unsupervised&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Automation cuts down the time spent on repeated tasks. Of course, it takes some time up front. But I think of that as paying off a time debt that would otherwise follow me far into the future.&lt;/p&gt;
+
+&lt;p&gt;In my case, the four stages took the shape of command-line tools and skills. My system follows the four stages exactly, so let me walk through them in order.&lt;/p&gt;
+
+&lt;h4 id=&quot;1-document-record-first-then-write-it-down&quot;&gt;1. Document: record first, then write it down&lt;/h4&gt;
+
+&lt;p&gt;To write things down, I first need a record of my daily work. For me, that record is the session with the LLM. If I save the sessions, every concrete step of the work stays there.&lt;/p&gt;
+
+&lt;p&gt;On top of that, whenever a piece of work comes up, I make it a habit to first create a task on &lt;a href=&quot;https://forgejo.org/&quot;&gt;Forgejo&lt;/a&gt; (a GitHub-like thing you can host yourself). This lets me look back later and see what tasks there were. Each task is tied to its session, so if I want the concrete steps, I just go look at the session. Later, I look back over these tasks to find spots that could be automated.&lt;/p&gt;
+
+&lt;p&gt;Then, for work that keeps coming back, I write a skill, a short instruction file that tells the model how to do that work smoothly. In other words, my documentation has two layers: Forgejo (the record of tasks and sessions) and skills (the written-down procedures).&lt;/p&gt;
+
+&lt;h4 id=&quot;2-find-equivalents-turn-steps-and-skills-into-commands&quot;&gt;2. Find equivalents: turn steps and skills into commands&lt;/h4&gt;
+
+&lt;p&gt;Next, I replace the documented steps and skills with command-line tools wherever I can.&lt;/p&gt;
+
+&lt;p&gt;A local LLM cannot be trusted. If I hand it the whole job, it leaves tasks unfinished or gets stuck in a loop somewhere unexpected. So I automate whatever I can with command-line tools, to lighten the model’s load. Concretely, I have command-line tools that look things up in Gmail, write email drafts, check my calendar for conflicts, access Google Drive, and so on.&lt;/p&gt;
+
+&lt;p&gt;This is also the heart of my hallucination fix. If I move the whole procedure of a task into the command-line tool, the model has no room to invent steps. The hallucination has nowhere to start.&lt;/p&gt;
+
+&lt;p&gt;One more thing matters here. I design the command-line tools local-LLM-first. I run the model for real, keep a log of failed tool calls, and watch for the mistakes it makes again and again. Then I redesign the tool to fit those mistakes. I fix an argument, or I turn search into lookup, and so on.&lt;/p&gt;
+
+&lt;p&gt;For example, the model kept typing mail lookup when the command was mail search. So I renamed the command to lookup and kept search as an alias.&lt;/p&gt;
+
+&lt;h4 id=&quot;3-automate-connect-them-with-a-meta-skill&quot;&gt;3. Automate: connect them with a meta-skill&lt;/h4&gt;
+
+&lt;p&gt;Real tasks do not arrive politely one at a time. Some stretch across several tasks. Some new tasks arrive with an existing task tucked inside. So I write what I call a meta-skill. A meta-skill is a skill for using the other skills and commands. It describes the overall flow of the work: which tool or skill to use at which moment.&lt;/p&gt;
+
+&lt;p&gt;There is a knack to writing skills. As I said above, a local LLM cannot follow many instructions. So I push most of the work into the command-line tools and keep the skills short.&lt;/p&gt;
+
+&lt;p&gt;Ideally, how to use a tool should all be written in the tool’s help text. But then the model has to run a command every time to read it, and that wastes time. So I deliberately write the usage into the skill.&lt;/p&gt;
+
+&lt;p&gt;On top of that, skill files written by an LLM are full of needless decoration and wordy instructions. They crowd the model’s working memory. So I write skills in telegram style. This saves quite a lot of tokens.&lt;/p&gt;
+
+&lt;p&gt;Here is an example. When an LLM writes a skill, it comes out like this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you would like to search for emails from a particular person within the last week, you can use the search subcommand together with the –from option, which accepts an email address or a name. Please note that too many results can crowd the context, so it is recommended to limit the number of results.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In telegram style, the same instruction becomes this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Search mail from person, last week: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mail search --from &amp;lt;person&amp;gt; --newer-than 7d&lt;/code&gt;. Max 5 results.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The token count drops to about a fifth.&lt;/p&gt;
+
+&lt;p&gt;I also keep skills in line with a project-wide policy. Once you start writing skills that stray from the policy, you end up scratching your head, and maintenance becomes a pain.&lt;/p&gt;
+
+&lt;h4 id=&quot;4-autonomous-let-it-run-unsupervised&quot;&gt;4. Autonomous: let it run unsupervised&lt;/h4&gt;
+
+&lt;p&gt;With all of this in place, the LLM can finally do whole tasks without me. When I hand it a Forgejo task, it follows the flow in the meta-skill, calls the command-line tools, and runs to the end.&lt;/p&gt;
+
+&lt;p&gt;The important part of running unsupervised is the safety net. I first decide which parts to automate and which parts not to. Then I put only the allowed operations into the command-line tools and deliberately leave the rest out. For example, the mail tool has no send function, so the local LLM cannot send an email by mistake. The calendar tool has no invitation function either, so it cannot invite people to meetings.&lt;/p&gt;
+
+&lt;p&gt;My boundary line is whether the work can be redone. If the work can be redone, I automate it. If it cannot, I do not. Drawing the line inside the tools is far more reliable than pleading “never send” in a prompt. In fact, the LLM has never once crossed that line.&lt;/p&gt;
+
+&lt;h4 id=&quot;optional-do-not-let-the-model-use-grep&quot;&gt;Optional: do not let the model use grep&lt;/h4&gt;
+
+&lt;p&gt;This one is optional, but it helped a lot. I do not let the model use grep to search my wiki. grep is a search command that LLMs love. But grep spits out a huge amount of text, the context fills up right away, and the model’s performance falls off a cliff. To avoid this, I use a command called &lt;a href=&quot;https://github.com/rtk-ai/rtk&quot;&gt;rtk&lt;/a&gt; and I built a vector database of my own, and I make the model pull information from there. For details, &lt;a href=&quot;https://dev.to/arshtechpro/how-rtk-reduces-llm-token-usage-for-ai-coding-agents-2kfd&quot;&gt;this blog&lt;/a&gt; covers rtk well, and &lt;a href=&quot;https://www.pinecone.io/learn/vector-database/&quot;&gt;this article&lt;/a&gt; covers vector databases.&lt;/p&gt;
+
+&lt;h3 id=&quot;in-closing&quot;&gt;In closing&lt;/h3&gt;
+
+&lt;p&gt;All sorts of local LLMs are available now, and new models and checkpoints keep coming. The better local LLMs get, the more tasks I can hand over. I am very much looking forward to what comes next.&lt;/p&gt;</content><author><name>Sadamori Kojaku</name></author><category term="blog" /><summary type="html">Note: This blog is something I write in the limited time I have. I wrote it in Japanese (mother&apos;s tongue) and had an AI turn it into English, followed by light final touch. That is why it may read a little AI-ish here and there. Do forgive me!</summary></entry><entry><title type="html">The snake that eats its own tail</title><link href="https://skojaku.github.io/snaketail.html" rel="alternate" type="text/html" title="The snake that eats its own tail" /><published>2026-02-24T00:00:00-05:00</published><updated>2026-02-24T00:00:00-05:00</updated><id>https://skojaku.github.io/snaketail</id><content type="html" xml:base="https://skojaku.github.io/snaketail.html">&lt;h3 id=&quot;more-automation-more-babysitting&quot;&gt;More automation, more babysitting&lt;/h3&gt;
 
 &lt;p&gt;The more I automate, the more frequently I babysit them.&lt;/p&gt;
 
