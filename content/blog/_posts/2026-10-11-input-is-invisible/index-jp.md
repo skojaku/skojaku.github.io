@@ -13,9 +13,9 @@ lang_alt_label: English
 
 <p style="color: #888; font-size: 0.85em;">図：G. A. Nokes, <em>The Evolution of the Steam Locomotive (1803 to 1898)</em> (1899) より。<a href="https://www.gutenberg.org/ebooks/73518">Project Gutenberg</a>。</p>
 
-yrCCS2026のウォームアップに参加した。色々考えるタネをもらってとても実りのあるセッションだった。今日はその中でLaurent Hébert-Dufresneの発表[How to talk and listen and write and read](https://docs.google.com/presentation/d/1hATYTdReo78Wplg8secTXuB3QktIqOXo5uc8wPUYuYo/edit?usp=sharing)で提示した興味深い視点について書きたい。以下は、プレゼンテーションを聴いた後の私の考えだ。
+yrCCS2026のウォームアップに参加した。色々考えるタネをもらってとても実りのあるセッションだった。今日はその中でLaurent Hébert-Dufresneの発表[How to talk and listen and write and read](https://docs.google.com/presentation/d/1hATYTdReo78Wplg8secTXuB3QktIqOXo5uc8wPUYuYo/edit?usp=sharing)で提示した興味深い視点について書きたい。
 
-yrCCS2026のワームアップで、Laurent Hébert-Dufresneが「論文の読み方」についてプレゼンテーションしていた。それがきっかけで考えていたことを一度まとめてみたい。
+僕は論文を読まなければならないと、いつも思っている。レビューを依頼された論文は読むし、arXivのRSSからも論文を読んでいる。しかし、まだ十分な量を読んでいるとは思えない。僕が尊敬する研究者の多くは、自分の分野の内外の基礎的な研究を知っているだけでなく、急速に増え続ける文献にも追いついている。僕もそうありたいと思っている。以下は、プレゼンテーションを聴いた後の私の考えだ。
 
 ## 社会は出力を評価し、入力を評価しない
 
