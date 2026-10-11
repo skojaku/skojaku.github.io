@@ -14,7 +14,10 @@ lang_alt_label: 日本語(Japanese)
 
 <p style="color: #888; font-size: 0.85em;">Figure: From G. A. Nokes, <em>The Evolution of the Steam Locomotive (1803 to 1898)</em> (1899). <a href="https://www.gutenberg.org/ebooks/73518">Project Gutenberg</a>.</p>
 
-I participated in the warm-up session for yrCCS2026. It was a very fruitful session that gave me plenty of food for thought. Here, I'd like to write about the interesting perspective presented by Laurent Hébert-Dufresne in his talk [How to talk and listen and write and read](https://docs.google.com/presentation/d/1hATYTdReo78Wplg8secTXuB3QktIqOXo5uc8wPUYuYo/edit? usp=sharing). Below are my thoughts after listening to the presentation.
+I participated in the warm-up session for YRCCS2026. It was a very fruitful session that gave me plenty of food for thought. One of the most interesting ideas came from Laurent Hébert-Dufresne's talk, [How to talk and listen and write and read](https://docs.google.com/presentation/d/1hATYTdReo78Wplg8secTXuB3QktIqOXo5uc8wPUYuYo/edit?usp=sharing). In his talk, he mentioned an asymmetry between the input and output of information in terms of rewards. This made clear to me why I have prioritized output over input, and what this habit could lead to.
+
+
+I always think that I should read more papers. I read papers I have been asked to review, and I read some papers from arXiv RSS feeds. But I do not think I read enough papers. Many researchers I respect not only know foundational work within and outside of their home fields but also keep up with the fast-growing literature. I wish I could do the same. Below are my thoughts after listening to the presentation.
 
 ## Society Evaluates Output, Not Input
 
@@ -24,8 +27,6 @@ If you write a paper, it counts as an achievement. Papers are sent for peer revi
 
 On the other hand, there is no reward for reading. Nowhere is it recorded how many papers you've read. As a result, reading can feel like a waste of time.
 
-To be honest, I don't read many papers. I read papers I've been asked to review, but I don't have the habit of actively seeking out and reading papers on my own. There's no doubt that the amount of input I receive falls far short of that of researchers active on the front lines, and I think I've read fewer papers thoroughly than even my students have lately.
-
 ## There Is a Delay in the Effects of Input
 
 The relationship between the input of ideas and their output is similar to how a steam engine works.
@@ -34,7 +35,7 @@ In a steam engine, firewood is burned to heat water. The water turns into steam 
 
 We, too, are thinking engines that work in the same way. We acquire materials (input) such as books, research papers, and conversations with others. These accumulate little by little in our minds, building up like pressure. When that pressure exceeds a certain threshold, it emerges as writing or ideas. Simply reading does not generate output; it is only through the process of thinking, writing, and speaking that what has accumulated is released.
 
-The difference from a steam engine is that if you allocate time toward output, the volume of output (such as the number of papers) increases. This is problematic. Why? Because while the person producing the output receives short-term rewards for their work, if they continue to produce similar ideas, those rewards will diminish over the long term. If the substance of your ideas is becoming repetitive, that is a warning sign.
+The difference from a steam engine is that if you allocate time toward output, the volume of output (such as the number of papers) increases. This is problematic. Why? Because while the person producing the output receives short-term rewards for their work, if they continue to produce similar ideas, those rewards will diminish over the long term. If your ideas is becoming repetitive, that is a warning sign.
 
 ## Making It a Habit
 
@@ -44,15 +45,18 @@ One researcher is tackling this problem with a personal approach. Molecular biol
 
 Based on this article and Laurent's presentation, I'll outline below what I can do, taking my own tendencies into account.
 
-### Broad Reading Mode
+### Two modes of reading
 
-This is a mode for gaining a broad, superficial understanding of the papers that come my way every day. I read the titles and abstracts and select the ones that interest me.
+This is something many people do but I put it here explicitly.
+
+Reading can be in two ways: broad mode and depth mode.
+
+The broad mode is a mode for gaining a broad, superficial understanding of the papers that come my way every day. I read the titles and abstracts and select the ones that interest me.
 
 We can broaden the search and reduce the cost by using large-scale language models. One idea, which was suggested by one of my students, is to turn a paper into a podcast and listen it while driving. I'd like to try these new ways to quickly grasp the high-level idea of papers.
 
-### In-Depth Reading Mode
-
-In in-depth reading mode, I actually like to read the paper from start to finish thoroughly, when I decide to read. However, it is hard to find time to read even when I try to set time aside. That's why, as Olivia Rissland did, it is a good idea to set aside specific reading times in advance each week and make sure to stick to them regularly. And the way she keep this habit is very useful (e.g., accountability, set aside reading time). 
+On in-depth reading mode, it is a mode to read a paper thoroughly. 
+I actually like to read the paper from start to finish thoroughly, when I decide to read. However, it is hard to find time to read even when I try to set time aside. That's why, as Olivia Rissland did, it is a good idea to set aside specific reading times in advance each week and make sure to stick to them regularly. And the way she keep this habit is very useful (e.g., accountability, set aside reading time). 
 
 ## Listening to Others
 
