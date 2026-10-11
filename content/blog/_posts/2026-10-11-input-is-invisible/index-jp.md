@@ -6,14 +6,15 @@ title: 出力は評価されるが、入力は評価されない
 slug: input-output-asymmetry-jp
 lang_alt_url: /input-output-asymmetry.html
 lang_alt_label: English
-published: false
 ---
 
 ![蒸気機関車の側面図（"JASON"）](/assets/blog/2026-10-11-input-is-invisible/steam-locomotive-jason.jpg){: width="70%"}
 
 <p style="color: #888; font-size: 0.85em;">図：G. A. Nokes, <em>The Evolution of the Steam Locomotive (1803 to 1898)</em> (1899) より。<a href="https://www.gutenberg.org/ebooks/73518">Project Gutenberg</a>。</p>
 
-YRCCS2026のワームアップで、Laurent Hébert-Dufresneが「論文の読み方」についてプレゼンテーションしていた。それがきっかけで考えていたことを一度まとめてみたい。
+yrCCS2026のウォームアップに参加した。色々考えるタネをもらってとても実りのあるセッションだった。今日はその中でLaurent Hébert-Dufresneの発表[How to talk and listen and write and read](https://docs.google.com/presentation/d/1hATYTdReo78Wplg8secTXuB3QktIqOXo5uc8wPUYuYo/edit?usp=sharing)で提示した興味深い視点について書きたい。以下は、プレゼンテーションを聴いた後の私の考えだ。
+
+yrCCS2026のワームアップで、Laurent Hébert-Dufresneが「論文の読み方」についてプレゼンテーションしていた。それがきっかけで考えていたことを一度まとめてみたい。
 
 ## 社会は出力を評価し、入力を評価しない
 
