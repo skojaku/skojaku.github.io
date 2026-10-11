@@ -7,6 +7,10 @@ slug: input-output-asymmetry-jp
 published: false
 ---
 
+![蒸気機関車の側面図（"JASON"）](/assets/blog/2026-10-11-input-is-invisible/steam-locomotive-jason.jpg){: width="70%"}
+
+<p style="color: #888; font-size: 0.85em;">図：G. A. Nokes, <em>The Evolution of the Steam Locomotive (1803 to 1898)</em> (1899) より。<a href="https://www.gutenberg.org/ebooks/73518">Project Gutenberg</a>。</p>
+
 YRCCS2026のワームアップで、Laurent Hébert-Dufresneが面白いことを言っていた。それがきっかけで考えていたことを一度まとめてみたい。
 
 ## 社会は出力を評価し、入力を評価しない
