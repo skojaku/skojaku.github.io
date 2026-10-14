@@ -11,6 +11,12 @@ permalink: /research/
 
 ## Talks
 
+### Reproducible research and automation and how to regain work-life balance
+
+yrCSS CCS Warm-Up 2026, Binghamton University, Binghamton, NY (October 9, 2026)
+
+- 🎞️ [Slides](/assets/attachments/docs/slides/2026-10-09-yrcss-ccs-warmup.html)
+
 ### Turning Spatial Intuition into Modeling with Neural Embeddings
 
 CompleNet 2026, Zaragoza, Spain (May 4-8, 2026)
