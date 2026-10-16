@@ -33,6 +33,7 @@ Kim, M., Kojaku, S., & Ahn, Y. Y. (2025). Uncovering simultaneous breakthroughs 
 - 📝 [Blog](https://munjungkim.github.io/embedding-disruptiveness-blog/)
 - 💻 [Code](https://github.com/yy/embedding-disruptiveness)
 - 📄 [Paper](https://doi.org/10.1126/sciadv.adx3420)
+- 🎞️ [Slides (CCS 2026)](https://skojaku.github.io/talks-ccs-2027-disruption/)
 
 ### Implicit degree bias in the link prediction task
 
